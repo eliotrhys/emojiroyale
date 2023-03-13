@@ -1,29 +1,20 @@
 "use client"
 
 import { useEffect, useState } from "react";
+
+// Components
 import Counter from "./Counter";
 import EmojiDisplay from "./EmojiDisplay";
 import GuessInput from "./GuessInput";
 import FailureScreen from "./FailureScreen";
 import CongratulationsScreen from "./CongratulationsScreen";
+
+// Utils & Data
 import { questions } from "../data/questions";
+import shuffle from "../app/utils/shuffle";
 
-function shuffle(array: Array<any>) {
-  // Loop through the array
-  for (let i = array.length - 1; i > 0; i--) {
-    // Generate a random index between 0 and i
-    const j = Math.floor(Math.random() * (i + 1));
-    // Swap the elements at positions i and j
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-interface Question {
-  title: string;
-  emoji: string;
-  mediaType: string;
-}
+// Types
+import Question from "../app/types/Question";
 
 export default function GameForm() {
   // Initialisation
@@ -36,6 +27,10 @@ export default function GameForm() {
   const [mediaType, setMediaType] = useState("");
 
   // Game states
+  const [timeRemaining, setTimeRemaining] = useState(10);
+  const [highestScore, setHighestScore] = useState<number>(
+    parseInt(localStorage.getItem("highestScore") ?? "0")
+  );
   const [showFailureScreen, setShowFailureScreen] = useState(false);
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
 
@@ -56,10 +51,33 @@ export default function GameForm() {
     }
   }, [questionIndex, shuffledQuestions]);
 
+  useEffect(() => {
+    if (count > highestScore) {
+      setHighestScore(count);
+      localStorage.setItem("highestScore", count.toString());
+      console.log("This users highest score is " + count.toString());
+    }
+  }, [count, setHighestScore, highestScore]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (timeRemaining === 0) {
+      setShowCongratulationsScreen(true);
+    }
+  }, [timeRemaining]);
+
   const handleCorrectGuess = () => {
     setCount((prevCount) => prevCount + 1);
 
     if (questionIndex === shuffledQuestions.length - 1) {
+      // Should never be hit but keep in case
       setShowCongratulationsScreen(true);
     } 
     else 
@@ -74,6 +92,7 @@ export default function GameForm() {
     setShowFailureScreen(false);
     setShowCongratulationsScreen(false);
     setShuffledQuestions(shuffle(questions));
+    setTimeRemaining(60);
   };
 
   const handleFailure = () => {
@@ -83,11 +102,12 @@ export default function GameForm() {
   return (
     <div style={{textAlign: "center"}}>
       {showCongratulationsScreen ? (
-        <CongratulationsScreen onRestart={handleRestart} />
+        <CongratulationsScreen onRestart={handleRestart} currentScore={count} />
       ) : showFailureScreen ? (
         <FailureScreen onRestart={handleRestart} />
       ) : (
         <>
+          <p>Time remaining: {timeRemaining}</p>
           <Counter count={count} />
           <EmojiDisplay emoji={emoji} mediaType={mediaType} />
           <GuessInput

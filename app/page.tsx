@@ -1,9 +1,9 @@
-import GameForm from "../components/GameForm";
+import Link from "next/link";
 
 export default function Page() {
     return (
         <div>
-            <GameForm />
+            <Link href="/game">Start the game!</Link>
         </div>
     )
 }

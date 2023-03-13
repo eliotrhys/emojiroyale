@@ -1,3 +1,9 @@
+import GameForm from "../../components/GameForm";
+
 export default function Page() {
-    return <h1>Hello, Next.js! THIS IS GAME PAGE</h1>;
+    return (
+        <div>
+            <GameForm />
+        </div>
+    )
 }
