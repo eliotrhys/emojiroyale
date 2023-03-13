@@ -15,6 +15,7 @@ import shuffle from "../app/utils/shuffle";
 
 // Types
 import Question from "../app/types/Question";
+import Countdown from "./Countdown";
 
 export default function GameForm() {
   // Initialisation
@@ -59,20 +60,6 @@ export default function GameForm() {
     }
   }, [count, setHighestScore, highestScore]);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (timeRemaining === 0) {
-      setShowCongratulationsScreen(true);
-    }
-  }, [timeRemaining]);
-
   const handleCorrectGuess = () => {
     setCount((prevCount) => prevCount + 1);
 
@@ -99,6 +86,14 @@ export default function GameForm() {
     setShowFailureScreen(true);
   };
 
+  const handleCountdownFinish = () => {
+    setShowCongratulationsScreen(true);
+  }
+
+  const handleTimeTick = () => {
+    setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
+  }
+
   return (
     <div style={{textAlign: "center"}}>
       {showCongratulationsScreen ? (
@@ -110,7 +105,7 @@ export default function GameForm() {
         <div className="min-h-screen min-w-screen flex items-center justify-center">
             <div className="text-center">
               
-              <p>Time remaining: {timeRemaining}</p>
+              <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
               <Counter count={count} />
               <EmojiDisplay emoji={emoji} mediaType={mediaType} />
               <GuessInput
