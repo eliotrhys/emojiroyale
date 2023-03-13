@@ -27,7 +27,7 @@ export default function GameForm() {
   const [mediaType, setMediaType] = useState("");
 
   // Game states
-  const [timeRemaining, setTimeRemaining] = useState(10);
+  const [timeRemaining, setTimeRemaining] = useState(60);
   const [highestScore, setHighestScore] = useState<number>(
     parseInt(localStorage.getItem("highestScore") ?? "0")
   );
@@ -107,14 +107,19 @@ export default function GameForm() {
         <FailureScreen onRestart={handleRestart} />
       ) : (
         <>
-          <p>Time remaining: {timeRemaining}</p>
-          <Counter count={count} />
-          <EmojiDisplay emoji={emoji} mediaType={mediaType} />
-          <GuessInput
-            answer={title}
-            onCorrectGuess={handleCorrectGuess}
-            onIncorrectGuess={handleFailure}
-          />
+        <div className="min-h-screen min-w-screen flex items-center justify-center">
+            <div className="text-center">
+              
+              <p>Time remaining: {timeRemaining}</p>
+              <Counter count={count} />
+              <EmojiDisplay emoji={emoji} mediaType={mediaType} />
+              <GuessInput
+                answer={title}
+                onCorrectGuess={handleCorrectGuess}
+                onIncorrectGuess={handleFailure}
+              />
+            </div>
+        </div>
         </>
       )}
     </div>

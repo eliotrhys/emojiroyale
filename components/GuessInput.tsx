@@ -19,13 +19,11 @@ export default function GuessInput(props: GuessInputProps) {
         console.log("THE CURRENT GUESS IS - ", guess);
     
         if (guess.toLowerCase() === props.answer.toLowerCase()) {
-            console.log("YOU GOT IT!!!!");
             props.onCorrectGuess();
             setGuess("");
           } 
           else 
           {
-            console.log("Failure!");
             setGuess("");
             props.onIncorrectGuess();
           }
@@ -33,12 +31,12 @@ export default function GuessInput(props: GuessInputProps) {
     
     const handleChange = (e: any) => {
         setGuess(e.target.value);
-        console.log("value is:", e.target.value);
     };
     
     return (
         <form>
           <input
+            className="text-4xl p-4 text-center border-dashed border-2 border-indigo-600"
             type="text"
             id="guess"
             name="guess"
@@ -46,9 +44,10 @@ export default function GuessInput(props: GuessInputProps) {
             onChange={handleChange}
             value={guess}
           />
-    
-          <h2>Guess: {guess}</h2>
-          <input type="submit" value="SUBMIT" onClick={handleSubmit} />
+
+          <div>
+            <input type="submit" value="SUBMIT" onClick={handleSubmit} />
+          </div>
         </form>
     );
 }
