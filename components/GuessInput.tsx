@@ -1,10 +1,16 @@
 import { FormEventHandler, useEffect, useState } from "react";
 
+type Guess = {
+  guess: string;
+  isCorrect: boolean;
+}
+
 interface GuessInputProps {
   answer: string;
-  onCorrectGuess: () => void;
-  onIncorrectGuess: () => void;
+  onGuess: (isCorrect: boolean) => void;
+  guesses: Guess[];
 }
+
 export default function GuessInput(props: GuessInputProps) {
       
     const [guess, setGuess] = useState("");
@@ -14,39 +20,42 @@ export default function GuessInput(props: GuessInputProps) {
     }, [props.answer]);
     
     const handleSubmit: FormEventHandler = (e) => {
-        e.preventDefault();
-        console.log("The current answer is - ", props.answer);
-        console.log("THE CURRENT GUESS IS - ", guess);
-    
-        if (guess.toLowerCase() === props.answer.toLowerCase()) {
-            props.onCorrectGuess();
-            setGuess("");
-          } 
-          else 
-          {
-            setGuess("");
-            props.onIncorrectGuess();
-          }
+      e.preventDefault();
+  
+      if (guess.toLowerCase() === props.answer.toLowerCase()) 
+      {
+        props.onGuess(true);
+        props.guesses.push({ guess, isCorrect: true });
+        setGuess("");
+      } 
+      else 
+      {
+        props.onGuess(false);
+        props.guesses.push({ guess, isCorrect: false });
+        setGuess("");
+      }
     };
     
     const handleChange = (e: any) => {
-        setGuess(e.target.value);
+      setGuess(e.target.value);
     };
     
     return (
-        <form>
-          <input
-            className="text-4xl p-4 text-center border-dashed border-2 border-indigo-600"
-            type="text"
-            id="guess"
-            name="guess"
-            placeholder="enter answer here"
-            onChange={handleChange}
-            value={guess}
-          />
+        <form className="mb-10 bg-slate-100">
+          <div className="mb-10">
+            <input
+              className="text-xl p-4 py-6 text-center focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 text-blue-500 border-blue-500 placeholder:text-blue-300 w-full"
+              type="text"
+              id="guess"
+              name="guess"
+              placeholder="type answer here"
+              onChange={handleChange}
+              value={guess}
+            />
+          </div>
 
           <div>
-            <input type="submit" value="SUBMIT" onClick={handleSubmit} />
+            <input className="px-10 py-4 w-full text-center hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block" type="submit" value="Guess!" onClick={handleSubmit} />
           </div>
         </form>
     );

@@ -1,21 +1,29 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Components
 import Counter from "./Counter";
 import EmojiDisplay from "./EmojiDisplay";
 import GuessInput from "./GuessInput";
-import FailureScreen from "./FailureScreen";
 import CongratulationsScreen from "./CongratulationsScreen";
 
 // Utils & Data
 import { questions } from "../data/questions";
 import shuffle from "../app/utils/shuffle";
+import horizontalLogo from "../public/images/horizontal_logo.png";
 
 // Types
 import Question from "../app/types/Question";
 import Countdown from "./Countdown";
+import Points from "./Points";
+import Link from "next/link";
+
+type Guess = {
+  guess: string;
+  isCorrect: boolean;
+}
 
 export default function GameForm() {
   // Initialisation
@@ -26,13 +34,13 @@ export default function GameForm() {
   const [title, setTitle] = useState("");
   const [emoji, setEmoji] = useState("");
   const [mediaType, setMediaType] = useState("");
+  const [guesses, setGuesses] = useState<Guess[]>([]);
 
   // Game states
   const [timeRemaining, setTimeRemaining] = useState(60);
   const [highestScore, setHighestScore] = useState<number>(
     parseInt(localStorage.getItem("highestScore") ?? "0")
   );
-  const [showFailureScreen, setShowFailureScreen] = useState(false);
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
 
   // Shuffle the questions array and store the shuffled array in state
@@ -52,6 +60,7 @@ export default function GameForm() {
     }
   }, [questionIndex, shuffledQuestions]);
 
+  // Local Storage high score
   useEffect(() => {
     if (count > highestScore) {
       setHighestScore(count);
@@ -60,14 +69,18 @@ export default function GameForm() {
     }
   }, [count, setHighestScore, highestScore]);
 
-  const handleCorrectGuess = () => {
+  
+  const handleGuess = (isCorrect: boolean) => {
     setCount((prevCount) => prevCount + 1);
+
+    const newGuess: Guess = { guess: title, isCorrect };
+    setGuesses([...guesses, newGuess]);
 
     if (questionIndex === shuffledQuestions.length - 1) {
       // Should never be hit but keep in case
       setShowCongratulationsScreen(true);
     } 
-    else 
+    else
     {
       setQuestionIndex((prevIndex) => prevIndex + 1);
     }
@@ -76,14 +89,10 @@ export default function GameForm() {
   const handleRestart = () => {
     setCount(0);
     setQuestionIndex(0);
-    setShowFailureScreen(false);
+    setGuesses([]);
     setShowCongratulationsScreen(false);
     setShuffledQuestions(shuffle(questions));
     setTimeRemaining(60);
-  };
-
-  const handleFailure = () => {
-    setShowFailureScreen(true);
   };
 
   const handleCountdownFinish = () => {
@@ -95,25 +104,42 @@ export default function GameForm() {
   }
 
   return (
-    <div style={{textAlign: "center"}}>
+    <div className="min-h-screen min-w-screen flex flex-col justify-between">
       {showCongratulationsScreen ? (
-        <CongratulationsScreen onRestart={handleRestart} currentScore={count} />
-      ) : showFailureScreen ? (
-        <FailureScreen onRestart={handleRestart} />
+        <CongratulationsScreen onRestart={handleRestart} finalScore={count} />
       ) : (
         <>
-        <div className="min-h-screen min-w-screen flex items-center justify-center">
-            <div className="text-center">
-              
-              <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
-              <Counter count={count} />
-              <EmojiDisplay emoji={emoji} mediaType={mediaType} />
-              <GuessInput
-                answer={title}
-                onCorrectGuess={handleCorrectGuess}
-                onIncorrectGuess={handleFailure}
-              />
+        <div className="px-4 pt-4">
+          <Link href="/">
+            <Image alt="Horizontal Logo" className="mx-auto lg:m-0" src={horizontalLogo} height={36} />
+          </Link>
+        </div>
+        <div className="container mx-auto px-4">
+          <div className="grid">
+              <div className="w-full lg:w-1/3 mx-auto flex flex-col justify-between">
+                <div className="mb-10">
+                  <Counter count={count} />
+                  <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                  <Points count={count} guesses={guesses} />
+                </div>
+                <EmojiDisplay emoji={emoji} mediaType={mediaType} />
+              </div>
             </div>
+        </div>
+        <div className="bg-slate-100 border-t-4 border-black">
+          <div className="container mx-auto px-4">
+            <div className="grid">
+              <div className="w-full lg:w-1/3 mx-auto flex flex-col justify-between">
+                <div className="mt-10">
+                  <GuessInput
+                    answer={title}
+                    onGuess={handleGuess}
+                    guesses={guesses}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         </>
       )}

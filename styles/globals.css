@@ -19,4 +19,44 @@ a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+@-webkit-keyframes dangerPulse {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
+
+@keyframes dangerPulse {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
+
+.danger-pulse {
+  -webkit-animation: dangerPulse 1s ease infinite;
+          animation: dangerPulse 1s ease infinite;
+}
+
+.intro-page {
+  background-image: url("../public/images/heart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.huge-emoji {
+  font-size: 160px;
+}
+
+@media (min-width: 1024px) {
+  .huge-emoji {
+    font-size: 200px;
+  }
+}
 /*# sourceMappingURL=globals.css.map */

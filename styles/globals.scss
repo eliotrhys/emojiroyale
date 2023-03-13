@@ -7,6 +7,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "blambot-pro", sans-serif;
+  // font-family: "badaboom-pro", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -18,4 +19,34 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@keyframes dangerPulse {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
+
+.danger-pulse {
+  animation: dangerPulse 1s ease infinite;
+}
+
+.intro-page {
+  background-image: url("../public/images/heart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.huge-emoji {
+  font-size: 160px;
+}
+
+@media (min-width: 1024px) { 
+  .huge-emoji {
+    font-size: 200px;
+  }
 }
