@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Components
 import Counter from "./Counter";
 import EmojiDisplay from "./EmojiDisplay";
 import GuessInput from "./GuessInput";
+import Countdown from "./Countdown";
+import Points from "./Points";
 import CongratulationsScreen from "./CongratulationsScreen";
 
 // Utils & Data
@@ -16,9 +19,6 @@ import horizontalLogo from "../public/images/horizontal_logo.png";
 
 // Types
 import Question from "../app/types/Question";
-import Countdown from "./Countdown";
-import Points from "./Points";
-import Link from "next/link";
 
 type Guess = {
   guess: string;
@@ -34,6 +34,8 @@ export default function GameForm() {
   const [title, setTitle] = useState("");
   const [emoji, setEmoji] = useState("");
   const [mediaType, setMediaType] = useState("");
+  const [acceptableAnswers, setAcceptableAnswers] = useState<string[]>([]);
+
   const [guesses, setGuesses] = useState<Guess[]>([]);
 
   // Game states
@@ -57,6 +59,7 @@ export default function GameForm() {
       setTitle(shuffledQuestions[questionIndex].title);
       setEmoji(shuffledQuestions[questionIndex].emoji);
       setMediaType(shuffledQuestions[questionIndex].mediaType);
+      setAcceptableAnswers(shuffledQuestions[questionIndex].acceptableAnswers);
     }
   }, [questionIndex, shuffledQuestions]);
 
@@ -106,7 +109,7 @@ export default function GameForm() {
   return (
     <div className="min-h-screen min-w-screen flex flex-col justify-between">
       {showCongratulationsScreen ? (
-        <CongratulationsScreen onRestart={handleRestart} finalScore={count} />
+        <CongratulationsScreen onRestart={handleRestart} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
       ) : (
         <>
         <div className="px-4 pt-4">
@@ -133,6 +136,7 @@ export default function GameForm() {
                 <div className="mt-10">
                   <GuessInput
                     answer={title}
+                    potentialAnswers={acceptableAnswers}
                     onGuess={handleGuess}
                     guesses={guesses}
                   />

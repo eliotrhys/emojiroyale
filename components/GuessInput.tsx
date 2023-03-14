@@ -7,6 +7,7 @@ type Guess = {
 
 interface GuessInputProps {
   answer: string;
+  potentialAnswers: string[];
   onGuess: (isCorrect: boolean) => void;
   guesses: Guess[];
 }
@@ -17,24 +18,31 @@ export default function GuessInput(props: GuessInputProps) {
 
     useEffect(() => {
         console.log("The current answer is - ", props.answer);
+        console.log("The current potential answers are - ", props.potentialAnswers);
     }, [props.answer]);
     
     const handleSubmit: FormEventHandler = (e) => {
       e.preventDefault();
-  
-      if (guess.toLowerCase() === props.answer.toLowerCase()) 
+
+      const lowerCasePotentialAnswers = props.potentialAnswers.map((answer) =>
+        answer.toLowerCase()
+      );
+
+      if (lowerCasePotentialAnswers.includes(guess.toLowerCase())) 
       {
+        console.log("ITS A MATCH");
         props.onGuess(true);
         props.guesses.push({ guess, isCorrect: true });
         setGuess("");
       } 
       else 
       {
+        console.log("EPIC FAIL");
         props.onGuess(false);
         props.guesses.push({ guess, isCorrect: false });
         setGuess("");
       }
-    };
+    }
     
     const handleChange = (e: any) => {
       setGuess(e.target.value);
