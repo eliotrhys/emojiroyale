@@ -3,7 +3,8 @@ enum MediaType {
     TVScene = "📺 Scene from a TV show",
     MovieTitle = "🎬 Movie title",
     TVTitle = "🎬 TV show title",
-    GameTitle = "👾 Video game title"
+    GameTitle = "👾 Video game title",
+    HistoricalEvent = "📜 Historical event",
 };
 
 export const questions = [
@@ -27,8 +28,14 @@ export const questions = [
     },
     {
         title: "Sly Raccoon",
-        acceptableAnswers: ["Sly Raccoon", "Sly Racoon", "Sly Cooper"],
+        acceptableAnswers: ["Sly Raccoon", "Sly Cooper"],
         emoji: "🦝💰🏦",
         mediaType: MediaType.GameTitle
     },
+    {
+        title: "Moon Landing",
+        acceptableAnswers: ["Moon Landing", "Landing On The Moon", "Neil Armstrong", "Buzz Aldrin", "Moon Landing 1969", "The Moon Landing"],
+        emoji: "🌛🧑🏻‍🚀🇺🇸",
+        mediaType: MediaType.HistoricalEvent
+    }
 ];

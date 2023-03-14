@@ -109,7 +109,7 @@ export default function GameForm() {
   return (
     <div className="min-h-screen min-w-screen flex flex-col justify-between">
       {showCongratulationsScreen ? (
-        <CongratulationsScreen onRestart={handleRestart} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+        <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
       ) : (
         <>
         <div className="px-4 pt-4">
@@ -119,7 +119,7 @@ export default function GameForm() {
         </div>
         <div className="container mx-auto px-4">
           <div className="grid">
-              <div className="w-full lg:w-1/3 mx-auto flex flex-col justify-between">
+              <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
                 <div className="mb-10">
                   <Counter count={count} />
                   <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
@@ -132,7 +132,7 @@ export default function GameForm() {
         <div className="bg-slate-100 border-t-4 border-black">
           <div className="container mx-auto px-4">
             <div className="grid">
-              <div className="w-full lg:w-1/3 mx-auto flex flex-col justify-between">
+              <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
                 <div className="mt-10">
                   <GuessInput
                     answer={title}

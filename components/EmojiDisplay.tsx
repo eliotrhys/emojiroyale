@@ -39,15 +39,15 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
   const finalEmojis = hasMultiCharEmoji(props.emoji);
 
   return (
-      <div className="mb-20">
+      <div className="mb-20 mx-auto text-center">
         <div className="flex justify-center">
           {finalEmojis.map((emoji: string, index: number) => (
-            <div key={index} className="text-7xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-4 hover:cursor-pointer">
+            <div key={index} className="text-8xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-4 hover:cursor-pointer">
               {emoji}
             </div>
           ))}
         </div>
-        <div className="text-lg lg:text-xl text-center">{props.mediaType}</div>
+        <div className="text-lg lg:text-xl text-center bg-orange-50 inline-block rounded-md p-2 text-center">{props.mediaType}</div>
       </div>
   )
 }
