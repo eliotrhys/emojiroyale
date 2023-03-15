@@ -21,14 +21,6 @@ a {
   box-sizing: border-box;
 }
 
-@keyframes dangerPulse {
-  0%, 100% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.1;
-  }
-}
 
 .danger-pulse {
   animation: dangerPulse 1s ease infinite;
@@ -42,11 +34,29 @@ a {
 }
 
 .huge-emoji {
-  font-size: 160px;
+  font-size: 120px;
 }
 
 @media (min-width: 1024px) { 
   .huge-emoji {
     font-size: 200px;
+  }
+
+  @keyframes dangerPulse {
+    0%, 100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.05;
+    }
+  }
+}
+
+@keyframes dangerPulse {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
   }
 }

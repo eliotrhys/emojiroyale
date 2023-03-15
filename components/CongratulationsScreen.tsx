@@ -27,18 +27,26 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
             <div>
               <div className="w-full">
                 <h1 className="huge-emoji">💩</h1>
-                <h1 className="text-5xl lg:text-7xl mb-10 font-black">Time's up!</h1>
+                <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Time's up!</h1>
               </div>
 
-              <div className="w-full lg:w-1/3 mx-auto ">
+              <div className="w-full lg:w-1/3 mx-auto">
                 <div className="mt-10">
-                  <div className="mb-10">
                     
-                    <div className="mb-10">
-                      <Points count={props.count} guesses={props.guesses} />
-                      <div className="text-4xl mb-0">🏅</div>
-                      <h2 className="text-xl lg:text-xl mb-6">You scored</h2>
-                      <h2 className="text-4xl lg:text-5xl mb-0 font-black">{props.finalScore} points</h2>
+                  <div className="mb-4 lg:mb-10 bg-white border-black border-4 rounded-lg p-4 text-center">
+                    <div className="flex items-center justify-center mb-4 lg:mb-6">
+                      <div className="text-4xl">🏅</div>
+                      <h2 className="text-xl lg:text-xl">You scored</h2>
+                    </div>
+                    
+                    { props.count > 0 && 
+                      <div className="mb-4 lg:mb-6">
+                        <Points count={props.count} guesses={props.guesses} />
+                      </div>
+                    }
+                    
+                    <div className="bg-violet-500 border-black border-4 rounded-lg p-4 text-center">
+                      <h2 className="text-xl lg:text-4xl font-black text-white">{props.finalScore} points</h2>
                     </div>
                   </div>
                   

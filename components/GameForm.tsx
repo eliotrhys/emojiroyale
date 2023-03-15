@@ -19,6 +19,7 @@ import horizontalLogo from "../public/images/horizontal_logo.png";
 
 // Types
 import Question from "../app/types/Question";
+import CountdownScreen from "./CountdownScreen";
 
 type Guess = {
   guess: string;
@@ -44,6 +45,9 @@ export default function GameForm() {
     parseInt(localStorage.getItem("highestScore") ?? "0")
   );
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
+  const [showCountdownScreen, setShowCountdownScreen] = useState(false);
+  const [introCountdown, setIntroCountdown] = useState(3);
+  const [countdownInterval, setCountdownInterval] = useState<NodeJS.Timeout | null>(null);
 
   // Shuffle the questions array and store the shuffled array in state
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
@@ -90,12 +94,34 @@ export default function GameForm() {
   };
 
   const handleRestart = () => {
+    
     setCount(0);
     setQuestionIndex(0);
     setGuesses([]);
     setShowCongratulationsScreen(false);
     setShuffledQuestions(shuffle(questions));
-    setTimeRemaining(60);
+
+    setShowCountdownScreen(true);
+    setIntroCountdown(3); // set the intro countdown to 3
+    
+      // Clear any existing countdown interval
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+    }
+
+    // Start a new countdown interval
+    const newCountdownInterval = setInterval(() => {
+      if (introCountdown > 0) {
+        setIntroCountdown((prevCount) => prevCount - 1);
+      } else {
+        setShowCountdownScreen(false);
+        setTimeRemaining(60);
+        clearInterval(newCountdownInterval); // Clear the new interval when it is done
+      }
+    }, 1000);
+
+    setCountdownInterval(newCountdownInterval);
+
   };
 
   const handleCountdownFinish = () => {
@@ -107,33 +133,39 @@ export default function GameForm() {
   }
 
   return (
-    <div className="min-h-screen min-w-screen flex flex-col justify-between">
+    <div className="h-screen w-screen flex flex-col justify-between">
       {showCongratulationsScreen ? (
         <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+      ) : showCountdownScreen ? (
+        <CountdownScreen introCount={introCountdown} />
       ) : (
         <>
-        <div className="px-4 pt-4">
-          <Link href="/">
-            <Image alt="Horizontal Logo" className="mx-auto lg:m-0" src={horizontalLogo} height={36} />
-          </Link>
-        </div>
-        <div className="container mx-auto px-4">
-          <div className="grid">
-              <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
-                <div className="mb-10">
-                  <Counter count={count} />
-                  <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
-                  <Points count={count} guesses={guesses} />
+        <div>
+          <div className="px-4 pt-4">
+            <Link href="/">
+              <Image alt="Horizontal Logo" className="mx-auto lg:m-0" src={horizontalLogo} height={36} />
+            </Link>
+          </div>
+          <div className="container mx-auto px-4">
+            <div className="grid">
+                <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
+                  <div className="">
+                    <Counter count={count} />
+                    <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                    <div className="mb-4 lg:mb-6">
+                      <Points count={count} guesses={guesses} />
+                    </div>
+                  </div>
+                  <EmojiDisplay emoji={emoji} mediaType={mediaType} />
                 </div>
-                <EmojiDisplay emoji={emoji} mediaType={mediaType} />
               </div>
-            </div>
+          </div>
         </div>
         <div className="bg-slate-100 border-t-4 border-black">
           <div className="container mx-auto px-4">
             <div className="grid">
               <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
-                <div className="mt-10">
+                <div className="mt-4 lg:mt-10">
                   <GuessInput
                     answer={title}
                     potentialAnswers={acceptableAnswers}

@@ -20,6 +20,44 @@ a {
           box-sizing: border-box;
 }
 
+.danger-pulse {
+  -webkit-animation: dangerPulse 1s ease infinite;
+          animation: dangerPulse 1s ease infinite;
+}
+
+.intro-page {
+  background-image: url("../public/images/heart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.huge-emoji {
+  font-size: 120px;
+}
+
+@media (min-width: 1024px) {
+  .huge-emoji {
+    font-size: 200px;
+  }
+  @-webkit-keyframes dangerPulse {
+    0%, 100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.05;
+    }
+  }
+  @keyframes dangerPulse {
+    0%, 100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.05;
+    }
+  }
+}
+
 @-webkit-keyframes dangerPulse {
   0%, 100% {
     scale: 1;
@@ -35,28 +73,6 @@ a {
   }
   50% {
     scale: 1.1;
-  }
-}
-
-.danger-pulse {
-  -webkit-animation: dangerPulse 1s ease infinite;
-          animation: dangerPulse 1s ease infinite;
-}
-
-.intro-page {
-  background-image: url("../public/images/heart.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right;
-}
-
-.huge-emoji {
-  font-size: 160px;
-}
-
-@media (min-width: 1024px) {
-  .huge-emoji {
-    font-size: 200px;
   }
 }
 /*# sourceMappingURL=globals.css.map */

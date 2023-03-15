@@ -49,10 +49,10 @@ export default function GuessInput(props: GuessInputProps) {
     };
     
     return (
-        <form className="mb-10 bg-slate-100">
-          <div className="mb-10">
+        <form className="mb-4 lg:mb-10 bg-slate-100">
+          <div className="mb-4 lg:mb-10">
             <input
-              className="text-xl p-4 py-6 text-center focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 text-blue-500 border-blue-500 placeholder:text-blue-300 w-full"
+              className="text-xl p-4 py-6 text-center hover:scale-105 lg:focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 border-blue-500 placeholder:text-blue-300 w-full"
               type="text"
               id="guess"
               name="guess"
@@ -63,7 +63,7 @@ export default function GuessInput(props: GuessInputProps) {
           </div>
 
           <div>
-            <input className="px-10 py-4 w-full text-center hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block" type="submit" value="Guess!" onClick={handleSubmit} />
+            <input className="px-10 py-4 w-full text-center hover:scale-105 lg:hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block" type="submit" value="Guess!" onClick={handleSubmit} />
           </div>
         </form>
     );

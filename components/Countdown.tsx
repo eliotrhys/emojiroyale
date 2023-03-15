@@ -33,7 +33,7 @@ export default function Countdown(props: CountdownProps) {
       }, [props.timeRemaining]);
       
     return (
-        <div className="mb-6 flex justify-center">
+        <div className="mb-4 lg:mb-6 flex justify-center">
             <div className={"text-2xl px-10 py-4 pt-8 text-center border-4 border-black rounded-full inline-block mx-auto w-full lg:w-1/2 " + (danger ? "bg-red-500 text-white danger-pulse" : "bg-white text-black")}>{props.timeRemaining}</div>
         </div>
     )
