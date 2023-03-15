@@ -1,8 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 
 // Components
 import Counter from "./Counter";
@@ -11,17 +9,18 @@ import GuessInput from "./GuessInput";
 import Countdown from "./Countdown";
 import Points from "./Points";
 import CongratulationsScreen from "./CongratulationsScreen";
+import SideMenu from "./SideMenu";
 
 // Utils & Data
 import { questions } from "../data/questions";
 import shuffle from "../app/utils/shuffle";
-import horizontalLogo from "../public/images/horizontal_logo.png";
 
 // Types
 import Question from "../app/types/Question";
 import CountdownScreen from "./CountdownScreen";
+import Navbar from "./Navbar";
 
-type Guess = {
+interface Guess {
   guess: string;
   isCorrect: boolean;
 }
@@ -29,6 +28,7 @@ type Guess = {
 export default function GameForm() {
   // Initialisation
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Question details
   const [count, setCount] = useState(0);
@@ -51,13 +51,20 @@ export default function GameForm() {
 
   // Shuffle the questions array and store the shuffled array in state
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
+
+  // ATTEMPT TO MAKE TIMER WORK ON MOUNT
+  // useEffect(() => {
+  //   console.log("RUNNING ONCE");
+  //   handleRestart();
+  // }, []);
   
+  // This function shuffles the questions array
   useEffect(() => {
     setShuffledQuestions(shuffle(questions));
     console.log(shuffledQuestions);
   }, []);
 
-  // Set the title, emoji and mediaType when the questionIndex changes
+  // This functions sets the title, emoji and mediaType when the questionIndex changes
   useEffect(() => {
     if (shuffledQuestions.length > 0) {
       setTitle(shuffledQuestions[questionIndex].title);
@@ -67,7 +74,7 @@ export default function GameForm() {
     }
   }, [questionIndex, shuffledQuestions]);
 
-  // Local Storage high score
+  // This function gets the Local Storage high score
   useEffect(() => {
     if (count > highestScore) {
       setHighestScore(count);
@@ -76,6 +83,14 @@ export default function GameForm() {
     }
   }, [count, setHighestScore, highestScore]);
 
+  // This function deals with the countdown (STILL TO FIX?)
+  useEffect(() => {
+    if (introCountdown === 0) {
+      setShowCountdownScreen(false); // toggle off the countdown screen
+      setTimeRemaining(60); // restart the game timer
+      setIntroCountdown(3)
+    }
+  }, [introCountdown]);
   
   const handleGuess = (isCorrect: boolean) => {
     setCount((prevCount) => prevCount + 1);
@@ -100,7 +115,6 @@ export default function GameForm() {
     setGuesses([]);
     setShowCongratulationsScreen(false);
     setShuffledQuestions(shuffle(questions));
-
     setShowCountdownScreen(true);
     setIntroCountdown(3); // set the intro countdown to 3
     
@@ -132,53 +146,60 @@ export default function GameForm() {
     setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
   }
 
+  const handleMenuToggle = () => {
+    console.log("FIRING MENU");
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
+
   return (
-    <div className="h-screen w-screen flex flex-col justify-between">
-      {showCongratulationsScreen ? (
-        <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
-      ) : showCountdownScreen ? (
-        <CountdownScreen introCount={introCountdown} />
-      ) : (
-        <>
-        <div>
-          <div className="px-4 pt-4">
-            <Link href="/">
-              <Image alt="Horizontal Logo" className="mx-auto lg:m-0" src={horizontalLogo} height={36} />
-            </Link>
-          </div>
-          <div className="container mx-auto px-4">
-            <div className="grid">
-                <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
-                  <div className="">
-                    <Counter count={count} />
-                    <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
-                    <div className="mb-4 lg:mb-6">
-                      <Points count={count} guesses={guesses} />
+    <div>
+      <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
+
+      <div className="h-screen w-screen flex flex-col justify-between">
+        {showCongratulationsScreen ? (
+          <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+        ) : showCountdownScreen ? (
+          <CountdownScreen introCount={introCountdown} />
+        ) : (
+          <>
+          <div>
+            <Navbar onMenuToggle={handleMenuToggle} />
+
+            <div className="container mx-auto px-4">
+              <div className="grid">
+                  <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
+                    <div className="">
+                      <Counter count={count} />
+                      <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                      <div className="mb-4 lg:mb-6">
+                        <Points count={count} guesses={guesses} />
+                      </div>
                     </div>
+                    <EmojiDisplay emoji={emoji} mediaType={mediaType} />
                   </div>
-                  <EmojiDisplay emoji={emoji} mediaType={mediaType} />
                 </div>
-              </div>
+            </div>
           </div>
-        </div>
-        <div className="bg-slate-100 border-t-4 border-black">
-          <div className="container mx-auto px-4">
-            <div className="grid">
-              <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
-                <div className="mt-4 lg:mt-10">
-                  <GuessInput
-                    answer={title}
-                    potentialAnswers={acceptableAnswers}
-                    onGuess={handleGuess}
-                    guesses={guesses}
-                  />
+          <div className="bg-slate-100 border-t-4 border-black">
+            <div className="container mx-auto px-4">
+              <div className="grid">
+                <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
+                  <div className="mt-4 lg:mt-10">
+                    <GuessInput
+                      answer={title}
+                      potentialAnswers={acceptableAnswers}
+                      onGuess={handleGuess}
+                      guesses={guesses}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </div>
+
   );
 }

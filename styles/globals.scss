@@ -60,3 +60,29 @@ a {
     scale: 1.1;
   }
 }
+
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Position offscreen */
+  bottom: 0;
+  width: 300px;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: 0.3s ease; /* Add right transition */
+  z-index: 11;
+
+  &.open {
+    right: 0px; /* Position offscreen */
+    transform: translateX(0); /* Show menu */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.offcanvas-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}

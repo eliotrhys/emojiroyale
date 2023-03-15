@@ -1,7 +1,7 @@
 import React from "react";
 import Points from "./Points";
 
-type Guess = {
+interface Guess {
   guess: string;
   isCorrect: boolean;
 }

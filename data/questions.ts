@@ -1,11 +1,4 @@
-enum MediaType {
-    MovieScene = '🎬 Scene from a movie',
-    TVScene = "📺 Scene from a TV show",
-    MovieTitle = "🎬 Movie title",
-    TVTitle = "🎬 TV show title",
-    GameTitle = "👾 Video game title",
-    HistoricalEvent = "📜 Historical event",
-};
+import { MediaType } from "../app/types/MediaType";
 
 export const questions = [
     {

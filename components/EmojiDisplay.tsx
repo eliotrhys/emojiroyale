@@ -1,12 +1,38 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface EmojiDisplayProps {
   emoji: string,
   mediaType: string
 }
 
-export default function EmojiDisplay(props: EmojiDisplayProps) {
+const variants = {
+  hidden: { opacity: 0 },
+  showing: {
+      opacity: 1,
+      transition: {
+          staggerChildren: 0.2
+      }
+  }
+}
 
+const animationItem = {
+  hidden: {
+      opacity: 0,
+      scale: 0
+  },
+  showing: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+          duration: 0.3,
+          type: "spring", 
+          bounce: 0.4
+      }
+  }
+}
+
+export default function EmojiDisplay(props: EmojiDisplayProps) {
   
   const hasMultiCharEmoji = (str: string) => {
 
@@ -41,10 +67,12 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
   return (
       <div className="mb-0 lg:mb-20 mx-auto text-center">
         <div className="text-lg lg:text-xl text-center border-4 border-lime-500 text-lime-500 bg-lime-100 px-6 inline-block rounded-md p-2 text-center mb-10">{props.mediaType}</div>
-        <div className="flex justify-center">
+        <div className="flex items-center justify-center">
           {finalEmojis.map((emoji: string, index: number) => (
-            <div key={index} className="text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 hover:cursor-pointer">
-              {emoji}
+            <div key={index}>
+              <div className="text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 hover:cursor-pointer">
+                {emoji}
+              </div>
             </div>
           ))}
         </div>

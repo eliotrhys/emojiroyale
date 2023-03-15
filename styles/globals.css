@@ -75,4 +75,44 @@ a {
     scale: 1.1;
   }
 }
+
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  /* Position offscreen */
+  bottom: 0;
+  width: 300px;
+  background-color: #fff;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  /* Add right transition */
+  z-index: 11;
+}
+
+.offcanvas-menu.open {
+  right: 0px;
+  /* Position offscreen */
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  /* Show menu */
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-menu-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
 /*# sourceMappingURL=globals.css.map */

@@ -1,6 +1,6 @@
-import { FormEventHandler, useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useRef, useState } from "react";
 
-type Guess = {
+interface Guess {
   guess: string;
   isCorrect: boolean;
 }
@@ -15,11 +15,18 @@ interface GuessInputProps {
 export default function GuessInput(props: GuessInputProps) {
       
     const [guess, setGuess] = useState("");
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         console.log("The current answer is - ", props.answer);
         console.log("The current potential answers are - ", props.potentialAnswers);
     }, [props.answer]);
+
+    useEffect(() => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, [setGuess]);
     
     const handleSubmit: FormEventHandler = (e) => {
       e.preventDefault();
@@ -30,14 +37,12 @@ export default function GuessInput(props: GuessInputProps) {
 
       if (lowerCasePotentialAnswers.includes(guess.toLowerCase())) 
       {
-        console.log("ITS A MATCH");
         props.onGuess(true);
         props.guesses.push({ guess, isCorrect: true });
         setGuess("");
       } 
       else 
       {
-        console.log("EPIC FAIL");
         props.onGuess(false);
         props.guesses.push({ guess, isCorrect: false });
         setGuess("");
@@ -59,6 +64,7 @@ export default function GuessInput(props: GuessInputProps) {
               placeholder="type answer here"
               onChange={handleChange}
               value={guess}
+              ref={inputRef}
             />
           </div>
 
