@@ -90,6 +90,7 @@ a {
   transition: 0.3s ease;
   /* Add right transition */
   z-index: 11;
+  border-left: 4px solid black;
 }
 
 .offcanvas-menu.open {
@@ -118,5 +119,42 @@ a {
 
 .menuMediaType::first-letter {
   font-size: 2rem;
+}
+
+.grow-shrink {
+  -webkit-animation-name: grow-shrink;
+          animation-name: grow-shrink;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes grow-shrink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grow-shrink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=globals.css.map */

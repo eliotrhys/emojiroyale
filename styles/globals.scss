@@ -71,6 +71,7 @@ a {
   transform: translateX(100%);
   transition: 0.3s ease; /* Add right transition */
   z-index: 11;
+  border-left: 4px solid black;
 
   &.open {
     right: 0px; /* Position offscreen */
@@ -89,4 +90,21 @@ a {
 
 .menuMediaType::first-letter {
   font-size: 2rem;
+}
+
+.grow-shrink {
+  animation-name: grow-shrink;
+  animation-duration: 0.4s;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -25,7 +25,7 @@ const animationItem = {
         opacity: 1,
         scale: 1,
         transition: {
-            duration: 0.3,
+            duration: 0.8,
             type: "spring", 
             bounce: 0.4
         }
@@ -34,7 +34,15 @@ const animationItem = {
 
 export default function Page() {
     return (
-        <div className="min-h-screen min-w-screen intro-page">
+        <div className="min-h-screen min-w-screen intro-page relative">
+            <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 pr-6 absolute top-0 right-0 hidden md:flex">
+                <div>
+                    <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
+                </div>
+                <div>
+                    <div className="text-xs text-white">Follow me on twitter</div>
+                </div>
+            </Link>
             <div className="container mx-auto px-4">
                 <motion.div 
                     animate={{ y: [-800, 0]} } 
@@ -49,10 +57,15 @@ export default function Page() {
                     </div>
                 </motion.div>
                 <div className="grid grid-cols-1">
-                    <div className="mb-4 lg:mb-6">
-                        <h3 className="text-md lg:text-2xl mb-4 text-center">How to play</h3>
-                        <h3 className="text-4xl text-center">👇</h3>
-                    </div>
+                    <motion.div className="mb-4 lg:mb-6"
+                        animate={{ y: [-800, 0]} } 
+                        transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+                    >
+                        <div>
+                            <h3 className="text-md lg:text-2xl mb-4 text-center">How to play</h3>
+                            <h3 className="text-4xl text-center">👇</h3>
+                        </div>
+                    </motion.div>
                 </div>
                 <motion.div 
                     initial="hidden"
@@ -106,14 +119,14 @@ export default function Page() {
                     </div>
                 </div>
                 <div>
-                <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6">
-                    <div>
-                        <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
-                    </div>
-                    <div>
-                        <div className="text-xs text-white">Follow me on twitter</div>
-                    </div>
-                </Link>
+                    <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6">
+                        <div>
+                            <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
+                        </div>
+                        <div>
+                            <div className="text-xs text-white">Follow me on twitter</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

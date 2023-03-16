@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface EmojiDisplayProps {
@@ -33,6 +33,12 @@ const animationItem = {
 }
 
 export default function EmojiDisplay(props: EmojiDisplayProps) {
+
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
   
   const hasMultiCharEmoji = (str: string) => {
 
@@ -71,7 +77,7 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
         <div className="flex items-center justify-center">
           {finalEmojis.map((emoji: string, index: number) => (
             <div key={index}>
-              <div className="text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 hover:cursor-pointer">
+              <div className={`animate ${animate ? 'grow-shrink' : ''} text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 hover:cursor-pointer`}>
                 {emoji}
               </div>
             </div>

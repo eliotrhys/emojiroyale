@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 
 interface IntroScreenProps {
@@ -29,8 +30,18 @@ export default function IntroScreen(props: IntroScreenProps) {
           <div className="flex flex-col justify-between">
             <div>
               <div className="w-full">
-                <h1 className="huge-emoji animate-bounce">⏰</h1>
-                <h1 className="text-5xl lg:text-9xl mb-10 font-black">{ props.introTimeRemaining }</h1>
+                <motion.div
+                  animate={{ y: [-800, 0]} } 
+                  transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+                >
+                  <h1 className="huge-emoji animate-bounce">⏰</h1>
+                </motion.div>
+                <motion.div
+                  animate={{ y: [-800, 0]} } 
+                  transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+                >
+                  <h1 className="text-5xl lg:text-9xl mb-10 font-black animate-bounce">{ props.introTimeRemaining }</h1>
+                </motion.div>
               </div>
           </div>
         </div>

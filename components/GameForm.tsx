@@ -55,9 +55,14 @@ export default function GameForm() {
 
   // This function shuffles the questions array and starts Intro Countdown
   useEffect(() => {
-    const shuffledQuestions = shuffle(questions);
+    const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+
+    const filteredQuestions = questions.filter((question) => {
+      return !savedCheckedItems.includes(question.mediaType);
+    });
+
+    const shuffledQuestions = shuffle(filteredQuestions);
     setShuffledQuestions(shuffledQuestions);
-    
   }, []);
 
   // This functions sets the title, emoji and mediaType when the questionIndex changes
@@ -154,11 +159,21 @@ export default function GameForm() {
     <div>
       <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} onCheckboxChange={handleCheckboxChange} />
 
-      <div className="h-screen w-screen flex flex-col justify-between">
+      <div className="h-screen flex flex-col justify-between">
         {showCongratulationsScreen ? (
-          <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+          <>
+            <div className="h-screen w-screen flex flex-col justify-between">
+              <Navbar onMenuToggle={handleMenuToggle} />
+              <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+            </div>
+          </>
         ) : showIntroScreen ? (
-          <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} />
+          <>
+            <div className="h-screen w-screen flex flex-col justify-between">
+              <Navbar onMenuToggle={handleMenuToggle} />
+              <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} />
+            </div>
+          </>
         ) : (
           <>
           <div>
