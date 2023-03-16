@@ -19,6 +19,7 @@ import shuffle from "../app/utils/shuffle";
 
 // Types
 import Question from "../app/types/Question";
+import { MediaType } from "../app/types/MediaType";
 
 interface Guess {
   guess: string;
@@ -38,6 +39,7 @@ export default function GameForm() {
   const [mediaType, setMediaType] = useState("");
   const [acceptableAnswers, setAcceptableAnswers] = useState<string[]>([]);
   const [guesses, setGuesses] = useState<Guess[]>([]);
+  const [selectedMediaTypes, setSelectedMediaTypes] = useState(Object.values(MediaType));
 
   // Game states
   const [timeRemaining, setTimeRemaining] = useState(60);
@@ -55,6 +57,7 @@ export default function GameForm() {
   useEffect(() => {
     const shuffledQuestions = shuffle(questions);
     setShuffledQuestions(shuffledQuestions);
+    
   }, []);
 
   // This functions sets the title, emoji and mediaType when the questionIndex changes
@@ -104,9 +107,15 @@ export default function GameForm() {
     setGuesses([]);
     setShowCongratulationsScreen((isShowing) => !isShowing);
 
-    const shuffledQuestions = shuffle(questions);
+    const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+
+    const filteredQuestions = questions.filter((question) => {
+      return !savedCheckedItems.includes(question.mediaType);
+    });
+
+    const shuffledQuestions = shuffle(filteredQuestions);
     setShuffledQuestions(shuffledQuestions);
-    
+
     setIsMenuOpen(false);
     handleIntroCountdownStart();
   };
@@ -137,9 +146,13 @@ export default function GameForm() {
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
   };
 
+  const handleCheckboxChange = (checkedItems: string[]) => {
+    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+  };
+
   return (
     <div>
-      <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
+      <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} onCheckboxChange={handleCheckboxChange} />
 
       <div className="h-screen w-screen flex flex-col justify-between">
         {showCongratulationsScreen ? (

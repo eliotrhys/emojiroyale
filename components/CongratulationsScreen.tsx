@@ -34,20 +34,20 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                 <div className="mt-10">
                     
                   <div className="mb-4 lg:mb-10 bg-white border-black border-4 rounded-lg text-center">
-                    <div className="flex items-center justify-center mb-4 lg:mb-6 border-b-4 pt-4 border-black">
+                    <div className="flex items-center justify-center border-b-4 pt-4 pb-4 border-black">
                       <div className="text-4xl">🏅</div>
                       <h2 className="text-xl lg:text-xl">You scored</h2>
                     </div>
                     
                     { props.count > 0 && 
-                      <div className="mb-4 lg:mb-6">
+                      <div className="my-4 lg:my-6">
                         <Points count={props.count} guesses={props.guesses} />
                       </div>
                     }
                     
-                    <div className="px-4 pb-4">
-                      <div className="bg-violet-500 border-black border-4 rounded-lg p-4 text-center">
-                        <h2 className="text-xl lg:text-4xl font-black text-white">{props.finalScore} points</h2>
+                    <div className="">
+                      <div className="bg-violet-500 p-4 text-center border-black border-t-4">
+                        <h2 className="text-xl lg:text-4xl font-black text-white">{props.finalScore} {props.finalScore > 1 || props.finalScore === 0 ? "points" : "point"}</h2>
                       </div>
                     </div>
                   </div>
@@ -55,7 +55,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                   <div>
                     <div className="text-4xl mb-0">🏆</div>
                     <p className="mb-0">Your highest score is</p>
-                    <p className="mb-0">{highestScore} points</p>
+                    <p className="mb-0">{highestScore} {highestScore > 1 || highestScore === 0 ? "points" : "point"}</p>
                   </div>
 
                 </div>
