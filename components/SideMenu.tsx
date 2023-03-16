@@ -44,7 +44,7 @@ export default function SideMenu(props: SideMenuProps) {
           <div className="">
             { allMediaTypes }
           </div>
-          <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center ease-in-out duration-100 hover:scale-105">
+          <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center ease-in-out duration-100 hover:scale-105 mb-8">
             <div>
               <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
             </div>
@@ -53,6 +53,7 @@ export default function SideMenu(props: SideMenuProps) {
               <div className="text-xs text-slate-300">(I'm smart and funny)</div>
             </div>
           </Link>
+          <div className="text-xs">🚨 Also, if your team is hiring designers, front-end developers or general creative people please let me know - looking for a job!</div>
         </div>
       </div>
     </div>

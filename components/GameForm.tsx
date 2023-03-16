@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Components
 import Counter from "./Counter";
@@ -10,6 +10,8 @@ import Countdown from "./Countdown";
 import Points from "./Points";
 import CongratulationsScreen from "./CongratulationsScreen";
 import SideMenu from "./SideMenu";
+import IntroScreen from "./IntroScreen";
+import Navbar from "./Navbar";
 
 // Utils & Data
 import { questions } from "../data/questions";
@@ -17,8 +19,6 @@ import shuffle from "../app/utils/shuffle";
 
 // Types
 import Question from "../app/types/Question";
-import CountdownScreen from "./CountdownScreen";
-import Navbar from "./Navbar";
 
 interface Guess {
   guess: string;
@@ -37,32 +37,24 @@ export default function GameForm() {
   const [emoji, setEmoji] = useState("");
   const [mediaType, setMediaType] = useState("");
   const [acceptableAnswers, setAcceptableAnswers] = useState<string[]>([]);
-
   const [guesses, setGuesses] = useState<Guess[]>([]);
 
   // Game states
   const [timeRemaining, setTimeRemaining] = useState(60);
+  const [introTimeRemaining, setIntroTimeRemaining] = useState(3);
+  const [showIntroScreen, setShowIntroScreen] = useState(true);
   const [highestScore, setHighestScore] = useState<number>(
     parseInt(localStorage.getItem("highestScore") ?? "0")
   );
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
-  const [showCountdownScreen, setShowCountdownScreen] = useState(false);
-  const [introCountdown, setIntroCountdown] = useState(3);
-  const [countdownInterval, setCountdownInterval] = useState<NodeJS.Timeout | null>(null);
 
   // Shuffle the questions array and store the shuffled array in state
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
 
-  // ATTEMPT TO MAKE TIMER WORK ON MOUNT
-  // useEffect(() => {
-  //   console.log("RUNNING ONCE");
-  //   handleRestart();
-  // }, []);
-  
-  // This function shuffles the questions array
+  // This function shuffles the questions array and starts Intro Countdown
   useEffect(() => {
-    setShuffledQuestions(shuffle(questions));
-    console.log(shuffledQuestions);
+    const shuffledQuestions = shuffle(questions);
+    setShuffledQuestions(shuffledQuestions);
   }, []);
 
   // This functions sets the title, emoji and mediaType when the questionIndex changes
@@ -80,19 +72,10 @@ export default function GameForm() {
     if (correctCount > highestScore) {
       setHighestScore(correctCount);
       localStorage.setItem("highestScore", correctCount.toString());
-      console.log("This users highest score is " + correctCount.toString());
     }
   }, [correctCount, setHighestScore, highestScore]);
-
-  // This function deals with the countdown (STILL TO FIX?)
-  useEffect(() => {
-    if (introCountdown === 0) {
-      setShowCountdownScreen(false); // toggle off the countdown screen
-      setTimeRemaining(60); // restart the game timer
-      setIntroCountdown(3)
-    }
-  }, [introCountdown]);
   
+  // Handle Guess
   const handleGuess = (isCorrect: boolean) => {
     setCount((prevCount) => prevCount + 1);
 
@@ -115,47 +98,42 @@ export default function GameForm() {
   };
 
   const handleRestart = () => {
-    
     setCount(0);
     setCorrectCount(0);
     setQuestionIndex(0);
     setGuesses([]);
-    setShowCongratulationsScreen(false);
-    setShuffledQuestions(shuffle(questions));
-    setShowCountdownScreen(true);
-    setIntroCountdown(3); // set the intro countdown to 3
-    setIsMenuOpen(false);
+    setShowCongratulationsScreen((isShowing) => !isShowing);
+
+    const shuffledQuestions = shuffle(questions);
+    setShuffledQuestions(shuffledQuestions);
     
-      // Clear any existing countdown interval
-    if (countdownInterval) {
-      clearInterval(countdownInterval);
-    }
-
-    // Start a new countdown interval
-    const newCountdownInterval = setInterval(() => {
-      if (introCountdown > 0) {
-        setIntroCountdown((prevCount) => prevCount - 1);
-      } else {
-        setShowCountdownScreen(false);
-        setTimeRemaining(60);
-        clearInterval(newCountdownInterval); // Clear the new interval when it is done
-      }
-    }, 1000);
-
-    setCountdownInterval(newCountdownInterval);
-
+    setIsMenuOpen(false);
+    handleIntroCountdownStart();
   };
 
   const handleCountdownFinish = () => {
-    setShowCongratulationsScreen(true);
+    setShowCongratulationsScreen((isShowing) => !isShowing);
+  }
+
+  const handleIntroCountdownStart = () => {
+    setShowIntroScreen((isShowing) => !isShowing);
+  }
+
+  const handleIntroCountdownFinish = () => {
+    setShowIntroScreen((isShowing) => !isShowing);
+    setIntroTimeRemaining(3);
+    setTimeRemaining(60);
   }
 
   const handleTimeTick = () => {
     setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
   }
 
+  const handleIntroTimeTick = () => {
+    setIntroTimeRemaining((prevIntroTimeRemaining) => prevIntroTimeRemaining - 1);
+  }
+
   const handleMenuToggle = () => {
-    console.log("FIRING MENU");
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
   };
 
@@ -166,8 +144,8 @@ export default function GameForm() {
       <div className="h-screen w-screen flex flex-col justify-between">
         {showCongratulationsScreen ? (
           <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
-        ) : showCountdownScreen ? (
-          <CountdownScreen introCount={introCountdown} />
+        ) : showIntroScreen ? (
+          <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} />
         ) : (
           <>
           <div>
@@ -208,6 +186,5 @@ export default function GameForm() {
         )}
       </div>
     </div>
-
   );
 }

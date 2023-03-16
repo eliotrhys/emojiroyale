@@ -43,7 +43,7 @@ export default function Page() {
                 >
                     <div className="text-center">
                         <div>
-                            <Image alt="Emoji Royale Logo" src={emojiLogo} height={140} className="mx-auto" />
+                            <Image alt="Emoji Royale Logo" src={emojiLogo} priority={true} height={140} className="mx-auto" />
                         </div>
                         <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">An emoji trivia game!</h2>
                     </div>

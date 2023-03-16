@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface EmojiDisplayProps {
@@ -63,6 +63,7 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
   }
 
   const finalEmojis = hasMultiCharEmoji(props.emoji);
+  console.log(finalEmojis);
 
   return (
       <div className="mb-0 lg:mb-20 mx-auto text-center">
