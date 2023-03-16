@@ -20,7 +20,7 @@ export default function Navbar(props: NavbarProps) {
             <Image alt="Horizontal Logo" className="" src={horizontalLogo} height={36} />
           </Link>
           <div>
-          <button onClick={handleClose}>Categories</button>
+            <button className="text-sm md:text-lg" onClick={handleClose}>Categories</button>
           </div>
         </div>
     </div>

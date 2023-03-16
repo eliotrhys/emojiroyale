@@ -66,7 +66,7 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
 
   return (
       <div className="mb-0 lg:mb-20 mx-auto text-center">
-        <div className="text-lg lg:text-xl text-center border-4 border-lime-500 text-lime-500 bg-lime-100 px-6 inline-block rounded-md p-2 text-center mb-10">{props.mediaType}</div>
+        <div className="text-lg lg:text-xl text-center border-4 border-amber-600 text-amber-600 bg-amber-100 px-6 inline-block rounded-md p-2 text-center mb-10">{props.mediaType}</div>
         <div className="flex items-center justify-center">
           {finalEmojis.map((emoji: string, index: number) => (
             <div key={index}>

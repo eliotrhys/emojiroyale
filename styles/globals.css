@@ -79,10 +79,10 @@ a {
 .offcanvas-menu {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: -350px;
   /* Position offscreen */
   bottom: 0;
-  width: 300px;
+  width: 350px;
   background-color: #fff;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -114,5 +114,9 @@ a {
           align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+.menuMediaType::first-letter {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=globals.css.map */

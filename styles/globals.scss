@@ -64,9 +64,9 @@ a {
 .offcanvas-menu {
   position: fixed;
   top: 0;
-  right: -300px; /* Position offscreen */
+  right: -350px; /* Position offscreen */
   bottom: 0;
-  width: 300px;
+  width: 350px;
   background-color: #fff;
   transform: translateX(100%);
   transition: 0.3s ease; /* Add right transition */
@@ -85,4 +85,8 @@ a {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+.menuMediaType::first-letter {
+  font-size: 2rem;
 }

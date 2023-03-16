@@ -32,6 +32,7 @@ export default function GameForm() {
 
   // Question details
   const [count, setCount] = useState(0);
+  const [correctCount, setCorrectCount] = useState(0);
   const [title, setTitle] = useState("");
   const [emoji, setEmoji] = useState("");
   const [mediaType, setMediaType] = useState("");
@@ -76,12 +77,12 @@ export default function GameForm() {
 
   // This function gets the Local Storage high score
   useEffect(() => {
-    if (count > highestScore) {
-      setHighestScore(count);
-      localStorage.setItem("highestScore", count.toString());
-      console.log("This users highest score is " + count.toString());
+    if (correctCount > highestScore) {
+      setHighestScore(correctCount);
+      localStorage.setItem("highestScore", correctCount.toString());
+      console.log("This users highest score is " + correctCount.toString());
     }
-  }, [count, setHighestScore, highestScore]);
+  }, [correctCount, setHighestScore, highestScore]);
 
   // This function deals with the countdown (STILL TO FIX?)
   useEffect(() => {
@@ -96,6 +97,11 @@ export default function GameForm() {
     setCount((prevCount) => prevCount + 1);
 
     const newGuess: Guess = { guess: title, isCorrect };
+
+    if (newGuess.isCorrect) {
+      setCorrectCount((prevIndex) => prevIndex + 1)
+    }
+
     setGuesses([...guesses, newGuess]);
 
     if (questionIndex === shuffledQuestions.length - 1) {
@@ -111,12 +117,14 @@ export default function GameForm() {
   const handleRestart = () => {
     
     setCount(0);
+    setCorrectCount(0);
     setQuestionIndex(0);
     setGuesses([]);
     setShowCongratulationsScreen(false);
     setShuffledQuestions(shuffle(questions));
     setShowCountdownScreen(true);
     setIntroCountdown(3); // set the intro countdown to 3
+    setIsMenuOpen(false);
     
       // Clear any existing countdown interval
     if (countdownInterval) {
