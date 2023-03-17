@@ -90,14 +90,12 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
         transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
       >
         <img className="absolute bottom-0 right-0 corner-smiley hover:scale-125 ease-in-out duration-100" src="/images/smileys/smiley_happy.png" alt={"Happy smiley face"} />
-
       </motion.div>
       <motion.div
         animate={{ y: [800, 0]} } 
         transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
       >
         <img className="absolute bottom-0 left-0 corner-smiley hover:scale-125 ease-in-out duration-100" src="/images/smileys/smiley_love.png" alt={"Happy smiley face"} />
-
       </motion.div>
     </div>
   );

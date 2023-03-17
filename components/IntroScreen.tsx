@@ -38,7 +38,6 @@ export default function IntroScreen(props: IntroScreenProps) {
                     <h1 className="huge-emoji">⏰</h1>
                     <h1 className="text-md lg:text-4xl -mt-10 mb-20">Let the countdown begin!</h1>
                   </div>
-                  
                 </motion.div>
                 <motion.div
                   animate={{ y: [-800, 0]} } 

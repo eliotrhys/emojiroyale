@@ -34,8 +34,18 @@ const animationItem = {
 export default function Page() {
     return (
         <div className="min-h-screen min-w-screen relative overflow-x-hidden">
-            <img src="/images/smileys/smiley_cry.png" className="absolute top-0 left-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
-            <img src="/images/smileys/smiley_clown.png" className="absolute top-0 right-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
+            <motion.div
+                animate={{ y: [-800, 0]} } 
+                transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+            >
+                <img src="/images/smileys/smiley_cry.png" className="absolute top-0 left-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
+            </motion.div>
+            <motion.div
+                animate={{ y: [-800, 0]} } 
+                transition={{ type: "spring", bounce: 0.4, duration: 1.8 }}
+            >
+                <img src="/images/smileys/smiley_clown.png" className="absolute top-0 right-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
+            </motion.div>
             <div className="intro-page bg-blue-500">
                 <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 pr-6 absolute top-0 right-0 hidden md:flex cursor-pointer">
                     <div>
@@ -82,16 +92,18 @@ export default function Page() {
                 </div>
             </div>
             <div>
-                <img src="/images/blue_wave.svg" />
+                <div style={{ marginBottom: "-15%" }}>
+                    <img src="/images/blue_wave.svg" />
+                </div>
             </div>
-            <div className="container mx-auto px-4">
+            <div className="container w-full lg:w-3/4 xl:w-2/3 mx-auto px-4">
                 <motion.div 
                     initial="hidden"
                     whileInView="showing"
                     variants={variants}
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
-                    <motion.div variants={animationItem} className="">
+                    className="grid grid-cols-12 gap-4 mb-10">
+                    <motion.div variants={animationItem} className="col-span-12 sm:col-span-6 lg:col-span-4">
                         <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
                             <div className="col-span-4 lg:col-span-12 lg:mb-2">
                                 <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
@@ -99,12 +111,12 @@ export default function Page() {
                             <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
                                 <div>
                                     <h3 className="text-lg sm:text-2xl lg:text-2xl">☝️ Step 1</h3>
-                                    <p className="text-sm sm:text-md lg:text-lg">Look at the emojis!</p>
+                                    <p className="text-sm sm:text-md lg:text-md">Look at the emojis!</p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
-                    <motion.div variants={animationItem} className="">
+                    <motion.div variants={animationItem} className="col-span-12 sm:col-span-6 lg:col-span-4">
                         <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
                             <div className="col-span-4 lg:col-span-12 lg:mb-2">
                                 <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
@@ -112,12 +124,12 @@ export default function Page() {
                             <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
                                 <div>
                                     <h3 className="text-lg sm:text-2xl lg:text-2xl">✌️ Step 2</h3>
-                                    <p className="text-sm lg:text-lg">Look at the category!</p>
+                                    <p className="text-sm lg:text-md">Look at the category!</p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
-                    <motion.div variants={animationItem} className="">
+                    <motion.div variants={animationItem} className="col-span-12 sm:col-start-4 sm:col-end-10 lg:col-span-4">
                         <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
                             <div className="col-span-4 lg:col-span-12 lg:mb-2">
                                 <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
@@ -125,7 +137,7 @@ export default function Page() {
                             <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
                                 <div>
                                     <h3 className="text-lg sm:text-2xl lg:text-2xl">☘️ Step 3</h3>
-                                    <p className="text-sm lg:text-lg">Type your answer and hit Enter!</p>
+                                    <p className="text-sm lg:text-md">Type your answer and hit Enter!</p>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +145,7 @@ export default function Page() {
                 </motion.div>
                 <div className="grid grid-cols-3">
                     <div className="col-span-full lg:col-start-2 lg:col-span-1">
-                        <Link href="/game" className="text-xl lg:text-2xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Start the game!</Link>
+                        <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Start the game!</Link>
                     </div>
                 </div>
                 <div>
@@ -142,7 +154,7 @@ export default function Page() {
                             <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
                         </div>
                         <div>
-                            <div className="text-xs text-white">Follow me on twitter</div>
+                            <div className="text-xs text-black">Follow me on twitter</div>
                         </div>
                     </Link>
                 </div>

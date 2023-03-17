@@ -33,6 +33,9 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
+  background: #0050d4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0050d4), to(#3b82f6));
+  background: linear-gradient(180deg, #0050d4 0%, #3b82f6 100%);
 }
 
 .huge-emoji {
@@ -170,9 +173,22 @@ a {
   height: 100px;
 }
 
+.horizontalLogo {
+  height: 40px;
+}
+
+@media (min-width: 640px) {
+  .corner-smiley {
+    height: 200px;
+  }
+}
+
 @media (min-width: 1024px) {
   .corner-smiley {
     height: 300px;
+  }
+  .horizontalLogo {
+    height: 60px;
   }
 }
 
