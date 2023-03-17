@@ -84,7 +84,8 @@ export default function SideMenu(props: SideMenuProps) {
               <div className="text-xs text-slate-300">(I'm smart and funny)</div>
             </div>
           </Link>
-          <div className="text-xs">🚨 Also, if your team is hiring designers, front-end developers or general creative people please let me know - looking for a job!</div>
+          <div className="text-xs mb-6">🚨 Also, if your team is hiring designers, front-end developers or general creative people please let me know - looking for a job!</div>
+          <div className="text-xs">🎨 Illustrations by TECHCROWD</div>
         </div>
       </div>
     </div>
