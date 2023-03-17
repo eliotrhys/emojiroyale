@@ -156,7 +156,7 @@ export default function GameForm() {
   };
 
   return (
-    <div>
+    <div className="bg-smiles">
       <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} onCheckboxChange={handleCheckboxChange} />
 
       <div className="h-screen flex flex-col justify-between">
@@ -194,7 +194,7 @@ export default function GameForm() {
                 </div>
             </div>
           </div>
-          <div className="bg-slate-100 border-t-4 border-black">
+          <div className="bg-indigo-100 border-t-4 border-black">
             <div className="container mx-auto px-4">
               <div className="grid">
                 <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">

@@ -19,7 +19,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
   const highestScore = parseInt(localStorage.getItem("highestScore") ?? "0");
 
   return (
-    <div className="h-[calc(100vh-56px)] min-w-screen text-center">
+    <div className="h-[calc(100vh-56px)] min-w-screen text-center relative">
       <div className="container mx-auto px-4 h-full">
         <div className="grid h-full">
 
@@ -79,12 +79,26 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                 animate={{ x: [-800, 0]} } 
                 transition={{ type: "spring", bounce: 0.4, duration: 1.6 }}
               >
-                <button className="px-10 py-4 w-full text-center hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block" onClick={props.onRestart}>Restart Game</button>
+                <button className="px-10 py-4 w-full text-center hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block cursor-pointer shadow-lift" onClick={props.onRestart}>Restart Game</button>
               </motion.div>
             </div>
           </div>
         </div>
       </div>
+      <motion.div
+        animate={{ y: [800, 0]} } 
+        transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+      >
+        <img className="absolute bottom-0 right-0 corner-smiley hover:scale-125 ease-in-out duration-100" src="/images/smileys/smiley_happy.png" alt={"Happy smiley face"} />
+
+      </motion.div>
+      <motion.div
+        animate={{ y: [800, 0]} } 
+        transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+      >
+        <img className="absolute bottom-0 left-0 corner-smiley hover:scale-125 ease-in-out duration-100" src="/images/smileys/smiley_love.png" alt={"Happy smiley face"} />
+
+      </motion.div>
     </div>
   );
 }

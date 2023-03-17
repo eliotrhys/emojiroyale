@@ -16,6 +16,7 @@ export default function GuessInput(props: GuessInputProps) {
       
     const [guess, setGuess] = useState("");
     const inputRef = useRef<HTMLInputElement>(null);
+    const [showImage, setShowImage] = useState(false);
 
     useEffect(() => {
         console.log("The current answer is - ", props.answer);
@@ -40,12 +41,14 @@ export default function GuessInput(props: GuessInputProps) {
         props.onGuess(true);
         props.guesses.push({ guess, isCorrect: true });
         setGuess("");
+        setShowImage(true);
       } 
       else 
       {
         props.onGuess(false);
         props.guesses.push({ guess, isCorrect: false });
         setGuess("");
+        setShowImage(false);
       }
     }
     
@@ -54,7 +57,16 @@ export default function GuessInput(props: GuessInputProps) {
     };
     
     return (
-        <form className="mb-4 lg:mb-10 bg-slate-100">
+        <form className="mb-4 lg:mb-10 relative">
+          {showImage && (
+            <div className="absolute -top-20 right-0">
+              <img
+                src="/images/bubble.svg"
+                alt="placeholder"
+                className="w-24 h-24 z-10"
+              />
+            </div>
+          )}
           <div className="mb-4 lg:mb-10">
             <input
               className="text-xl p-4 py-6 text-center hover:scale-105 lg:focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 border-blue-500 placeholder:text-blue-300 w-full"
@@ -69,7 +81,7 @@ export default function GuessInput(props: GuessInputProps) {
           </div>
 
           <div>
-            <input className="px-10 py-4 w-full text-center hover:scale-105 lg:hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block" type="submit" value="Guess!" onClick={handleSubmit} />
+            <input className="px-10 py-4 w-full text-center hover:scale-105 lg:hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block cursor-pointer shadow-lift" type="submit" value="Guess!" onClick={handleSubmit} />
           </div>
         </form>
     );

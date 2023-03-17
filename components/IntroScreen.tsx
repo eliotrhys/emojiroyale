@@ -34,7 +34,11 @@ export default function IntroScreen(props: IntroScreenProps) {
                   animate={{ y: [-800, 0]} } 
                   transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
                 >
-                  <h1 className="huge-emoji animate-bounce">⏰</h1>
+                  <div className="animate-bounce">
+                    <h1 className="huge-emoji">⏰</h1>
+                    <h1 className="text-md lg:text-4xl -mt-10 mb-20">Let the countdown begin!</h1>
+                  </div>
+                  
                 </motion.div>
                 <motion.div
                   animate={{ y: [-800, 0]} } 

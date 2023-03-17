@@ -3,8 +3,6 @@ import Link from "next/link";
 import { ChangeEvent, useEffect, useState } from "react";
 import { MediaType } from "../app/types/MediaType";
 
-import horizontalLogo from "../public/images/horizontal_logo.png";
-
 interface SideMenuProps {
   isOpen: boolean;
   onMenuToggle: () => void;
@@ -64,7 +62,7 @@ export default function SideMenu(props: SideMenuProps) {
     <div>
       <div className={`offcanvas-menu ${props.isOpen ? "open" : ""} px-4`}>
         <div className="text-right flex justify-between my-6">
-          <Image src={horizontalLogo} height={36} alt={"Emoji Royale Logo"} />
+          <img src="/images/horizontalLogo.png" style={{ height: "36px" }} alt={"Emoji Royale Logo"} />
           <div>
             <button onClick={handleClose} className="border-4 border-red-500 text-red-500 hover:text-white hover:bg-red-500 h-10 w-10 p-2 flex items-center justify-center text-xl rounded-full ease-in-out duration-100">x</button>
           </div>

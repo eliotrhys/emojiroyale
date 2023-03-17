@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import Link from "next/link";
 import emojiLogo from "../public/images/emoji_logo.png";
 
@@ -34,39 +33,58 @@ const animationItem = {
 
 export default function Page() {
     return (
-        <div className="min-h-screen min-w-screen intro-page relative">
-            <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 pr-6 absolute top-0 right-0 hidden md:flex">
-                <div>
-                    <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
-                </div>
-                <div>
-                    <div className="text-xs text-white">Follow me on twitter</div>
-                </div>
-            </Link>
-            <div className="container mx-auto px-4">
-                <motion.div 
-                    animate={{ y: [-800, 0]} } 
-                    transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-                    className="w-full lg:w-1/2 mx-auto pt-10"
-                >
-                    <div className="text-center">
-                        <div>
-                            <Image alt="Emoji Royale Logo" src={emojiLogo} priority={true} height={140} className="mx-auto" />
-                        </div>
-                        <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">An emoji trivia game!</h2>
+        <div className="min-h-screen min-w-screen relative overflow-x-hidden">
+            <img src="/images/smileys/smiley_cry.png" className="absolute top-0 left-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
+            <img src="/images/smileys/smiley_clown.png" className="absolute top-0 right-0 corner-smiley hover:scale-125 ease-in-out duration-100" />
+            <div className="intro-page bg-blue-500">
+                <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 pr-6 absolute top-0 right-0 hidden md:flex cursor-pointer">
+                    <div>
+                        <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
                     </div>
-                </motion.div>
-                <div className="grid grid-cols-1">
-                    <motion.div className="mb-4 lg:mb-6"
+                    <div>
+                        <div className="text-xs text-white">Follow me on twitter</div>
+                    </div>
+                </Link>
+                <div className="container mx-auto px-4">
+                    <motion.div 
                         animate={{ y: [-800, 0]} } 
-                        transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+                        transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+                        className="w-full lg:w-1/2 mx-auto pt-10"
                     >
-                        <div>
-                            <h3 className="text-md lg:text-2xl mb-4 text-center">How to play</h3>
-                            <h3 className="text-4xl text-center">👇</h3>
+                        <div className="text-center">
+                            <div>
+                                <img alt="Emoji Royale Logo" src="/images/verticalLogo.png" style={{ height: "200px" }} className="mx-auto" />
+                            </div>
+                            <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">🧠 An emoji trivia game! 🤓</h2>
                         </div>
                     </motion.div>
+                    <div className="grid grid-cols-1">
+                        <motion.div className="mb-4 lg:mb-6"
+                            animate={{ y: [-800, 0]} } 
+                            transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+                        >
+                            <div>
+                                <div className="flex justify-center flex-wrap mb-4">
+                                    <div className="text-sm mb-4 px-10 py-2 text-center border-4 border-black relative z-10 bg-white text-black rounded-full inline-block lift">
+                                        <div>
+                                            <h3 className="text-sm lg:text-xl text-center">How to play</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center flex-wrap">
+                                    <div>
+                                        <h3 className="text-4xl text-center animate-bounce">👇</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
+            </div>
+            <div>
+                <img src="/images/blue_wave.svg" />
+            </div>
+            <div className="container mx-auto px-4">
                 <motion.div 
                     initial="hidden"
                     whileInView="showing"
@@ -115,11 +133,11 @@ export default function Page() {
                 </motion.div>
                 <div className="grid grid-cols-3">
                     <div className="col-span-full lg:col-start-2 lg:col-span-1">
-                        <Link href="/game" className="text-xl lg:text-2xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full">Start the game!</Link>
+                        <Link href="/game" className="text-xl lg:text-2xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Start the game!</Link>
                     </div>
                 </div>
                 <div>
-                    <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6">
+                    <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 cursor-pointer">
                         <div>
                             <img src="/images/twitter.png" className="mr-4" style={{ height: "24px" }} alt="" />
                         </div>
