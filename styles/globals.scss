@@ -99,6 +99,7 @@ a {
 .grow-shrink {
   animation-name: grow-shrink;
   animation-duration: 0.4s;
+  animation-iteration-count: 1;
 }
 
 @keyframes grow-shrink {

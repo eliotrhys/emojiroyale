@@ -32,7 +32,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                   transition={{ type: "spring", bounce: 0.4, duration: 0.4 }}
                 >
                   <h1 className="huge-emoji -mb-10">💩</h1>
-                  <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Time's up!</h1>
+                  <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Time&apos;s up!</h1>
                 </motion.div>
               </div>
 

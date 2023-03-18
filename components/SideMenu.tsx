@@ -70,7 +70,7 @@ export default function SideMenu(props: SideMenuProps) {
         <div>
           <div className="mb-6">
             <div className="text-lg mb-2">Categories</div>
-            <div className="text-xs text-slate-400">Uncheck categories you're not interested in!</div>
+            <div className="text-xs text-slate-400">Uncheck categories you&apos;re not interested in!</div>
           </div>
           <div className="">
             { allMediaTypes }
@@ -81,7 +81,7 @@ export default function SideMenu(props: SideMenuProps) {
             </div>
             <div>
               <div className="text-xs">Follow me on twitter</div>
-              <div className="text-xs text-slate-300">(I'm smart and funny)</div>
+              <div className="text-xs text-slate-300">&#40;I&apos;m smart and funny&#41;</div>
             </div>
           </Link>
           <div className="text-xs mb-6">🚨 Also, if your team is hiring designers, front-end developers or general creative people please let me know - looking for a job!</div>

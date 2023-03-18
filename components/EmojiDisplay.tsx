@@ -35,49 +35,54 @@ const animationItem = {
 export default function EmojiDisplay(props: EmojiDisplayProps) {
 
   const [animate, setAnimate] = useState(false);
+  const [animationKey, setAnimationKey] = useState<number>(0);
 
   useEffect(() => {
     setAnimate(true);
   }, []);
+
+  useEffect(() => {
+    // Define a function to toggle the grow-shrink animation class on and off
+    const toggleAnimation = () => {
+      setAnimationKey(Date.now());
+      setAnimate(true);
+      // Remove the animation class after the animation is complete
+      setTimeout(() => setAnimate(false), 1000);
+    };
+
+    // Call the toggleAnimation function every 10 seconds
+    const intervalId = setInterval(toggleAnimation, 10000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
   
-  const hasMultiCharEmoji = (str: string) => {
-
-    // Check for multi-character emoji
-    const emojiRegex = /\p{Emoji}/gu;
-    const matches = str.match(emojiRegex);
-
-    // If Yes
-    if (!matches) 
-    {
-      const regex = /([\uD800-\uDBFF][\uDC00-\uDFFF])|([\u2600-\u27FF])/g;
-      const emojis = str.match(regex) || [];
-      return emojis;
-    }
-
-    // If No
-    for (const match of matches) {
-      if (match.length > 1) {
-        const regex = /([\p{Emoji_Modifier_Base}\uFE0F]|\p{Emoji_Presentation})[\u200D\p{Emoji_Presentation}\p{Emoji_Modifier}]*|\p{Emoji}/gu;
-        const emojis = str.match(regex) || [];
-        return emojis;
-      }
-    }
-
-    const regex = /([\uD800-\uDBFF][\uDC00-\uDFFF])|([\u2600-\u27FF])/g;
-    const emojis = str.match(regex) || [];
-    return emojis;
+  function splitByForwardSlash(str: string): string[] {
+    return str.split('/').filter((s) => s !== '');
   }
 
-  const finalEmojis = hasMultiCharEmoji(props.emoji);
+  const finalEmojis = splitByForwardSlash(props.emoji);
   console.log(finalEmojis);
 
   return (
       <div className="mb-0 lg:mb-20 mx-auto text-center">
-        <div className="text-lg lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 px-6 inline-block rounded-md p-2 text-center mb-10 menuMediaType">{props.mediaType}</div>
+        <div
+        key={animationKey}
+        className={`text-lg lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 px-6 inline-block rounded-md p-2 text-center mb-10 menuMediaType ${
+          animate ? "grow-shrink" : ""
+        }`}
+      >
+        {props.mediaType}
+      </div>
         <div className="flex items-center justify-center">
           {finalEmojis.map((emoji: string, index: number) => (
             <div key={index}>
-              <div className={`animate ${animate ? 'grow-shrink' : ''} text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}>
+              <div
+                key={animationKey}
+                className={`animate ${
+                  animate ? "grow-shrink" : ""
+                } text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
+              >
                 {emoji}
               </div>
             </div>

@@ -132,6 +132,8 @@ a {
           animation-name: grow-shrink;
   -webkit-animation-duration: 0.4s;
           animation-duration: 0.4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 @-webkit-keyframes grow-shrink {

@@ -39,7 +39,6 @@ export default function GameForm() {
   const [mediaType, setMediaType] = useState("");
   const [acceptableAnswers, setAcceptableAnswers] = useState<string[]>([]);
   const [guesses, setGuesses] = useState<Guess[]>([]);
-  const [selectedMediaTypes, setSelectedMediaTypes] = useState(Object.values(MediaType));
 
   // Game states
   const [timeRemaining, setTimeRemaining] = useState(60);
