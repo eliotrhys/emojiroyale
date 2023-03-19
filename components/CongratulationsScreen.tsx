@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { render } from "react-dom";
 import Points from "./Points";
 
 interface Guess {
@@ -16,7 +17,26 @@ interface CongratulationsScreenProps {
 
 export default function CongratulationsScreen(props: CongratulationsScreenProps) {
 
-  const highestScore = parseInt(localStorage.getItem("highestScore") ?? "0");
+  const renderHighestScore = () => {
+    if (typeof window !== "undefined") {
+      const highestScore = parseInt(localStorage.getItem("highestScore") ?? "0");
+
+      return (
+        <motion.div
+          animate={{ x: [-800, 0]} } 
+          transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+        >
+          <div className="text-4xl mb-0">🏆</div>
+          <p className="mb-0">Your highest score is</p>
+          <p className="mb-0">{highestScore} {highestScore > 1 || highestScore === 0 ? "points" : "point"}</p>
+        </motion.div>
+      )
+    } 
+    else 
+    {
+      return null;
+    }
+  }
 
   return (
     <div className="h-[calc(100vh-56px)] min-w-screen text-center relative">
@@ -60,15 +80,8 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                       </div>
                     </div>
                   </motion.div>
-                  
-                  <motion.div
-                    animate={{ x: [-800, 0]} } 
-                    transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
-                  >
-                    <div className="text-4xl mb-0">🏆</div>
-                    <p className="mb-0">Your highest score is</p>
-                    <p className="mb-0">{highestScore} {highestScore > 1 || highestScore === 0 ? "points" : "point"}</p>
-                  </motion.div>
+
+                  { renderHighestScore() }
 
                 </div>
               </div>

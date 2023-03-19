@@ -44,9 +44,11 @@ export default function GameForm() {
   const [timeRemaining, setTimeRemaining] = useState(60);
   const [introTimeRemaining, setIntroTimeRemaining] = useState(3);
   const [showIntroScreen, setShowIntroScreen] = useState(true);
+
   const [highestScore, setHighestScore] = useState<number>(
-    parseInt(localStorage.getItem("highestScore") ?? "0")
+    typeof window !== "undefined" ? parseInt(localStorage.getItem("highestScore") ?? "0") : 0
   );
+
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
 
   // Shuffle the questions array and store the shuffled array in state
@@ -54,14 +56,16 @@ export default function GameForm() {
 
   // This function shuffles the questions array and starts Intro Countdown
   useEffect(() => {
-    const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+    if (typeof window !== "undefined") {
+      const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
 
-    const filteredQuestions = questions.filter((question) => {
-      return !savedCheckedItems.includes(question.mediaType);
-    });
+      const filteredQuestions = questions.filter((question) => {
+        return !savedCheckedItems.includes(question.mediaType);
+      });
 
-    const shuffledQuestions = shuffle(filteredQuestions);
-    setShuffledQuestions(shuffledQuestions);
+      const shuffledQuestions = shuffle(filteredQuestions);
+      setShuffledQuestions(shuffledQuestions);
+    }
   }, []);
 
   // This functions sets the title, emoji and mediaType when the questionIndex changes
@@ -76,9 +80,11 @@ export default function GameForm() {
 
   // This function gets the Local Storage high score
   useEffect(() => {
-    if (correctCount > highestScore) {
-      setHighestScore(correctCount);
-      localStorage.setItem("highestScore", correctCount.toString());
+    if (typeof window !== "undefined") {
+      if (correctCount > highestScore) {
+        setHighestScore(correctCount);
+        localStorage.setItem("highestScore", correctCount.toString());
+      }
     }
   }, [correctCount, setHighestScore, highestScore]);
   
@@ -111,14 +117,16 @@ export default function GameForm() {
     setGuesses([]);
     setShowCongratulationsScreen((isShowing) => !isShowing);
 
-    const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+    if (typeof window !== "undefined") {
+      const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
 
-    const filteredQuestions = questions.filter((question) => {
-      return !savedCheckedItems.includes(question.mediaType);
-    });
+      const filteredQuestions = questions.filter((question) => {
+        return !savedCheckedItems.includes(question.mediaType);
+      });
 
-    const shuffledQuestions = shuffle(filteredQuestions);
-    setShuffledQuestions(shuffledQuestions);
+      const shuffledQuestions = shuffle(filteredQuestions);
+      setShuffledQuestions(shuffledQuestions);
+    }
 
     setIsMenuOpen(false);
     handleIntroCountdownStart();
@@ -151,8 +159,10 @@ export default function GameForm() {
   };
 
   const handleCheckboxChange = (checkedItems: string[]) => {
-    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
-  };
+    if (typeof window !== "undefined") {
+      localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+    }
+};
 
   return (
     <div className="bg-smiles overflow-x-hidden">
@@ -180,7 +190,7 @@ export default function GameForm() {
 
             <div className="container mx-auto px-4">
               <div className="grid">
-                  <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
+                  <div className="w-full lg:w-2/3 xl:w-2/3 mx-auto flex flex-col justify-between">
                     <div className="">
                       <Counter count={count} />
                       <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />

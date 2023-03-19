@@ -14,8 +14,10 @@ export default function SideMenu(props: SideMenuProps) {
   const [checkedMediaTypes, setCheckedMediaTypes] = useState<MediaType[]>([]);
 
   useEffect(() => {
-    const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
-    setCheckedMediaTypes(savedCheckedItems);
+    if (typeof window !== "undefined") {
+      const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+      setCheckedMediaTypes(savedCheckedItems);
+    }
   }, []);
 
   const handleClose = () => {
@@ -38,7 +40,7 @@ export default function SideMenu(props: SideMenuProps) {
     }
   }
 
-  const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
+  const savedCheckedItems = typeof window !== "undefined" ? JSON.parse(localStorage.getItem('checkedItems') || '[]') : [];
 
   const allMediaTypes = Object.values(MediaType).map((mediaType) => {
     const isChecked = savedCheckedItems.includes(mediaType);
@@ -57,6 +59,7 @@ export default function SideMenu(props: SideMenuProps) {
       </div>
     );
   });
+
 
   return (
     <div>

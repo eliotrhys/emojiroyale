@@ -104,40 +104,40 @@ export default function Page() {
                     viewport={{ once: true }}
                     className="grid grid-cols-12 gap-4 mb-10">
                     <motion.div variants={animationItem} className="col-span-12 sm:col-span-6 lg:col-span-4">
-                        <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
-                            <div className="col-span-4 lg:col-span-12 lg:mb-2">
-                                <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
+                        <div className="grid grid-cols-12 gap-4 lg:gap-0 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
+                            <div className="col-span-6 sm:col-span-12">
+                                <img src="/images/landing/red.jpg" className="w-full rounded-md lg:mb-4" alt="" />
                             </div>
-                            <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
-                                <div>
-                                    <h3 className="text-lg sm:text-2xl lg:text-2xl">☝️ Step 1</h3>
-                                    <p className="text-sm sm:text-md lg:text-md">Look at the emojis!</p>
+                            <div className="col-span-6 sm:col-span-12 flex items-center justify-start lg:justify-center">
+                                <div className="text-left sm:text-center">
+                                    <h3 className="text-md sm:text-lg lg:text-xl mb-2 lg:mb-4">🤯 1000s of emoji combos!</h3>
+                                    <p className="text-xs sm:text-md leading-relaxed">Never run out of questions!</p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
                     <motion.div variants={animationItem} className="col-span-12 sm:col-span-6 lg:col-span-4">
-                        <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
-                            <div className="col-span-4 lg:col-span-12 lg:mb-2">
-                                <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
+                        <div className="grid grid-cols-12 gap-4 lg:gap-0 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
+                            <div className="col-span-6 sm:col-span-12">
+                                <img src="/images/landing/yellow.jpg" className="w-full rounded-md lg:mb-4" alt="" />
                             </div>
-                            <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
-                                <div>
-                                    <h3 className="text-lg sm:text-2xl lg:text-2xl">✌️ Step 2</h3>
-                                    <p className="text-sm lg:text-md">Look at the category!</p>
+                            <div className="col-span-6 sm:col-span-12 flex items-center justify-start lg:justify-center">
+                                <div className="text-left sm:text-center">
+                                    <h3 className="text-md sm:text-lg lg:text-xl mb-2 lg:mb-4">🛍️ Loads of categories!</h3>
+                                    <p className="text-xs sm:text-md leading-relaxed">TV Shows, Disney Movies, Historical Events - and <strong>many, many more!</strong></p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
                     <motion.div variants={animationItem} className="col-span-12 sm:col-start-4 sm:col-end-10 lg:col-span-4">
-                        <div className="grid gap-4 grid-cols-12 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
-                            <div className="col-span-4 lg:col-span-12 lg:mb-2">
-                                <img src="https://media0.giphy.com/media/elhmwUMsAUbScKLLzl/giphy.gif?cid=ecf05e4772tr6m81jyn7i894cj1xgpawr4osepvzi5oba3wy&rid=giphy.gif&ct=g" className="w-full rounded-md" alt="" />
+                        <div className="grid grid-cols-12 gap-4 lg:gap-0 bg-white border-black border-4 rounded-md p-4 lg:text-center h-full">
+                            <div className="col-span-6 sm:col-span-12">
+                                <img src="/images/landing/green.jpg" className="w-full rounded-md lg:mb-4" alt="" />
                             </div>
-                            <div className="col-span-8 lg:col-span-12 flex items-center justify-start lg:justify-center">
-                                <div>
-                                    <h3 className="text-lg sm:text-2xl lg:text-2xl">☘️ Step 3</h3>
-                                    <p className="text-sm lg:text-md">Type your answer and hit Enter!</p>
+                            <div className="col-span-6 sm:col-span-12 flex items-center justify-start lg:justify-center">
+                                <div className="text-left sm:text-center">
+                                    <h3 className="text-md sm:text-lg lg:text-xl mb-2 lg:mb-4">🤷🏻‍♂️ How do I play?</h3>
+                                    <p className="text-xs sm:text-md leading-relaxed">Look at the emoji puzzle, type your answer into the box and hit Enter! <strong>Simple as!</strong></p>
                                 </div>
                             </div>
                         </div>
