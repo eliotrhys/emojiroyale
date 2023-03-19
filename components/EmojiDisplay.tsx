@@ -84,14 +84,14 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
       >
         {props.mediaType}
       </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center flex-wrap">
           {finalEmojis.map((emoji: string, index: number) => (
             <div key={index}>
               <div
                 key={emojiAnimationKey}
                 className={`animate ${
                   animateEmojis ? "grow-shrink" : ""
-                } text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
+                } text-6xl md:text-8xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
               >
                 {emoji}
               </div>

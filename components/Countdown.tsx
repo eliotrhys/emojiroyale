@@ -28,7 +28,6 @@ export default function Countdown(props: CountdownProps) {
 
         if (props.timeRemaining < 11) {
             setDanger(true);
-            console.log("DANGER IS NOW " + danger);
         }
       }, [props.timeRemaining]);
       

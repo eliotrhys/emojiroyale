@@ -168,17 +168,17 @@ export default function GameForm() {
     <div className="bg-smiles overflow-x-hidden">
       <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} onCheckboxChange={handleCheckboxChange} />
 
-      <div className="h-screen flex flex-col justify-between">
+      <div className="min-h-screen flex flex-col justify-between">
         {showCongratulationsScreen ? (
           <>
-            <div className="h-screen w-screen flex flex-col justify-between">
+            <div className="min-h-screen min-w-screen flex flex-col justify-between">
               <Navbar onMenuToggle={handleMenuToggle} />
               <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
             </div>
           </>
         ) : showIntroScreen ? (
           <>
-            <div className="h-screen w-screen flex flex-col justify-between">
+            <div className="min-h-screen min-w-screen flex flex-col justify-between">
               <Navbar onMenuToggle={handleMenuToggle} />
               <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} />
             </div>

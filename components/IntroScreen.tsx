@@ -25,7 +25,7 @@ export default function IntroScreen(props: IntroScreenProps) {
   }, [props.introTimeRemaining]);
 
   return (
-    <div className="h-screen w-screen text-center flex items-center justify-center">
+    <div className="min-h-screen min-w-screen text-center flex items-center justify-center">
       <div className="container mx-auto px-4">
           <div className="flex flex-col justify-between">
             <div>

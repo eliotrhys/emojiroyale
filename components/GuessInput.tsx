@@ -21,8 +21,9 @@ export default function GuessInput(props: GuessInputProps) {
     const [animationKey, setAnimationKey] = useState<number>(0);
 
     useEffect(() => {
-        console.log("The current answer is - ", props.answer);
-        console.log("The current potential answers are - ", props.potentialAnswers);
+      // Keep for logging in debugging
+        // console.log("The current answer is - ", props.answer);
+        // console.log("The current potential answers are - ", props.potentialAnswers);
     }, [props.answer]);
 
     useEffect(() => {

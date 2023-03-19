@@ -1,9 +1,11 @@
 export enum MediaType {
-    MovieScene = '🎬 Movie Scene',
-    TVScene = "📺 TV Show Scene",
-    MovieTitle = "🎬 Movie Title",
-    TVTitle = "📺 TV show Title",
-    GameTitle = "👾 Video Game Title",
+    Movie = '🎬 Movie',
+    TVShow = "📺 TV Show",
+    VideoGame = "👾 Video Game",
     HistoricalEvent = "📜 Historical Event",
-    SongTitle = "🎤 Song Title",
+    Song = "🎤 Song",
+    Book = "📚 Book",
+    NationFlag = "🏳️ Nation Flags",
+    MythsLegends = "🐲 Myths & Legends",
+    FamousPeople = "🤑 Famous People"
 };

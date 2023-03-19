@@ -60,7 +60,6 @@ export default function SideMenu(props: SideMenuProps) {
     );
   });
 
-
   return (
     <div>
       <div className={`offcanvas-menu ${props.isOpen ? "open" : ""} px-4`}>

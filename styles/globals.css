@@ -44,7 +44,7 @@ a {
 
 @media (min-width: 1024px) {
   .huge-emoji {
-    font-size: 200px;
+    font-size: 160px;
   }
   @-webkit-keyframes dangerPulse {
     0%, 100% {
