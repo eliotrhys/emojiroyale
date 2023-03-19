@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Emoji Royale",
-    "short_name": "Emoji Royale",
-    "description": "A marathon emoji trivia guessing game",
+    "name": "Triviamoji",
+    "short_name": "Triviamoji",
+    "description": "An emoji trivia guessing game!",
     "icons": [
         {
             "src": "/icon-192x192.png",

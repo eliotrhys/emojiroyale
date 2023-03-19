@@ -63,7 +63,7 @@ export default function Page() {
                     >
                         <div className="text-center">
                             <div>
-                                <img alt="Emoji Royale Logo" src="/images/verticalLogo.png" style={{ height: "200px" }} className="mx-auto" />
+                                <img alt="Triviamoji Logo" src="/images/horizontalLogo.png" className="main-logo h-auto w-auto mx-auto relative z-20" />
                             </div>
                             <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">🧠 An emoji trivia game! 🤓</h2>
                         </div>

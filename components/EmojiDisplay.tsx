@@ -34,20 +34,23 @@ const animationItem = {
 
 export default function EmojiDisplay(props: EmojiDisplayProps) {
 
-  const [animate, setAnimate] = useState(false);
-  const [animationKey, setAnimationKey] = useState<number>(0);
+  const [animateCategory, setAnimateCategory] = useState(false);
+  const [categoryAnimationKey, setCategoryAnimationKey] = useState<number>(0);
+
+  const [animateEmojis, setAnimateEmojis] = useState(false);
+  const [emojiAnimationKey, setEmojiAnimationKey] = useState<number>(0);
 
   useEffect(() => {
-    setAnimate(true);
+    setAnimateCategory(true);
   }, []);
 
   useEffect(() => {
     // Define a function to toggle the grow-shrink animation class on and off
     const toggleAnimation = () => {
-      setAnimationKey(Date.now());
-      setAnimate(true);
+      setCategoryAnimationKey(Date.now());
+      setAnimateCategory(true);
       // Remove the animation class after the animation is complete
-      setTimeout(() => setAnimate(false), 1000);
+      setTimeout(() => setAnimateCategory(false), 1000);
     };
 
     // Call the toggleAnimation function every 10 seconds
@@ -56,20 +59,27 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    // Update the emojiAnimationKey every time the props.emoji value changes
+    setEmojiAnimationKey((prevKey) => prevKey + 1);
+    setAnimateEmojis(true);
+    // Remove the animation class after the animation is complete
+    setTimeout(() => setAnimateEmojis(false), 1000);
+  }, [props.emoji]);
   
   function splitByForwardSlash(str: string): string[] {
     return str.split('/').filter((s) => s !== '');
   }
 
   const finalEmojis = splitByForwardSlash(props.emoji);
-  console.log(finalEmojis);
 
   return (
       <div className="mb-0 lg:mb-20 mx-auto text-center">
         <div
-        key={animationKey}
+        key={categoryAnimationKey}
         className={`text-lg lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 px-6 inline-block rounded-md p-2 text-center mb-10 menuMediaType ${
-          animate ? "grow-shrink" : ""
+          animateCategory ? "grow-shrink" : ""
         }`}
       >
         {props.mediaType}
@@ -78,9 +88,9 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
           {finalEmojis.map((emoji: string, index: number) => (
             <div key={index}>
               <div
-                key={animationKey}
+                key={emojiAnimationKey}
                 className={`animate ${
-                  animate ? "grow-shrink" : ""
+                  animateEmojis ? "grow-shrink" : ""
                 } text-6xl md:text-8xl lg:text-9xl mb-10 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
               >
                 {emoji}

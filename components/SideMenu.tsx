@@ -65,7 +65,7 @@ export default function SideMenu(props: SideMenuProps) {
     <div>
       <div className={`offcanvas-menu ${props.isOpen ? "open" : ""} px-4`}>
         <div className="text-right flex justify-between my-6">
-          <img src="/images/horizontalLogo.png" style={{ height: "36px" }} alt={"Emoji Royale Logo"} />
+          <img src="/images/horizontalLogo.png" style={{ height: "36px" }} alt={"Triviamoji Logo"} />
           <div>
             <button onClick={handleClose} className="border-4 border-red-500 text-red-500 hover:text-white hover:bg-red-500 h-10 w-10 p-2 flex items-center justify-center text-xl rounded-full ease-in-out duration-100">x</button>
           </div>
