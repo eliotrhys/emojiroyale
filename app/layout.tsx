@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import Script from 'next/script'
 
 export default function RootLayout({ children }: { children: any }) {
   return (
@@ -20,6 +21,20 @@ export default function RootLayout({ children }: { children: any }) {
         <meta name="keywords" content="Triviamoji, Emoji trivia, Emoji guessing game, Emoji trivia challenge, Guess the emoji game, Emoji quiz challenge, Emoji charades game, Emoji puzzle game, Emoji word game, Emoji brain teaser, Emoji guessing competition, Emoji riddle game, Emoji, Guess the emoji" />
       </head>
       <body>{children}</body>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0ELFHP6WM4" />
+
+      <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+    
+              gtag('config', 'G-0ELFHP6WM4');
+          `,
+           }}
+        />
     </html>
   );
 }
