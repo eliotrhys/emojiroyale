@@ -41,7 +41,7 @@ export default function GameForm() {
   const [guesses, setGuesses] = useState<Guess[]>([]);
 
   // Game states
-  const [timeRemaining, setTimeRemaining] = useState(60);
+  const [timeRemaining, setTimeRemaining] = useState(300);
   const [introTimeRemaining, setIntroTimeRemaining] = useState(3);
   const [showIntroScreen, setShowIntroScreen] = useState(true);
 
@@ -143,7 +143,8 @@ export default function GameForm() {
   const handleIntroCountdownFinish = () => {
     setShowIntroScreen((isShowing) => !isShowing);
     setIntroTimeRemaining(3);
-    setTimeRemaining(60);
+    // FIX BEFORE DEPLOYMENT AND ALSO THE INIT SETTER
+    setTimeRemaining(300);
   }
 
   const handleTimeTick = () => {

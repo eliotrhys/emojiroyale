@@ -1,4 +1,5 @@
 import { FormEventHandler, useCallback, useEffect, useRef, useState } from "react";
+import Keyboard from "./Keyboard";
 
 interface Guess {
   guess: string;
@@ -108,6 +109,7 @@ export default function GuessInput(props: GuessInputProps) {
             </div>
           )}
           <div className="mb-4 lg:mb-10">
+            <Keyboard />
             <input
               className="text-xl p-4 py-6 text-center hover:scale-105 lg:focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 border-blue-500 placeholder:text-blue-300 w-full"
               type="text"

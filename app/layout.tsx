@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>{children}</body>
       {/* <!-- Google tag (gtag.js) --> */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0ELFHP6WM4" />
+      {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0ELFHP6WM4" />
 
       <script
             dangerouslySetInnerHTML={{
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: any }) {
               gtag('config', 'G-0ELFHP6WM4');
           `,
            }}
-        />
+        /> */}
     </html>
   );
 }
