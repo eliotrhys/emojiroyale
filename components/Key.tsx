@@ -1,14 +1,14 @@
-type KeyProps = {
+interface KeyProps {
   letter: string;
-  onClick: () => void;
+  onClick: (letter: string) => void;
 }
 
 const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, props: KeyProps) => {
   event.preventDefault();
-  console.log('Button clicked!');
 
-  if (props.onClick) {
-    props.onClick();
+  if (props.onClick) 
+  {
+    props.onClick(props.letter);
   }
 }
 

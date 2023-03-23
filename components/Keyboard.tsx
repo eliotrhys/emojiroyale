@@ -1,22 +1,72 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Key from './Key';
 
 type KeyboardLayout = string[][];
 
-export default function Keyboard() {
-  const [currentWord, setCurrentWord] = useState<string>("THIS IS THE CURRENT WORD");
+interface KeyboardProps {
+    handleCurrentWordChange: (currentWord: string) => void;
+    onEnter: () => void;
+}
 
-  const handleKeyPress = () => {
-    // event.preventDefault();
-    console.log("HITTING THE KEY FROM THE PARENT");
-    // setCurrentWord((word) => word + key);
-    // onKeyPress(key);
+export default function Keyboard(props: KeyboardProps) {
+  const [currentWord, setCurrentWord] = useState<string>("");
+
+  const handleKeyPress = (letter: string) => {
+    switch (letter) {
+      case 'BACKSPACE':
+        if (currentWord.length > 0) {
+          const newCurrentWord = currentWord.slice(0, -1);
+          setCurrentWord(newCurrentWord);
+        }
+        break;
+      case 'SPACE':
+        setCurrentWord((word) => word + ' ');
+        break;
+      case 'ENTER':
+        props.handleCurrentWordChange(currentWord);
+        props.onEnter();
+        setCurrentWord("");
+        break;
+      default:
+        setCurrentWord((word) => word + letter);
+        break;
+    }
   };
+
+  useEffect(() => {
+    props.handleCurrentWordChange(currentWord);
+  }, [currentWord, props.handleCurrentWordChange]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+
+      const key = event.key.toUpperCase();
+
+      if (key === 'BACKSPACE') 
+      {
+        handleKeyPress('BACKSPACE');
+      } 
+      else if (key === 'ENTER') 
+      {
+        props.onEnter();
+      }
+      else 
+      {
+        handleKeyPress(key);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentWord]);
 
   const keyboardLayout: KeyboardLayout = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACKSPACE']
+    ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+    ['ENTER', 'SPACE', 'BACKSPACE']
   ];
 
   return (

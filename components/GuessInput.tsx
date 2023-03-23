@@ -27,12 +27,6 @@ export default function GuessInput(props: GuessInputProps) {
         // console.log("The current potential answers are - ", props.potentialAnswers);
     }, [props.answer]);
 
-    useEffect(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }, [setGuess]);
-
     const resetImages = useCallback(() => {
       setShowCorrectImage(false);
       setShowWrongImage(false);
@@ -42,9 +36,12 @@ export default function GuessInput(props: GuessInputProps) {
       resetImages();
     }, [resetImages]);
     
-    const handleSubmit: FormEventHandler = (e) => {
-      e.preventDefault();
+    const handleSubmit = () => {
 
+      console.log("HANDLE SUBMIT IS BEING HIT!");
+      console.log("ANSWER IS: " + props.answer);
+      console.log("GUESS IS: " + guess);
+      
       resetImages();
 
       const lowerCasePotentialAnswers = props.potentialAnswers.map((answer) =>
@@ -67,11 +64,12 @@ export default function GuessInput(props: GuessInputProps) {
       }
       setAnimationKey(Date.now());
     }
-    
-    const handleChange = (e: any) => {
-      setGuess(e.target.value);
-    };
-    
+
+    const handleCurrentWordChange = useCallback((currentWord: string) => {
+      console.log("HITTING HANDLECURRENTWORDCHANGE AND CURRENTWORD IS " + currentWord);
+      setGuess(currentWord);
+    }, [setGuess]);
+
     return (
         <form className="mb-4 lg:mb-10 relative">
           { showCorrectImage && (
@@ -109,17 +107,16 @@ export default function GuessInput(props: GuessInputProps) {
             </div>
           )}
           <div className="mb-4 lg:mb-10">
-            <Keyboard />
-            <input
-              className="text-xl p-4 py-6 text-center hover:scale-105 lg:focus:scale-110 focus:outline-none ease-in-out duration-100 border-dashed border-4 border-blue-500 placeholder:text-blue-300 w-full"
-              type="text"
+            <Keyboard handleCurrentWordChange={handleCurrentWordChange} onEnter={handleSubmit} />
+            {/* <input
+              className=""
+              type="hidden"
               id="guess"
               name="guess"
-              placeholder="type answer here"
               onChange={handleChange}
               value={guess}
               ref={inputRef}
-            />
+            /> */}
           </div>
 
           <div>

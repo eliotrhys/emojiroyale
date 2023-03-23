@@ -205,7 +205,7 @@ export default function GameForm() {
             </div>
           </div>
           <div className="bg-indigo-100 border-t-4 border-black">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-1">
               <div className="grid">
                 <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
                   <div className="mt-4 lg:mt-10">
