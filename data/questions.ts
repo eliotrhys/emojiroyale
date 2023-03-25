@@ -22,7 +22,7 @@ export const questions = [
     },
     {
         title: "Four Weddings And A Funeral",
-        acceptableAnswers: ["four weddings and a funeral", "four weddings & a funeral", "four weddings"],
+        acceptableAnswers: ["four weddings and a funeral", "four weddings & a funeral", "four weddings", "4 weddings", "4 weddings and a funeral", "4 weddings & a funeral"],
         emoji: "💍/💍/💍/💍/⚰️",
         mediaType: MediaType.Movie
     },
@@ -212,7 +212,7 @@ export const questions = [
     // BOOK SECTION
     {
         title: "The Lord Of The Rings",
-        acceptableAnswers: ["the lord of the rings", "lord of the rings", "lotr", "thefellowship of the ring", "the two towers", "the return of the king", "fellowship of the ring", "two towers", "return of the king"],
+        acceptableAnswers: ["the lord of the rings", "lord of the rings", "lotr", "thefellowship of the ring", "the two towers", "the 2 towers", "2 towers", "the return of the king", "fellowship of the ring", "two towers", "return of the king"],
         emoji: "🧙‍♂️/🧌/🧝‍♀️/💍",
         mediaType: MediaType.Book
     },

@@ -97,6 +97,7 @@ a {
   /* Add right transition */
   z-index: 11;
   border-left: 4px solid black;
+  overflow: scroll;
 }
 
 .offcanvas-menu.open {

@@ -16,7 +16,7 @@ interface GuessInputProps {
 export default function GuessInput(props: GuessInputProps) {
       
     const [guess, setGuess] = useState("");
-    const inputRef = useRef<HTMLInputElement>(null);
+    // const inputRef = useRef<HTMLInputElement>(null);
     const [showCorrectImage, setShowCorrectImage] = useState(false);
     const [showWrongImage, setShowWrongImage] = useState(false);
     const [animationKey, setAnimationKey] = useState<number>(0);
@@ -26,6 +26,10 @@ export default function GuessInput(props: GuessInputProps) {
         // console.log("The current answer is - ", props.answer);
         // console.log("The current potential answers are - ", props.potentialAnswers);
     }, [props.answer]);
+
+    useEffect(() => {
+      console.log("Guess updated: ", guess);
+    }, [guess]);
 
     const resetImages = useCallback(() => {
       setShowCorrectImage(false);
@@ -38,7 +42,6 @@ export default function GuessInput(props: GuessInputProps) {
     
     const handleSubmit = () => {
 
-      console.log("HANDLE SUBMIT IS BEING HIT!");
       console.log("ANSWER IS: " + props.answer);
       console.log("GUESS IS: " + guess);
       
@@ -48,30 +51,28 @@ export default function GuessInput(props: GuessInputProps) {
         answer.toLowerCase()
       );
 
-      if (lowerCasePotentialAnswers.includes(guess.toLowerCase())) 
+      if (lowerCasePotentialAnswers.includes(guess.toLowerCase().trimEnd())) 
       {
         props.onGuess(true);
         props.guesses.push({ guess, isCorrect: true });
-        setGuess("");
         setShowCorrectImage(true);
       } 
       else 
       {
         props.onGuess(false);
         props.guesses.push({ guess, isCorrect: false });
-        setGuess("");
         setShowWrongImage(true);
       }
+      setGuess("");
       setAnimationKey(Date.now());
     }
 
     const handleCurrentWordChange = useCallback((currentWord: string) => {
-      console.log("HITTING HANDLECURRENTWORDCHANGE AND CURRENTWORD IS " + currentWord);
       setGuess(currentWord);
-    }, [setGuess]);
+    }, [guess]);
 
     return (
-        <form className="mb-4 lg:mb-10 relative">
+        <div className="mb-4 lg:mb-4 relative">
           { showCorrectImage && (
             <div className="absolute -top-20 right-0 lg:-top-40 lg:-right-10">
               <div key={animationKey} className="relative bloom">
@@ -108,21 +109,8 @@ export default function GuessInput(props: GuessInputProps) {
           )}
           <div className="mb-4 lg:mb-10">
             <Keyboard handleCurrentWordChange={handleCurrentWordChange} onEnter={handleSubmit} />
-            {/* <input
-              className=""
-              type="hidden"
-              id="guess"
-              name="guess"
-              onChange={handleChange}
-              value={guess}
-              ref={inputRef}
-            /> */}
           </div>
-
-          <div>
-            <input className="px-10 py-4 w-full text-center hover:scale-105 lg:hover:scale-110 ease-in-out duration-100 border-4 border-black bg-blue-500 hover:bg-blue-700 text-white rounded-full inline-block cursor-pointer shadow-lift" type="submit" value="Guess!" onClick={handleSubmit} />
-          </div>
-        </form>
+        </div>
     );
 }
   

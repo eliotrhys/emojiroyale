@@ -1,21 +1,51 @@
+import { useState } from "react";
+
 interface KeyProps {
   letter: string;
   onClick: (letter: string) => void;
-}
-
-const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, props: KeyProps) => {
-  event.preventDefault();
-
-  if (props.onClick) 
-  {
-    props.onClick(props.letter);
-  }
+  keyIsActive: boolean;
+  pressedKey: string;
+  isFullWidth: boolean;
 }
 
 export default function Key(props: KeyProps){
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+
+    event.preventDefault();
+    setIsActive(true);
+    
+    if (props.onClick) {
+      props.onClick(props.letter);
+    }
+  };
+  
+  const handleMouseUp = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+    setIsActive(false);
+  };
+
   return (
     <>
-      <button className="p-2 mx-1 my-1 bg-blue-300 text-blue-900 rounded-md flex items-center justify-center" onClick={(event) => handleClick(event, props)}>{props.letter}</button>
+      <button
+        className={`px-2 py-4 mx-0.5 my-0.5 lg:mx-1 lg:my-1 first:ml-0 last:mr-0 bg-white text-black border-2 border-black rounded-md flex items-center justify-center lg:w-auto lg:min-w-[40px] hover:bg-yellow-300 hover:scale-125
+        ${
+          props.keyIsActive && props.pressedKey === props.letter || isActive ? "!bg-yellow-300 scale-125" : ""
+        }
+        ${
+          props.isFullWidth ? "!w-full" : ""
+        }
+        `
+      }
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onFocus={() => setIsActive(true)}
+        onBlur={() => setIsActive(false)}
+      >
+      {props.letter !== "BACKSPACE" ? <div>{props.letter}</div> : <div>\\\</div>}
+    </button>
     </>
   )
 };
