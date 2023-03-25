@@ -44,7 +44,7 @@ export default function Key(props: KeyProps){
         onFocus={() => setIsActive(true)}
         onBlur={() => setIsActive(false)}
       >
-      {props.letter !== "BACKSPACE" ? <div>{props.letter}</div> : <div>\\\</div>}
+      {props.letter !== "BACKSPACE" ? <div>{props.letter}</div> : <div className="h-full w-full flex items-center justify-center"><div><img src={"/images/delete-left-solid.svg"} className="h-6" /></div></div>}
     </button>
     </>
   )

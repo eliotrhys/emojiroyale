@@ -34,7 +34,10 @@ export default function Keyboard(props: KeyboardProps) {
                 setCurrentWord("");
                 break;
             default:
-                setCurrentWord((word) => word + letter);
+                if (currentWord.length < 75)
+                {
+                    setCurrentWord((word) => word + letter);
+                }
                 break;
         }
     };
@@ -63,7 +66,6 @@ export default function Keyboard(props: KeyboardProps) {
         {
             if (key === " "){ console.log("ITS ALIVE THE SPACEBAR"); };
             setPressedKey(key);
-            console.log("PRESSED KEY IS: " + key);
 
             if (key === 'BACKSPACE') 
             {
@@ -76,14 +78,14 @@ export default function Keyboard(props: KeyboardProps) {
             } 
             else if (key === ' ' || key === "SPACE") 
             {
+                // Stop default Spacebar scroll behaviour
                 if (event.target === document.body) 
                 {
                     event.preventDefault();
                 }
-                
-                console.log("SPACE FIRING!");
+
                 handleKeyPress('SPACE');
-            } 
+            }
             else 
             {
                 handleKeyPress(key);
@@ -116,7 +118,7 @@ export default function Keyboard(props: KeyboardProps) {
 
     return (
         <>
-            <div className="text-center bg-white border-black border-4 py-4 px-4 rounded-md text-xl mb-4">{currentWord === "" ? <span className="text-blue-300">Start typing!</span> : currentWord}</div>
+            <div className="text-center bg-white border-black border-4 py-4 px-4 rounded-md text-xl mb-4 overflow-x-scroll">{currentWord === "" ? <span className="text-blue-300">Start typing!</span> : currentWord}</div>
             <div>
                 {keyboardLayout.map((row, rowIndex) => (
                 <div className="flex items-center justify-center" key={rowIndex}>

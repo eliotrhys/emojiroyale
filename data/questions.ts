@@ -120,7 +120,7 @@ export const questions = [
     {
         title: "Elon Musk",
         acceptableAnswers: ["elon musk", "elon", "musk"],
-        emoji: "🙍🏻‍♂️/🚀/🔋/🚗/🪐",
+        emoji: "🙎🏻‍♂️/🚀/🔋/🚗/🪐",
         mediaType: MediaType.FamousPeople
     },
     {
@@ -377,7 +377,7 @@ export const questions = [
     {
         title: "Norway",
         acceptableAnswers: ["norway", "the kingdom of norway", "kingdom of norway", "norge", "noreg"],
-        emoji: "🇸🇪",
+        emoji: "🇳🇴",
         mediaType: MediaType.NationFlag
     },
     {
@@ -455,7 +455,7 @@ export const questions = [
     },
     {
         title: "Dancing In The Moonlight",
-        acceptableAnswers: ["dancing in the moonlight", "dancin in the moonlight", "dancin' in the moonlight"],
+        acceptableAnswers: ["dancing in the moonlight", "dancin in the moonlight", "dancin' in the moonlight", "dancing in the moon light", "dancin in the moon light", "dancin' in the moon light"],
         emoji: "💃/🕺/🌝/🔦",
         mediaType: MediaType.Song
     },

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-
-interface Guess {
-  guess: string;
-  isCorrect: boolean;
-}
+import Guess from "../app/types/Guess";
+import PopoverTrigger from "./PopoverTrigger";
 
 interface PointsProps {
   count: number;
@@ -13,8 +10,10 @@ interface PointsProps {
 export default function Points(props: PointsProps) {
 
   const answers = props.guesses.map((guess, index) => 
-    guess.isCorrect ? <div key={index} className="h-4 w-4 lg:h-8 lg:w-8 p-2 my-2 mx-2 border-4 border-black bg-green-500 rounded-full"></div> :
-    <div key={index} className="h-4 w-4 lg:h-8 lg:w-8 p-2 my-2 mx-2 border-4 border-black bg-red-500 rounded-full"></div>
+    guess.isCorrect ? 
+    <PopoverTrigger key={index} isCorrect={true} correctAnswer={guess.correctAnswer} correctAnswerEmoji={guess.correctAnswerEmoji} />
+    :
+    <PopoverTrigger key={index} isCorrect={false} correctAnswer={guess.correctAnswer} correctAnswerEmoji={guess.correctAnswerEmoji} />
   );
 
   return (

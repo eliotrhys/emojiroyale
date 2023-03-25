@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { render } from "react-dom";
+import Guess from "../app/types/Guess";
 import Points from "./Points";
-
-interface Guess {
-  guess: string;
-  isCorrect: boolean;
-}
 
 interface CongratulationsScreenProps {
   onRestart: () => void;
@@ -25,6 +21,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
         <motion.div
           animate={{ x: [-800, 0]} } 
           transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
+          className="my-4"
         >
           <div className="text-4xl mb-0">🏆</div>
           <p className="mb-0">Your highest score is</p>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // Components
 import Counter from "./Counter";
@@ -19,12 +19,7 @@ import shuffle from "../app/utils/shuffle";
 
 // Types
 import Question from "../app/types/Question";
-import { MediaType } from "../app/types/MediaType";
-
-interface Guess {
-  guess: string;
-  isCorrect: boolean;
-}
+import Guess from "../app/types/Guess";
 
 export default function GameForm() {
   // Initialisation
@@ -41,7 +36,7 @@ export default function GameForm() {
   const [guesses, setGuesses] = useState<Guess[]>([]);
 
   // Game states
-  const [timeRemaining, setTimeRemaining] = useState(300);
+  const [timeRemaining, setTimeRemaining] = useState(60);
   const [introTimeRemaining, setIntroTimeRemaining] = useState(3);
   const [showIntroScreen, setShowIntroScreen] = useState(true);
 
@@ -110,6 +105,10 @@ export default function GameForm() {
     }
   };
 
+  const handleGuessUpdate = useCallback((updatedGuesses: Guess[]) => {
+    setGuesses(updatedGuesses);
+ }, []);
+
   const handleRestart = () => {
     setCount(0);
     setCorrectCount(0);
@@ -132,6 +131,7 @@ export default function GameForm() {
     handleIntroCountdownStart();
   };
 
+  // COUNTDOWN
   const handleCountdownFinish = () => {
     setShowCongratulationsScreen((isShowing) => !isShowing);
   }
@@ -143,8 +143,7 @@ export default function GameForm() {
   const handleIntroCountdownFinish = () => {
     setShowIntroScreen((isShowing) => !isShowing);
     setIntroTimeRemaining(3);
-    // FIX BEFORE DEPLOYMENT AND ALSO THE INIT SETTER
-    setTimeRemaining(300);
+    setTimeRemaining(60);
   }
 
   const handleTimeTick = () => {
@@ -193,8 +192,12 @@ export default function GameForm() {
               <div className="grid">
                   <div className="w-full lg:w-2/3 xl:w-2/3 mx-auto flex flex-col justify-between">
                     <div className="">
-                      <Counter count={count} />
-                      <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                      <div className="flex border-4 border-black rounded-full bg-white text-black mb-4 lg:mb-6 flex justify-center mt-4 items-center justify-center">
+                        <Counter count={count} />
+                        <div className="ml-4">
+                          <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                        </div>
+                      </div>
                       <div className="mb-4 lg:mb-6">
                         <Points count={count} guesses={guesses} />
                       </div>
@@ -204,18 +207,18 @@ export default function GameForm() {
                 </div>
             </div>
           </div>
-          <div className="">
+          <div className="keyboard-container">
             <div className="container mx-auto px-1">
-              <div className="grid">
-                <div className="w-full lg:w-2/3 xl:w-3/6 mx-auto flex flex-col justify-between">
-                  <div className="mt-4 lg:mt-4">
-                    <GuessInput
-                      answer={title}
-                      potentialAnswers={acceptableAnswers}
-                      onGuess={handleGuess}
-                      guesses={guesses}
-                    />
-                  </div>
+              <div className="w-full lg:w-2/3 xl:w-3/6 mx-auto flex flex-col justify-between">
+                <div className="mt-4 lg:mt-4">
+                  <GuessInput
+                    answer={title}
+                    answerEmoji={emoji}
+                    potentialAnswers={acceptableAnswers}
+                    onGuess={handleGuess}
+                    onGuessesUpdate={handleGuessUpdate}
+                    guesses={guesses}
+                  />
                 </div>
               </div>
             </div>

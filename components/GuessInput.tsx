@@ -1,22 +1,19 @@
-import { FormEventHandler, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Guess from "../app/types/Guess";
 import Keyboard from "./Keyboard";
-
-interface Guess {
-  guess: string;
-  isCorrect: boolean;
-}
 
 interface GuessInputProps {
   answer: string;
+  answerEmoji: string;
   potentialAnswers: string[];
-  onGuess: (isCorrect: boolean) => void;
   guesses: Guess[];
+  onGuess: (isCorrect: boolean) => void;
+  onGuessesUpdate: (guesses: Guess[]) => void;
 }
 
 export default function GuessInput(props: GuessInputProps) {
       
     const [guess, setGuess] = useState("");
-    // const inputRef = useRef<HTMLInputElement>(null);
     const [showCorrectImage, setShowCorrectImage] = useState(false);
     const [showWrongImage, setShowWrongImage] = useState(false);
     const [animationKey, setAnimationKey] = useState<number>(0);
@@ -54,13 +51,15 @@ export default function GuessInput(props: GuessInputProps) {
       if (lowerCasePotentialAnswers.includes(guess.toLowerCase().trimEnd())) 
       {
         props.onGuess(true);
-        props.guesses.push({ guess, isCorrect: true });
+        const newGuess: Guess = { guess, isCorrect: true, correctAnswer: props.answer, correctAnswerEmoji: props.answerEmoji };
+        props.onGuessesUpdate([...props.guesses, newGuess]);
         setShowCorrectImage(true);
       } 
       else 
       {
         props.onGuess(false);
-        props.guesses.push({ guess, isCorrect: false });
+        const newGuess: Guess = { guess, isCorrect: false, correctAnswer: props.answer, correctAnswerEmoji: props.answerEmoji };
+        props.onGuessesUpdate([...props.guesses, newGuess]);
         setShowWrongImage(true);
       }
       setGuess("");
