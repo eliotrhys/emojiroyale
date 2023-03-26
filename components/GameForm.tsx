@@ -25,6 +25,7 @@ export default function GameForm() {
   // Initialisation
   const [questionIndex, setQuestionIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   // Question details
   const [count, setCount] = useState(0);
@@ -48,6 +49,26 @@ export default function GameForm() {
 
   // Shuffle the questions array and store the shuffled array in state
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowHeight(window.innerHeight);
+      };
+
+      handleResize();
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
+
+  const divMinHeight = {
+    minHeight: windowHeight,
+  };
 
   // This function shuffles the questions array and starts Intro Countdown
   useEffect(() => {
@@ -168,7 +189,7 @@ export default function GameForm() {
     <div className="bg-smiles overflow-x-hidden">
       <SideMenu isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} onCheckboxChange={handleCheckboxChange} />
 
-      <div className="min-h-screen flex flex-col justify-between">
+      <div className="flex flex-col justify-between" style={divMinHeight}>
         {showCongratulationsScreen ? (
           <>
             <div className="min-h-screen min-w-screen flex flex-col justify-between">

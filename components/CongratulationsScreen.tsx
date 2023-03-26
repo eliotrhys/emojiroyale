@@ -36,7 +36,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
   }
 
   return (
-    <div className="min-h-[calc(100vh-56px)] min-w-screen text-center relative">
+    <div className="min-h-[calc(100vh-40px)] lg:min-h-[calc(100vh-56px)] min-w-screen text-center relative">
       <div className="container mx-auto px-4 h-full">
         <div className="grid h-full">
 
