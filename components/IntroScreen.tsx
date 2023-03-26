@@ -5,6 +5,7 @@ interface IntroScreenProps {
   introTimeRemaining: number;
   onCountdownFinish: () => void;
   onIntroTimeTick: () => void;
+  isSuddenDeath: boolean;
 }
 
 export default function IntroScreen(props: IntroScreenProps) {
@@ -25,7 +26,7 @@ export default function IntroScreen(props: IntroScreenProps) {
   }, [props.introTimeRemaining]);
 
   return (
-    <div className="min-h-screen min-w-screen text-center flex items-center justify-center">
+    <div className={`min-h-screen min-w-screen text-center flex items-center justify-center ${ props.isSuddenDeath ? "bg-black" : "" }`}>
       <div className="container mx-auto px-4">
           <div className="flex flex-col justify-between">
             <div>
@@ -35,15 +36,25 @@ export default function IntroScreen(props: IntroScreenProps) {
                   transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
                 >
                   <div className="animate-bounce">
-                    <h1 className="huge-emoji">⏰</h1>
-                    <h1 className="text-md lg:text-4xl -mt-10 mb-20">Let the countdown begin!</h1>
+                    { props.isSuddenDeath ? 
+                      <div>
+                        <h1 className="huge-emoji">☠️</h1>
+                        <h1 className="text-md lg:text-4xl -mt-10 mb-20 text-red-600">NO SECOND CHANCES</h1>
+                      </div>
+                      :
+                      <div>
+                        <h1 className="huge-emoji">⏰</h1>
+                        <h1 className="text-md lg:text-4xl -mt-10 mb-20">Let the countdown begin!</h1>
+                      </div>
+                  }
+                    
                   </div>
                 </motion.div>
                 <motion.div
                   animate={{ y: [-800, 0]} } 
                   transition={{ type: "spring", bounce: 0.4, duration: 1.2 }}
                 >
-                  <h1 className="text-5xl lg:text-9xl mb-10 font-black animate-bounce">{ props.introTimeRemaining }</h1>
+                  <h1 className={`text-5xl lg:text-9xl mb-10 ${ props.isSuddenDeath ? "text-red-600" : "text-black" } font-black animate-bounce`}>{ props.introTimeRemaining }</h1>
                 </motion.div>
               </div>
           </div>

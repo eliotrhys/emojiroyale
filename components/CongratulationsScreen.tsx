@@ -9,13 +9,26 @@ interface CongratulationsScreenProps {
   finalScore: number;
   guesses: Guess[];
   count: number;
+  isSuddenDeath: boolean;
 }
 
 export default function CongratulationsScreen(props: CongratulationsScreenProps) {
 
   const renderHighestScore = () => {
-    if (typeof window !== "undefined") {
-      const highestScore = parseInt(localStorage.getItem("highestScore") ?? "0");
+    if (typeof window !== "undefined") 
+    {
+      let highestScoreForGameMode = 0;
+
+      if (props.isSuddenDeath)
+      {
+        const highestScoreSuddenDeath = parseInt(localStorage.getItem("highestScoreSuddenDeath") ?? "0");
+        highestScoreForGameMode = highestScoreSuddenDeath;
+      }
+      else 
+      {
+        const highestScore = parseInt(localStorage.getItem("highestScore") ?? "0");
+        highestScoreForGameMode = highestScore;
+      }
 
       return (
         <motion.div
@@ -24,8 +37,10 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
           className="my-4"
         >
           <div className="text-4xl mb-0">🏆</div>
-          <p className="mb-0">Your highest score is</p>
-          <p className="mb-0">{highestScore} {highestScore > 1 || highestScore === 0 ? "points" : "point"}</p>
+          <p className="mb-0">Your high score for</p>
+          {props.isSuddenDeath ? <div className="bg-black text-white whitespace-nowrap rounded-md p-2 my-4 border-4 border-white inline-block lift">☠️ Sudden Death</div>
+          : <div className="bg-white text-black whitespace-nowrap rounded-md p-2 my-4 border-4 border-black inline-block lift">⏰ Classic</div>}
+          <p className="mb-0">is {highestScoreForGameMode} {highestScoreForGameMode > 1 || highestScoreForGameMode === 0 ? "points" : "point"}</p>
         </motion.div>
       )
     } 

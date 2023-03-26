@@ -18,15 +18,16 @@ export default function GuessInput(props: GuessInputProps) {
     const [showWrongImage, setShowWrongImage] = useState(false);
     const [animationKey, setAnimationKey] = useState<number>(0);
 
-    useEffect(() => {
-      // Keep for logging in debugging
-        // console.log("The current answer is - ", props.answer);
-        // console.log("The current potential answers are - ", props.potentialAnswers);
-    }, [props.answer]);
+    // KEEP THESE FOR LOGGING AND DEBUGGING
 
-    useEffect(() => {
-      console.log("Guess updated: ", guess);
-    }, [guess]);
+    // useEffect(() => {
+    //   console.log("The current answer is - ", props.answer);
+    //   console.log("The current potential answers are - ", props.potentialAnswers);
+    // }, [props.answer]);
+
+    // useEffect(() => {
+    //   console.log("Guess updated: ", guess);
+    // }, [guess]);
 
     const resetImages = useCallback(() => {
       setShowCorrectImage(false);
@@ -39,8 +40,8 @@ export default function GuessInput(props: GuessInputProps) {
     
     const handleSubmit = () => {
 
-      console.log("ANSWER IS: " + props.answer);
-      console.log("GUESS IS: " + guess);
+      // console.log("ANSWER IS: " + props.answer);
+      // console.log("GUESS IS: " + guess);
       
       resetImages();
 

@@ -21,7 +21,12 @@ import shuffle from "../app/utils/shuffle";
 import Question from "../app/types/Question";
 import Guess from "../app/types/Guess";
 
-export default function GameForm() {
+
+interface GameFormProps {
+  isSuddenDeath: boolean;
+}
+
+export default function GameForm(props: GameFormProps) {
   // Initialisation
   const [questionIndex, setQuestionIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +48,10 @@ export default function GameForm() {
 
   const [highestScore, setHighestScore] = useState<number>(
     typeof window !== "undefined" ? parseInt(localStorage.getItem("highestScore") ?? "0") : 0
+  );
+
+  const [highestScoreSuddenDeath, setHighestScoreSuddenDeath] = useState<number>(
+    typeof window !== "undefined" ? parseInt(localStorage.getItem("highestScoreSuddenDeath") ?? "0") : 0
   );
 
   const [showCongratulationsScreen, setShowCongratulationsScreen] = useState(false);
@@ -97,12 +106,23 @@ export default function GameForm() {
   // This function gets the Local Storage high score
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (correctCount > highestScore) {
-        setHighestScore(correctCount);
-        localStorage.setItem("highestScore", correctCount.toString());
+
+      if (props.isSuddenDeath) 
+      {
+        if (correctCount > highestScoreSuddenDeath) {
+          setHighestScoreSuddenDeath(correctCount);
+          localStorage.setItem("highestScoreSuddenDeath", correctCount.toString());
+        }
+      }
+      else 
+      {
+        if (correctCount > highestScore) {
+          setHighestScore(correctCount);
+          localStorage.setItem("highestScore", correctCount.toString());
+        }
       }
     }
-  }, [correctCount, setHighestScore, highestScore]);
+  }, [correctCount, setHighestScore, highestScore, setHighestScoreSuddenDeath, highestScoreSuddenDeath]);
   
   // Handle Guess
   const handleGuess = (isCorrect: boolean) => {
@@ -120,6 +140,10 @@ export default function GameForm() {
       // Should never be hit but keep in case
       setShowCongratulationsScreen(true);
     } 
+    else if (props.isSuddenDeath && !newGuess.isCorrect)
+    {
+      setShowCongratulationsScreen((isShowing) => !isShowing);
+    }
     else
     {
       setQuestionIndex((prevIndex) => prevIndex + 1);
@@ -137,7 +161,8 @@ export default function GameForm() {
     setGuesses([]);
     setShowCongratulationsScreen((isShowing) => !isShowing);
 
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") 
+    {
       const savedCheckedItems = JSON.parse(localStorage.getItem('checkedItems') || '[]');
 
       const filteredQuestions = questions.filter((question) => {
@@ -168,7 +193,10 @@ export default function GameForm() {
   }
 
   const handleTimeTick = () => {
-    setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
+    if (!props.isSuddenDeath) 
+    {
+      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 1);
+    }
   }
 
   const handleIntroTimeTick = () => {
@@ -183,7 +211,7 @@ export default function GameForm() {
     if (typeof window !== "undefined") {
       localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
     }
-};
+  };
 
   return (
     <div className="bg-smiles overflow-x-hidden">
@@ -194,14 +222,14 @@ export default function GameForm() {
           <>
             <div className="min-h-screen min-w-screen flex flex-col justify-between">
               <Navbar onMenuToggle={handleMenuToggle} />
-              <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} />
+              <CongratulationsScreen onRestart={handleRestart} count={count} guesses={guesses} finalScore={guesses.filter((guess) => guess.isCorrect === true).length} isSuddenDeath={props.isSuddenDeath} />
             </div>
           </>
         ) : showIntroScreen ? (
           <>
             <div className="min-h-screen min-w-screen flex flex-col justify-between">
               <Navbar onMenuToggle={handleMenuToggle} />
-              <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} />
+              <IntroScreen introTimeRemaining={introTimeRemaining} onIntroTimeTick={handleIntroTimeTick} onCountdownFinish={handleIntroCountdownFinish} isSuddenDeath={props.isSuddenDeath} />
             </div>
           </>
         ) : (
@@ -214,26 +242,34 @@ export default function GameForm() {
                   <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
                     <div className="">
                       <div className="rounded-full text-black mt-4">
-                        <div className="grid grid-cols-2">
-                          <Counter count={count} />
-                          <div className="px-2">
-                            <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
-                          </div>
+                        <div className={`grid ${ props.isSuddenDeath ? "grid-cols-1" : "grid-cols-2"} mb-2`}>
+                          <Counter count={count} isSuddenDeath={props.isSuddenDeath} />
+                          { props.isSuddenDeath ? 
+                            null 
+                            :
+                            <div className="px-2">
+                              <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                            </div>
+                          }
                         </div>
                       </div>
-                      <div className="mb-2 lg:mb-4 min-h-24">
-                        <Points count={count} guesses={guesses} />
-                      </div>
+                      
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <div className="mb-2 lg:mb-4 min-h-24">
+                      <Points count={count} guesses={guesses} />
                     </div>
                   </div>
                 </div>
-                <div className="w-full">
-                  <EmojiDisplay emoji={emoji} mediaType={mediaType} />
-                </div>
+                
             </div>
           </div>
+          <div className="w-full">
+            <EmojiDisplay emoji={emoji} mediaType={mediaType} />
+          </div>
           <div className="keyboard-container">
-            <div className="container mx-auto px-1">
+            <div className="container mx-auto">
               <div className="w-full lg:w-2/3 xl:w-3/6 mx-auto flex flex-col justify-between">
                 <div className="mt-4 lg:mt-4">
                   <GuessInput

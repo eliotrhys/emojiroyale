@@ -78,7 +78,7 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
       <div className="mb-0 mx-auto text-center">
         <div
         key={categoryAnimationKey}
-        className={`text-md lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 lg:px-6 inline-block rounded-md p-1 lg:p-2 text-center mb-10 menuMediaType ${
+        className={`text-md lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 px-6 inline-block rounded-md p-1 lg:p-2 text-center mb-10 menuMediaType ${
           animateCategory ? "grow-shrink" : ""
         }`}
       >
@@ -91,7 +91,8 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
                 key={emojiAnimationKey}
                 className={`animate ${
                   animateEmojis ? "grow-shrink" : ""
-                } text-6xl md:text-8xl mb-2 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
+                } ${ finalEmojis.length > 6 ? "text-5xl md:text-8xl" : "text-6xl md:text-8xl" }
+                 mb-2 hover:scale-125 hover:rotate-[15deg] ease-in-out duration-100 mx-2 lg:mx-4 cursor-pointer`}
               >
                 {emoji}
               </div>

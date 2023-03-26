@@ -48,6 +48,7 @@ export default function Keyboard(props: KeyboardProps) {
 
     // Listeners for physical keydowns
     const handleKeyDown = (event: KeyboardEvent) => {
+        
         const key = event.key.toUpperCase();
 
         setKeyIsActive(true);
@@ -64,7 +65,9 @@ export default function Keyboard(props: KeyboardProps) {
 
         if (allowedKeys.includes(key)) 
         {
+            // TO DO - FIGURE OUT WHY SPACEBAR ISN'T WORKING
             if (key === " "){ console.log("ITS ALIVE THE SPACEBAR"); };
+
             setPressedKey(key);
 
             if (key === 'BACKSPACE') 
@@ -118,7 +121,7 @@ export default function Keyboard(props: KeyboardProps) {
 
     return (
         <>
-            <div className="text-center bg-white border-black border-4 py-4 px-4 rounded-md text-xl mb-4 overflow-x-scroll">{currentWord === "" ? <span className="text-blue-300">Start typing!</span> : currentWord}</div>
+            <div className="text-center bg-white border-black border-r-0 border-l-0 sm:border-r-4 sm:border-l-4 border-4 py-4 px-4 sm:rounded-md text-xl mb-4 overflow-x-scroll">{currentWord === "" ? <span className="text-blue-300">Start typing!</span> : currentWord}</div>
             <div>
                 {keyboardLayout.map((row, rowIndex) => (
                 <div className="flex items-center justify-center" key={rowIndex}>

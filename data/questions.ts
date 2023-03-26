@@ -414,7 +414,7 @@ export const questions = [
         title: "Netherlands",
         acceptableAnswers: ["netherlands", "holland", "the netherlands", "kingdom of the netherlands", "koninkrijk der nederlanden"],
         emoji: "🇳🇱",
-        mediaType: "MediaType.NationFlag"
+        mediaType: MediaType.NationFlag
     },
     {
         title: "Belgium",

@@ -1,9 +1,8 @@
 "use client"
 
 import Link from "next/link";
-import emojiLogo from "../public/images/emoji_logo.png";
-
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const variants = {
     hidden: { opacity: 0 },
@@ -32,6 +31,7 @@ const animationItem = {
 }
 
 export default function Page() {
+
     return (
         <div className="min-h-screen min-w-screen relative overflow-x-hidden">
             <motion.div
@@ -70,12 +70,18 @@ export default function Page() {
                     </motion.div>
                     <div className="grid grid-cols-3 mb-6">
                         <div className="col-span-full lg:col-start-2 lg:col-span-1">
-                            <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Play Classic!</Link>
+                            <Link href={{ pathname: "/game", query: {isSuddenDeath: "false"}}} 
+                            className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">
+                                Play Classic!
+                            </Link>
                         </div>
                     </div>
                     <div className="grid grid-cols-3 mb-6">
                         <div className="col-span-full lg:col-start-2 lg:col-span-1">
-                            <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-white ease-in-out duration-100 bg-black rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap w-full cursor-pointer rotate-[-5deg] hover:rotate-[0deg] lift">☠️ Play Sudden Death ☠️</Link>
+                            <Link href={{ pathname: "/game", query: {isSuddenDeath: "true"}}}  
+                            className="text-xl lg:text-xl flex justify-center items-center border-4 border-white ease-in-out duration-100 bg-black rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap w-full cursor-pointer rotate-[-5deg] hover:rotate-[0deg] lift">
+                                ☠️ Play Sudden Death ☠️
+                            </Link>
                         </div>
                     </div>
                     <div className="grid grid-cols-1">

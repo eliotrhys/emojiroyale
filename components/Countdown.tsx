@@ -33,7 +33,7 @@ export default function Countdown(props: CountdownProps) {
       
     return (
         <div className="">
-            <div className={"text-2xl py-2 text-center border-4 border-black rounded-full flex items-center justify-center mx-auto w-full lift " + (danger ? "bg-red-500 text-white danger-pulse" : "bg-white text-black")}>
+            <div className={"text-md lg:text-2xl py-1 lg:py-2 text-center border-4 border-black rounded-full flex items-center justify-center mx-auto w-full lift " + (danger ? "bg-red-500 text-white danger-pulse" : "bg-white text-black")}>
                 <span className="rotate-[-25deg] mr-2">⏰</span>
                 {props.timeRemaining}
             </div>
