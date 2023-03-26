@@ -111,10 +111,10 @@ export default function Keyboard(props: KeyboardProps) {
   const keyboardLayout: KeyboardLayout = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+    ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACKSPACE']
   ];
 
-  const keyboardControls: KeyboardControls = [ 'ENTER', 'SPACE', 'BACKSPACE'];
+  const keyboardControls: KeyboardControls = ['SPACE'];
 
     return (
         <>
@@ -137,7 +137,7 @@ export default function Keyboard(props: KeyboardProps) {
             </div>
             <div className="grid grid-cols-3 gap-1 mx-auto">
                 {keyboardControls.map((letter, index) => (
-                    <div key={index} className="w-full">
+                    <div key={index} className="w-full col-span-1 col-start-2">
                         <Key
                             key={letter}
                             letter={letter}

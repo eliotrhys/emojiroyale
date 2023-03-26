@@ -358,7 +358,7 @@ export const questions = [
     },
     {
         title: "Italy",
-        acceptableAnswers: ["italy", "italian republic", "republic of italy", "italia"],
+        acceptableAnswers: ["italy", "italian republic", "republic of italy", "italia", "repubblica italiana"],
         emoji: "🇮🇹",
         mediaType: MediaType.NationFlag
     },
@@ -402,6 +402,138 @@ export const questions = [
         title: "Ireland",
         acceptableAnswers: ["ireland", "Éire", "eire"],
         emoji: "🇮🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Portugal",
+        acceptableAnswers: ["portugal", "portuguese republic", "república portuguesa"],
+        emoji: "🇵🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Netherlands",
+        acceptableAnswers: ["netherlands", "holland", "the netherlands", "kingdom of the netherlands", "koninkrijk der nederlanden"],
+        emoji: "🇳🇱",
+        mediaType: "MediaType.NationFlag"
+    },
+    {
+        title: "Belgium",
+        acceptableAnswers: ["belgium", "kingdom of belgium", "belgië", "belgique"],
+        emoji: "🇧🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Greece",
+        acceptableAnswers: ["greece", "hellenic republic", "ελλάδα"],
+        emoji: "🇬🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Austria",
+        acceptableAnswers: ["austria", "republic of austria", "österreich"],
+        emoji: "🇦🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Denmark",
+        acceptableAnswers: ["denmark", "kingdom of denmark", "danmark"],
+        emoji: "🇩🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Switzerland",
+        acceptableAnswers: ["switzerland", "swiss confederation", "schweiz", "suisse", "svizzera"],
+        emoji: "🇨🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Czech Republic",
+        acceptableAnswers: ["czech republic", "česká republika", "the czech republic", "czechia"],
+        emoji: "🇨🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Poland",
+        acceptableAnswers: ["poland", "republic of poland", "rzeczpospolita polska", "polska"],
+        emoji: "🇵🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {   
+        title: "Hungary", 
+        acceptableAnswers: ["hungary", "magyarország", "magyarorszag"],
+        emoji: "🇭🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Romania",
+        acceptableAnswers: ["romania", "românia"],
+        emoji: "🇷🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Bulgaria",
+        acceptableAnswers: ["bulgaria", "republic of bulgaria", "българия"],
+        emoji: "🇧🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Croatia",
+        acceptableAnswers: ["croatia", "republic of croatia", "hrvatska"],
+        emoji: "🇭🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Serbia",
+        acceptableAnswers: ["serbia", "republic of serbia", "srbija", "Србија"],
+        emoji: "🇷🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Slovakia",
+        acceptableAnswers: ["slovakia", "slovak republic", "slovensko"],
+        emoji: "🇸🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Slovenia",
+        acceptableAnswers: ["slovenia", "republic of slovenia", "slovenija"],
+        emoji: "🇸🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Latvia",
+        acceptableAnswers: ["latvia", "republic of latvia", "latvija"],
+        emoji: "🇱🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Estonia",
+        acceptableAnswers: ["estonia", "republic of estonia", "eesti"],
+        emoji: "🇪🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Lithuania",
+        acceptableAnswers: ["lithuania", "republic of lithuania", "lietuva"],
+        emoji: "🇱🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Belarus",
+        acceptableAnswers: ["belarus", "republic of belarus", "belarusian", "беларусь"],
+        emoji: "🇧🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Bosnia and Herzegovina",
+        acceptableAnswers: ["bosnia and herzegovina", "bosna i hercegovina", "босна и херцеговина", "bosnia", "herzegovina", "bosnia & herzegovina"],
+        emoji: "🇧🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Iceland",
+        acceptableAnswers: ["iceland", "ísland"],
+        emoji: "🇮🇸",
         mediaType: MediaType.NationFlag
     },
     // SONG SECTION

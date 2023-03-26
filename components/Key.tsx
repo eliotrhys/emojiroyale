@@ -30,12 +30,15 @@ export default function Key(props: KeyProps){
   return (
     <>
       <button
-        className={`px-2 py-4 mx-0.5 my-0.5 lg:mx-1 lg:my-1 first:ml-0 last:mr-0 bg-white text-black border-2 border-black rounded-md flex items-center justify-center lg:w-auto lg:min-w-[40px] hover:bg-yellow-300 hover:scale-125
+        className={`px-2 py-2 mx-0.5 my-0.5 lg:mx-1 lg:my-1 first:ml-0 last:mr-0 bg-white text-black border-2 border-black rounded-md flex items-center justify-center lg:w-auto lg:min-w-[40px] hover:bg-yellow-300 hover:scale-125
         ${
           props.keyIsActive && props.pressedKey === props.letter || isActive ? "!bg-yellow-300 scale-125" : ""
         }
         ${
           props.isFullWidth ? "!w-full" : ""
+        }
+        ${
+          props.letter.toUpperCase() === "ENTER" ? "!text-xs !px-1 !my-0" : ""
         }
         `
       }

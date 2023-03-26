@@ -190,20 +190,24 @@ export default function GameForm() {
 
             <div className="container mx-auto px-4">
               <div className="grid">
-                  <div className="w-full lg:w-2/3 xl:w-2/3 mx-auto flex flex-col justify-between">
+                  <div className="w-full lg:w-2/3 xl:w-1/3 mx-auto flex flex-col justify-between">
                     <div className="">
-                      <div className="flex border-4 border-black rounded-full bg-white text-black mb-4 lg:mb-6 flex justify-center mt-4 items-center justify-center">
-                        <Counter count={count} />
-                        <div className="ml-4">
-                          <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                      <div className="rounded-full text-black mt-4">
+                        <div className="grid grid-cols-2">
+                          <Counter count={count} />
+                          <div className="px-2">
+                            <Countdown timeRemaining={timeRemaining} onTimeTick={handleTimeTick} onCountdownFinish={handleCountdownFinish} />
+                          </div>
                         </div>
                       </div>
-                      <div className="mb-4 lg:mb-6">
+                      <div className="mb-2 lg:mb-4 min-h-24">
                         <Points count={count} guesses={guesses} />
                       </div>
                     </div>
-                    <EmojiDisplay emoji={emoji} mediaType={mediaType} />
                   </div>
+                </div>
+                <div className="w-full">
+                  <EmojiDisplay emoji={emoji} mediaType={mediaType} />
                 </div>
             </div>
           </div>

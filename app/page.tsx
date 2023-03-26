@@ -59,15 +59,25 @@ export default function Page() {
                     <motion.div 
                         animate={{ y: [-800, 0]} } 
                         transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-                        className="w-full lg:w-1/2 mx-auto pt-10"
+                        className="w-full lg:w-1/2 mx-auto pt-10 mb-10"
                     >
                         <div className="text-center">
                             <div>
                                 <img alt="Triviamoji Logo" src="/images/horizontalLogo.png" className="main-logo h-auto w-auto mx-auto relative z-20" />
                             </div>
-                            <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">🧠 An emoji trivia game! 🤓</h2>
+                            <h2 className="text-lg lg:text-2xl mb-4 lg:mb-10 text-white">🧠 The emoji trivia game! 🤓</h2>
                         </div>
                     </motion.div>
+                    <div className="grid grid-cols-3 mb-6">
+                        <div className="col-span-full lg:col-start-2 lg:col-span-1">
+                            <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Play Classic!</Link>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-3 mb-6">
+                        <div className="col-span-full lg:col-start-2 lg:col-span-1">
+                            <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-white ease-in-out duration-100 bg-black rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap w-full cursor-pointer rotate-[-5deg] hover:rotate-[0deg] lift">☠️ Play Sudden Death ☠️</Link>
+                        </div>
+                    </div>
                     <div className="grid grid-cols-1">
                         <motion.div className="mb-4 lg:mb-6"
                             animate={{ y: [-800, 0]} } 
@@ -143,11 +153,7 @@ export default function Page() {
                         </div>
                     </motion.div>
                 </motion.div>
-                <div className="grid grid-cols-3">
-                    <div className="col-span-full lg:col-start-2 lg:col-span-1">
-                        <Link href="/game" className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">Start the game!</Link>
-                    </div>
-                </div>
+                
                 <div>
                     <Link href={"https://twitter.com/eliotrhys"} target="_blank" className="flex items-center justify-center ease-in-out duration-100 hover:scale-105 py-6 cursor-pointer">
                         <div>

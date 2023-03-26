@@ -93,10 +93,6 @@ a {
   border-bottom: 1px solid #ddd;
 }
 
-.menuMediaType::first-letter {
-  font-size: 2rem;
-}
-
 .grow-shrink {
   animation-name: grow-shrink;
   animation-duration: 0.4s;
@@ -129,9 +125,17 @@ a {
   height: 40px;
 }
 
+.menuMediaType::first-letter {
+  font-size: 1rem;
+}
+
 @media (min-width: 640px) { 
   .corner-smiley {
     height: 200px;
+  }
+
+  .menuMediaType::first-letter {
+    font-size: 2rem;
   }
 }
 

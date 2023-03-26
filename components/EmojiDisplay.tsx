@@ -78,7 +78,7 @@ export default function EmojiDisplay(props: EmojiDisplayProps) {
       <div className="mb-0 mx-auto text-center">
         <div
         key={categoryAnimationKey}
-        className={`text-lg lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 px-6 inline-block rounded-md p-2 text-center mb-10 menuMediaType ${
+        className={`text-md lg:text-xl text-center border-4 border-emerald-600 text-emerald-600 bg-emerald-100 lg:px-6 inline-block rounded-md p-1 lg:p-2 text-center mb-10 menuMediaType ${
           animateCategory ? "grow-shrink" : ""
         }`}
       >
