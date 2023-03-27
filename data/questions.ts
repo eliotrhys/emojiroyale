@@ -181,7 +181,7 @@ export const questions = [
     // HISTORICAL EVENT SECTION
     {
         title: "Moon Landing",
-        acceptableAnswers: ["moon landing", "landing on the moon", "neil armstrong", "buzz aldrin", "moon landing 1969", "the moon landing"],
+        acceptableAnswers: ["moon landing", "landing on the moon", "neil armstrong", "buzz aldrin", "moon landing 1969", "the moon landing", "apollo 11", "the apollo 11", "the apollo 11 moon landing", "apollo 11 moon landing"],
         emoji: "🌛/👨🏻‍🚀/🇺🇸",
         mediaType: MediaType.HistoricalEvent
     },

@@ -63,8 +63,17 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
                   animate={{ x: [-800, 0]} } 
                   transition={{ type: "spring", bounce: 0.4, duration: 0.4 }}
                 >
-                  <h1 className="huge-emoji -mb-10">💩</h1>
-                  <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Time&apos;s up!</h1>
+                  { props.isSuddenDeath ? 
+                    <div>
+                      <h1 className="huge-emoji -mb-10">☠️</h1>
+                      <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Oof.</h1>
+                    </div>
+                    :
+                    <div>
+                      <h1 className="huge-emoji -mb-10">💩</h1>
+                      <h1 className="text-2xl lg:text-5xl mb-0 lg:mb-10 font-black">Time&apos;s up!</h1>
+                    </div>
+                  }
                 </motion.div>
               </div>
 

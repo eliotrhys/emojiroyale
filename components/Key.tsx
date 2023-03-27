@@ -27,12 +27,16 @@ export default function Key(props: KeyProps){
     setIsActive(false);
   };
 
+  const isSpacebar = props.letter === " " || props.letter === "SPACE";
+  const isPressed = props.keyIsActive && props.pressedKey === props.letter;
+  const isSpacebarPressed = props.keyIsActive && isSpacebar && props.pressedKey === " ";
+
   return (
     <>
       <button
-        className={`text-xl px-1 py-3 mx-0.5 my-0.5 lg:mx-1 lg:my-1 first:ml-0 last:mr-0 bg-white text-black border-2 border-black rounded-md flex items-center justify-center !min-w-[33px] lg:min-w-[40px]
+        className={`text-xl px-1 py-3 mx-0.5 my-0.5 lg:mx-1 lg:my-1 first:ml-0 last:mr-0 cursor-pointer bg-white text-black border-2 border-black rounded-md flex items-center justify-center !min-w-[33px] lg:min-w-[40px]
         ${
-          props.keyIsActive && props.pressedKey === props.letter || isActive ? "!bg-yellow-300 scale-125" : ""
+          isPressed || isActive || isSpacebarPressed ? "!bg-yellow-300 scale-125" : ""
         }
         ${
           props.isFullWidth ? "!w-full" : ""

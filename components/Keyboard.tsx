@@ -23,7 +23,8 @@ export default function Keyboard(props: KeyboardProps) {
                     setCurrentWord(newCurrentWord);
                 }
                 break;
-            case 'SPACE':
+            case ' ':
+                console.log("PRESSED KEY IS: " + pressedKey);
                 if (currentWord.length > 0) {
                     setCurrentWord((word) => word + ' ');
                 }
@@ -87,7 +88,7 @@ export default function Keyboard(props: KeyboardProps) {
                     event.preventDefault();
                 }
 
-                handleKeyPress('SPACE');
+                handleKeyPress(' ');
             }
             else 
             {
