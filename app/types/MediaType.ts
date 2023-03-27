@@ -1,6 +1,7 @@
 export enum MediaType {
     Movie = '🎬 Movie',
     TVShow = "📺 TV Show",
+    Cartoon = "✍️ Cartoon",
     VideoGame = "👾 Video Game",
     HistoricalEvent = "📜 Historical Event",
     Song = "🎤 Song",

@@ -15,6 +15,12 @@ export const questions = [
         mediaType: MediaType.Movie
     },
     {
+        title: "Batman",
+        acceptableAnswers: ["batman", "bat man", "the dark knight", "dark knight", "batman begins", "bat man begins"],
+        emoji: "🦇/👨🏻/🤡",
+        mediaType: MediaType.Movie
+    },
+    {
         title: "Interview With The Vampire",
         acceptableAnswers: ["interview with the vampire", "the interview with the vampire", "interview with vampire"],
         emoji: "👨🏻/🎙/🧛🏻",
@@ -87,8 +93,8 @@ export const questions = [
         mediaType: MediaType.Movie
     },
     {
-        title: "Silence Of The Lambs",
-        acceptableAnswers: ["silence of the lambs", "silence of lambs"],
+        title: "The Silence Of The Lambs",
+        acceptableAnswers: ["silence of the lambs", "silence of lambs", "the silence of the lambs"],
         emoji: "🤫/🐑/🐑",
         mediaType: MediaType.Movie
     },
@@ -116,11 +122,542 @@ export const questions = [
         emoji: "🚢/➡️/🧊/⬇️",
         mediaType: MediaType.Movie
     },
+    {
+        title: "Jurassic Park",
+        acceptableAnswers: ["jurassic park", "jurassic"],
+        emoji: "👨🏻‍🔬/🦖/🦕/🏞️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Good, The Bad and The Ugly",
+        acceptableAnswers: ["the good, the bad and the ugly", "the good the bad and the ugly", "good bad and ugly", "good bad ugly", "the good the bad the ugly"],
+        emoji: "😇/😈/🧟‍♂️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Fight Club",
+        acceptableAnswers: ["fight club"],
+        emoji: "🥊/🤫/🧼",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Inception",
+        acceptableAnswers: ["inception"],
+        emoji: "😴/💭/➡️/😴/💭",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Star Wars",
+        // Maybe come back to this later
+        acceptableAnswers: ["star wars", "the phantom menace", "phantom menace", "a new hope", "new hope"],
+        emoji: "⭐️/🔫/⚔️/💣",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Matrix",
+        acceptableAnswers: ["the matrix", "matrix"],
+        emoji: "🤔/🟥/💊/🟦/😎",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Green Mile",
+        acceptableAnswers: ["the green mile", "green mile"],
+        emoji: "🟩/🛣️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Romeo And Juliet",
+        acceptableAnswers: ["romeo and juliet", "romeo + juliet", "romeo & juliet"],
+        emoji: "👦🏻/❤️/👧🏼/🧪/😵/😵",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Gladiator",
+        acceptableAnswers: ["gladiator"],
+        emoji: "🏟️/🤺/🦁/🐯",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Alien",
+        acceptableAnswers: ["alien", "aliens"],
+        emoji: "👽",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Raiders Of The Lost Ark",
+        acceptableAnswers: ["raiders of the lost ark", "raiders", "indiana jones"],
+        emoji: "🤠/⚱️/🪨/💨",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Jaws",
+        acceptableAnswers: ["jaws"],
+        emoji: "🏊🏻‍♀️/🦈/🩸/🌊",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Toy Story",
+        acceptableAnswers: ["toy story", "toystory"],
+        emoji: "🧸/🕮",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Forrest Gump",
+        acceptableAnswers: ["forrest gump", "forest gump"],
+        emoji: "🏃‍♂️/🌲/💝/🦐/🏅/🔫",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Little Mermaid",
+        acceptableAnswers: ["the little mermaid", "little mermaid"],
+        emoji: "🤏/🧜🏻‍♀️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Braveheart",
+        acceptableAnswers: ["braveheart", "brave heart"],
+        emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿/👨🏻‍🎤",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Singin' In The Rain",
+        acceptableAnswers: ["singin' in the rain", "singing in the rain", "singin in the rain"],
+        emoji: "🎤/☔️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "A Clockwork Orange",
+        acceptableAnswers: ["a clockwork orange", "clockwork orange"],
+        emoji: "🕰️/⚙️/🍊",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Up",
+        acceptableAnswers: ["up"],
+        emoji: "👴🏻/🏠/🎈",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Top Gun",
+        acceptableAnswers: ["top gun"],
+        emoji: "⬆️/🔫",
+        mediaType: MediaType.Movie
+    },
+    // CARTOON SECTION
+    {
+        title: "The Simpsons",
+        acceptableAnswers: ["the simpsons", "simpsons", "simsons", "the simsons"],
+        emoji: "🏡/👨‍🦲/👩/👦/👧/👶/🐕/🐈",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Peppa Pig",
+        acceptableAnswers: ["peppa pig", "pepper pig"],
+        emoji: "🌶️/🐷",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Family Guy",
+        acceptableAnswers: ["family guy"],
+        emoji: "🏡/👨🏻/👩🏻‍🦰/👦🏼/👧🏻/🔫/👶🏻",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "American Dad",
+        acceptableAnswers: ["american dad"],
+        emoji: "🇺🇸/👨🏻/👨‍👧‍👦",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "South Park",
+        acceptableAnswers: ["south park"],
+        emoji: "🧭/⬇️/🏞️/👦🏻/👦🏻/👦🏻/👦🏻",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Rick and Morty",
+        acceptableAnswers: ["rick and morty", "rick & morty", "rick n' morty", "rick n morty"],
+        emoji: "🌀/🔫/👨🏻‍🔬/👦🏻",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Death Note",
+        acceptableAnswers: ["death note", "deathnote", "the death note"],
+        emoji: "⚰️/🗒️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Dragon Ball",
+        acceptableAnswers: ["dragon ball", "dragonball", "dragon ball z", "dragonball z"],
+        emoji: "🐉/⚾️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "One Punch Man",
+        acceptableAnswers: ["one punch man", "1 punch man"],
+        emoji: "☝️/👊/👨🏻",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Archer",
+        acceptableAnswers: ["archer"],
+        emoji: "👨🏻/🏹",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Futurama",
+        acceptableAnswers: ["futurama", "future rama"],
+        emoji: "🧑🏻‍🦰/🍕/🥶/🕰️/🧑🏻‍🦰/🚀/🤖/👽",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Avatar: The Last Airbender",
+        acceptableAnswers: ["avatar: the last airbender", "avatar the last airbender", "the last airbender", "atla", "legend of korra", "airbender", "avatar"],
+        emoji: "💨/🔥/💧/🌪️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Avatar: The Last Airbender",
+        acceptableAnswers: ["avatar: the last airbender", "avatar the last airbender", "the last airbender", "atla", "legend of korra", "airbender", "avatar", "avatar last airbender"],
+        emoji: "💨/🔥/💧/🌪️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "The Powerpuff Girls",
+        acceptableAnswers: ["the powerpuff girls", "powerpuff girls", "powerpuff", "power puff girls", "the power puff girls"],
+        emoji: "👨🏻‍🔬/🧪/👧🏼/👩🏻‍🦰/👧🏻",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Adventure Time",
+        acceptableAnswers: ["adventure time"],
+        emoji: "🗡️/👦🏻/🐶/👸/🍬/🍫/🏰/🧙‍♂️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Samurai Jack",
+        acceptableAnswers: ["samurai jack"],
+        emoji: "🇯🇵/🤺/🗡️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Bob's Burgers",
+        acceptableAnswers: ["bob's burgers", "bobs burgers", "bob burgers", "bob burger"],
+        emoji: "👨🏻/🍔/👨‍👩‍👧‍👦",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Bojack Horseman",
+        acceptableAnswers: ["bojack horseman", "bojack", "bo-jack horseman", "bo jack horseman", "horseman"],
+        emoji: "🎥/🐴/🥃/😔",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Love, Death & Robots",
+        acceptableAnswers: ["love, death & robots", "love death & robots", "love death and robots", "love, death and robots", "love death robots", "love, death, robots", "love and death and robots"],
+        emoji: "❤️/☠️/🤖",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Scooby Doo",
+        acceptableAnswers: ["scooby doo", "scooby-doo", "whats new scooby doo", "what's new scooby doo"],
+        emoji: "🐕/💨/👻/👹/🧟‍♂️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "King Of The Hill",
+        acceptableAnswers: ["king of the hill"],
+        emoji: "🤴🏻/⛰️/⛽️",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "PAW Patrol",
+        acceptableAnswers: ["paw patrol"],
+        emoji: "🚨/🐶/🐶/🐶/🐶/🚔",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Teenage Mutant Ninja Turtles",
+        acceptableAnswers: ["teenage mutant ninja turtles", "teenage mutant ninja turtle", "tmnt"],
+        emoji: "🐢/🐢/🐢/🐢/🥷",
+        mediaType: MediaType.Cartoon
+    },
+    {
+        title: "Robot Chicken",
+        acceptableAnswers: ["robot chicken"],
+        emoji: "🤖/🐔",
+        mediaType: MediaType.Cartoon
+    },
+    // TV SHOW SECTION
+    {
+        title: "Cheers",
+        acceptableAnswers: ["cheers"],
+        emoji: "🍻",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Sons Of Anarchy",
+        acceptableAnswers: ["sons of anarchy"],
+        emoji: "👦🏻/👦🏻/🔥/🏍️/🏍️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Westworld",
+        acceptableAnswers: ["westworld", "west world"],
+        emoji: "⬅️/🧭/🌍",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Doctor Who",
+        acceptableAnswers: ["doctor who", "dr who", "dr. who"],
+        emoji: "👩🏻‍🦰/👨🏻‍⚕️/🕰️/⏮️/👽/👻/👹",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Mr. Bean",
+        acceptableAnswers: ["mr. bean", "mr bean", "bean"],
+        emoji: "🤵🏻‍♂️/🫘",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Mr. Robot",
+        acceptableAnswers: ["mr. robot", "mr robot", "bean"],
+        emoji: "🤵🏻‍♂️/🤖",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "👩🏻/♟️",
+        acceptableAnswers: ["the queen's gambit", "the queens gambit", "queen's gambit", "queens gambit"],
+        emoji: "🤵🏻‍♂️/🫘",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The IT Crowd",
+        acceptableAnswers: ["the it crowd", "it crowd", "i.t. crowd", "the i.t. crowd"],
+        emoji: "💻/👨‍👨‍👦‍👦/👨‍👨‍👦‍👦/👨‍👨‍👦‍👦/👨‍👨‍👦‍👦/👨‍👨‍👦‍👦",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Friends",
+        acceptableAnswers: ["friends"],
+        emoji: "👨🏻/👨🏻/👨🏻/☕️/👩🏻/👩🏻/👩🏼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Golden Girls",
+        acceptableAnswers: ["the golden girls", "golden girls"],
+        emoji: "🥇/👩🏻/👩🏼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Golden Girls",
+        acceptableAnswers: ["the golden girls", "golden girls"],
+        emoji: "🥇/👩🏻/👩🏼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Big Bang Theory",
+        acceptableAnswers: ["the big bang theory", "big bang theory", "big bang", "tbbt"],
+        emoji: "🤓/🤓/🤓/🤓/👩🏼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Office",
+        acceptableAnswers: ["the office", "office", "the office (us)", "the office (uk)", "the uk office", "the us office"],
+        emoji: "👨‍💼/👨‍💼/👨‍💼/👨‍💼/👨‍💼/📈",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Black Mirror",
+        acceptableAnswers: ["black mirror", "the black mirror"],
+        emoji: "⬛️/🪞",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Crown",
+        acceptableAnswers: ["the crown", "crown"],
+        emoji: "👑/🇬🇧",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Game of Thrones",
+        acceptableAnswers: ["game of thrones", "the game of thrones", "thrones", "got"],
+        emoji: "🐉/🔥/👑/⚔️/🍑/🍆",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Breaking Bad",
+        acceptableAnswers: ["breaking bad"],
+        emoji: "👱🏻‍♂️/👨🏻‍🦲/🚐/💊/💊/💊",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Parks and Recreation",
+        acceptableAnswers: ["parks and recreation", "parks and rec", "parks & recreation", "parks & rec"],
+        emoji: "🏞️/👩‍💼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The X-Files",
+        acceptableAnswers: ["the x-files", "x-files", "xfiles", "x files", "the x files"],
+        emoji: "👽/🕵🏻/🕵🏻/👻",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Buffy The Vampire Slayer",
+        acceptableAnswers: ["buffy the vampire slayer", "buffy", "vampire slayer"],
+        emoji: "👩🏼/🔪/🧛🏻",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Lost",
+        acceptableAnswers: ["lost"],
+        emoji: "✈️/💥/🏝️/🔍",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Dexter",
+        acceptableAnswers: ["dexter"],
+        emoji: "😬/🔪/👨🏻‍💼/🩸/😊",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Planet Earth",
+        acceptableAnswers: ["planet earth", "planet earth 2", "planet earth ii"],
+        emoji: "🌍",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Chernobyl",
+        acceptableAnswers: ["chernobyl"],
+        emoji: "👨🏻‍🔬/👨🏻‍🔬/🔋/💥/☢️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Chernobyl",
+        acceptableAnswers: ["chernobyl"],
+        emoji: "👨🏻‍🔬/👨🏻‍🔬/🔋/💥/☢️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Scrubs",
+        acceptableAnswers: ["scrubs"],
+        emoji: "🏥/👨🏾‍🦲/🧑🏻/🤬",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Scrubs",
+        acceptableAnswers: ["scrubs"],
+        emoji: "🏥/👨🏾‍🦲/🧑🏻/🤬",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Only Fools And Horses",
+        acceptableAnswers: ["only fools and horses", "only fools", "fools and horses", "only fools & horses", "fools & horses"],
+        emoji: "🏥/👨🏾‍🦲/🧑🏻/🤬",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "True Detective",
+        acceptableAnswers: ["true detective"],
+        emoji: "✅/🕵️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The Last Of Us",
+        acceptableAnswers: ["the last of us", "last of us"],
+        emoji: "👨🏻/👧🏻/🍄/🧟‍♂️/🧟‍♀️/🧟",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "It's Always Sunny In Philadelphia",
+        acceptableAnswers: ["it's always sunny in philadelphia", "its always sunny in philadelphia", "always sunny", "always sunny in philadelphia", "sunny in philadelphia"],
+        emoji: "☀️/🍻/☀️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Monty Python's Flying Circus",
+        acceptableAnswers: ["monty python's flying circus", "monty pythons flying circus", "monty python", "flying circus"],
+        emoji: "🏔️/🐍/✈️/🎪",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "The West Wing",
+        acceptableAnswers: ["the west wing", "the westwing", "west wing", "westwing"],
+        emoji: "🧭/⬅️/🦋",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Fawlty Towers",
+        acceptableAnswers: ["fawlty towers", "faulty towers"],
+        emoji: "⚠️/🗼/🗼",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Freaks and Geeks",
+        acceptableAnswers: ["freaks and geeks", "freeks & geeks"],
+        emoji: "🧟/🧟/🧟/🤓/🤓/🤓",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Twin Peaks",
+        acceptableAnswers: ["twin peaks"],
+        emoji: "🏔️/🏔️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Orange Is The New Black",
+        acceptableAnswers: ["orange is the new black", "oitnb"],
+        emoji: "🍊/🆕/⬛️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Rome",
+        acceptableAnswers: ["rome", "HBO rome"],
+        emoji: "🏛️/🏟️/🏺/🍷",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Six Feet Under",
+        acceptableAnswers: ["six feet under", "6 feet under"],
+        emoji: "🦶/🦶/🦶/🦶/🦶/🦶/↘️/↗️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Ted Lasso",
+        acceptableAnswers: ["ted lasso"],
+        emoji: "🏈/👨🏻/💰/✈️/🇬🇧/👨🏻/⚽️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Mad Men",
+        acceptableAnswers: ["mad men", "madmen"],
+        emoji: "👨🏻‍💼/🚬/🚬/🚬/💃",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Star Trek",
+        acceptableAnswers: ["star trek", "star trek tng", "star trek: tng", "star trek the next generation", "star trek next generation", "the next generation"],
+        emoji: "⭐️/🚶‍♂️",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "House of Cards",
+        acceptableAnswers: ["house of cards"],
+        emoji: "🏠/🃏/🃏/🃏",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Top Gear",
+        acceptableAnswers: ["top gear", "topgear"],
+        emoji: "🎩/⚙️",
+        mediaType: MediaType.TVShow
+    },
     // FAMOUS PEOPLE SECTION
     {
         title: "Elon Musk",
         acceptableAnswers: ["elon musk", "elon", "musk"],
-        emoji: "🙎🏻‍♂️/🚀/🔋/🚗/🪐",
+        emoji: "🧑🏻/🚀/🔋/🚗/🪐",
         mediaType: MediaType.FamousPeople
     },
     {
@@ -168,7 +705,7 @@ export const questions = [
     },
     {
         title: "Mario",
-        acceptableAnswers: ["mario", "super mario", "super mario brothers", "super mario bros.", "super mario bros"],
+        acceptableAnswers: ["mario", "super mario", "super mario brothers", "super mario bros.", "super mario bros", "mario brothers"],
         emoji: "👨🏻‍🔧/🍄",
         mediaType: MediaType.VideoGame
     },
@@ -176,6 +713,60 @@ export const questions = [
         title: "Grand Theft Auto",
         acceptableAnswers: ["grand theft auto", "GTA"],
         emoji: "🚗/😕/🔫/😠",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Donkey Kong",
+        acceptableAnswers: ["donkey kong", "donkeykong", "donkey kong 64", "dk"],
+        emoji: "🦍/🍌/🛢️/🧗‍♂️",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Sonic the Hedgehog",
+        acceptableAnswers: ["sonic the hedgehog", "sonic", "sonic heroes", "sonic hedgehog"],
+        emoji: "💍/💍/💍/🦔/💨",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Tetris",
+        acceptableAnswers: ["tetris"],
+        emoji: "🟦/🟦/🟦/🟦/🕹️/🎵/🇷🇺",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Candy Crush",
+        acceptableAnswers: ["candy crush", "candycrush", "candy crush saga", "candycrush saga", "candy crush saga online", "candycrush saga online"],
+        emoji: "🍬/😍",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Pac-Man",
+        acceptableAnswers: ["pac-man", "pacman", "pac man", "miss pac man", "miss pacman", "miss pac-man"],
+        emoji: "👻/🟡/🟡/🟡/🟡/🍒",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Skyrim",
+        acceptableAnswers: ["skyrim", "elder scrolls", "elder scrolls skyrim", "the elder scrolls v: skyrim", "the elder scrolls v skyrim", "the elder scrolls skyrim"],
+        emoji: "🏹/🦵",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Portal",
+        acceptableAnswers: ["portal", "portals", "portal 2"],
+        emoji: "🙂/🌀/🙃",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Pokémon",
+        acceptableAnswers: ["pokémon", "pokemon", "pokemon red", "pokemon blue", "pokémon red", "pokémon blue"],
+        emoji: "👦🏻/🐉/💥/🐉/👦🏻",
+        mediaType: MediaType.VideoGame
+    },
+    {
+        title: "Minecraft",
+        acceptableAnswers: ["minecraft", "mine craft"],
+        emoji: "⛏️/🧟‍♂️/🕷️",
         mediaType: MediaType.VideoGame
     },
     // HISTORICAL EVENT SECTION
