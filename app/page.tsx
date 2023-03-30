@@ -72,7 +72,7 @@ export default function Page() {
                         <div className="col-span-full lg:col-start-2 lg:col-span-1">
                             <Link href={{ pathname: "/game", query: {isSuddenDeath: "false"}}} 
                             className="text-xl lg:text-xl flex justify-center items-center border-4 border-black ease-in-out duration-100 bg-red-500 hover:bg-red-900 rounded-full py-3 lg:py-5 w-100 text-white whitespace-nowrap animate-bounce w-full cursor-pointer shadow-lift">
-                                Play Classic!
+                                Play Timed!
                             </Link>
                         </div>
                     </div>

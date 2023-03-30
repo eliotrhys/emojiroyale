@@ -39,7 +39,7 @@ export default function CongratulationsScreen(props: CongratulationsScreenProps)
           <div className="text-4xl mb-0">🏆</div>
           <p className="mb-0">Your high score for</p>
           {props.isSuddenDeath ? <div className="bg-black text-white whitespace-nowrap rounded-md p-2 my-4 border-4 border-white inline-block lift">☠️ Sudden Death</div>
-          : <div className="bg-white text-black whitespace-nowrap rounded-md p-2 my-4 border-4 border-black inline-block lift">⏰ Classic</div>}
+          : <div className="bg-white text-black whitespace-nowrap rounded-md p-2 my-4 border-4 border-black inline-block lift">⏰ Timed</div>}
           <p className="mb-0">is {highestScoreForGameMode} {highestScoreForGameMode > 1 || highestScoreForGameMode === 0 ? "points" : "point"}</p>
         </motion.div>
       )

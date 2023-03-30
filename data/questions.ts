@@ -34,7 +34,7 @@ export const questions = [
     },
     {
         title: "The Curious Case Of Benjamin Button",
-        acceptableAnswers: ["the curious case of benjamin button", "benjamin button", "curious case of benjamin button", "curious case", "benjaminbutton"],
+        acceptableAnswers: ["the curious case of benjamin button", "benjamin button", "curious case of benjamin button", "curious case", "benjaminbutton", "case of benjamin button", "the case of benjamin button"],
         emoji: "👴🏻/👨🏻‍🦳/👱🏻‍♂️/👦🏼/👶🏼",
         mediaType: MediaType.Movie
     },
@@ -239,8 +239,158 @@ export const questions = [
     },
     {
         title: "Top Gun",
-        acceptableAnswers: ["top gun"],
-        emoji: "⬆️/🔫",
+        acceptableAnswers: ["top gun", "top gun maverick", "top gun: maverick", "topgun"],
+        emoji: "⬆️/🔫/✈️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Boogie Nights",
+        acceptableAnswers: ["boogie nights", "boo gee nights", "boogie knights", "boogy nights", "boogy knights"],
+        emoji: "👻/🥋/♞/♞",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Edward Scissorhands",
+        acceptableAnswers: ["edward scissorhands", "edward scissor hands", "scissorhands", "scissor hands", "edward"],
+        emoji: "🏰/🧍‍♂️/✂️/🤲/💇‍♀️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Black Panther",
+        acceptableAnswers: ["black panther", "blackpanther"],
+        emoji: "◼️/🐆",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Tooth Fairy",
+        acceptableAnswers: ["the tooth fairy", "da tooth fairy", "the toothfairy", "da toothfairy", "tooth fairy", "toothfairy"],
+        emoji: "🦷/🧚‍♂️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Joker",
+        acceptableAnswers: ["joker", "the joker"],
+        emoji: "🃏",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Incredible Hulk",
+        acceptableAnswers: ["the incredible hulk", "incredible hulk", "hulk", "the hulk"],
+        emoji: "🧑‍🔬/😡/🟩/💪",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Snakes On A Plane",
+        acceptableAnswers: ["snakes on a plane", "snakes on the plane", "snake on a plane", "snake on the plane"],
+        emoji: "🐍/🐍/🛩️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "An American Werewolf In London",
+        acceptableAnswers: ["an american werewolf in london", "american werewolf in london", "werewolf in london", "an american were wolf in london", "american were wolf in london"],
+        emoji: "🇺🇸/🌙/🐺/🇬🇧",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Princess Bride",
+        acceptableAnswers: ["the princess bride", "princess bride"],
+        emoji: "👸/👰‍♀️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Robocop",
+        acceptableAnswers: ["robocop", "robo cop", "robo-cop"],
+        emoji: "🤖/👮‍♂️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Who Framed Roger Rabbit?",
+        acceptableAnswers: ["who framed roger rabbit?", "who framed roger rabbit"],
+        emoji: "❓/🖼️/🐰",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Sixteen Candles",
+        acceptableAnswers: ["sixteen candles", "16 candles"],
+        emoji: "🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️/🕯️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "E.T. The Extra-Terrestrial",
+        acceptableAnswers: ["e.t. the extra-terrestrial", "et the extra terrestrial", "et the extra-terrestrial", "et", "e.t", "e.t."],
+        emoji: "👽/📞/🏠",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Karate Kid",
+        acceptableAnswers: ["the karate kid", "karate kid", "cobra kai"],
+        emoji: "🥋/👦🏻",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Planes, Trains & Automobiles",
+        acceptableAnswers: ["planes, trains & automobiles", "planes, trains and automobiles", "planes trains and automobiles", "planes trains automobiles"],
+        emoji: "✈️/✈️/🚂/🚂/🚗/🚗",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Airplane!",
+        acceptableAnswers: ["airplane!", "airplane"],
+        emoji: "✈️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Flashdance",
+        acceptableAnswers: ["flashdance", "flashdance!", "flash dance"],
+        emoji: "🔦/💃",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Jungle Book",
+        acceptableAnswers: ["the jungle book", "jungle book", "junglebook", "the junglebook"],
+        emoji: "🐍/🐒/🐅/📖",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Twilight",
+        acceptableAnswers: ["twilight", "twilight new moon", "junglebook", "the junglebook"],
+        emoji: "🧛🏻/❤️/👩🏻/❤️/🐺",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Ghostbusters",
+        acceptableAnswers: ["ghostbusters", "ghost busters"],
+        emoji: "👻/👻/🔫/👨🏻/👨🏻/👨🏻/👨🏾",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Eat, Pray, Love",
+        acceptableAnswers: ["eat, pray, love", "eat pray love"],
+        emoji: "🍴/🙏/❤️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "500 Days Of Summer",
+        acceptableAnswers: ["500 days of summer", "five hundred days of summer"],
+        emoji: "5️⃣/0️⃣/0️⃣/☀️/❤️",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "The Devil Wears Prada",
+        acceptableAnswers: ["the devil wears prada", "devil wears prada"],
+        emoji: "😈/👠",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Trainspotting",
+        acceptableAnswers: ["trainspotting", "train spotting"],
+        emoji: "🚂/👀",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Frozen",
+        acceptableAnswers: ["frozen"],
+        emoji: "🥶/👸",
         mediaType: MediaType.Movie
     },
     // CARTOON SECTION
@@ -426,9 +576,9 @@ export const questions = [
         mediaType: MediaType.TVShow
     },
     {
-        title: "👩🏻/♟️",
+        title: "The Queen's Gambit",
         acceptableAnswers: ["the queen's gambit", "the queens gambit", "queen's gambit", "queens gambit"],
-        emoji: "🤵🏻‍♂️/🫘",
+        emoji: "👩🏻/♟️",
         mediaType: MediaType.TVShow
     },
     {
@@ -500,7 +650,7 @@ export const questions = [
     {
         title: "The X-Files",
         acceptableAnswers: ["the x-files", "x-files", "xfiles", "x files", "the x files"],
-        emoji: "👽/🕵🏻/🕵🏻/👻",
+        emoji: "❌/🗂️",
         mediaType: MediaType.TVShow
     },
     {
@@ -530,19 +680,7 @@ export const questions = [
     {
         title: "Chernobyl",
         acceptableAnswers: ["chernobyl"],
-        emoji: "👨🏻‍🔬/👨🏻‍🔬/🔋/💥/☢️",
-        mediaType: MediaType.TVShow
-    },
-    {
-        title: "Chernobyl",
-        acceptableAnswers: ["chernobyl"],
-        emoji: "👨🏻‍🔬/👨🏻‍🔬/🔋/💥/☢️",
-        mediaType: MediaType.TVShow
-    },
-    {
-        title: "Scrubs",
-        acceptableAnswers: ["scrubs"],
-        emoji: "🏥/👨🏾‍🦲/🧑🏻/🤬",
+        emoji: "🇺🇦/👨🏻‍🔬/👨🏻‍🔬/🔋/💥/☢️",
         mediaType: MediaType.TVShow
     },
     {
@@ -554,7 +692,7 @@ export const questions = [
     {
         title: "Only Fools And Horses",
         acceptableAnswers: ["only fools and horses", "only fools", "fools and horses", "only fools & horses", "fools & horses"],
-        emoji: "🏥/👨🏾‍🦲/🧑🏻/🤬",
+        emoji: "🤡/🤡/🤡/🐴/🐴/🐴",
         mediaType: MediaType.TVShow
     },
     {
@@ -653,6 +791,18 @@ export const questions = [
         emoji: "🎩/⚙️",
         mediaType: MediaType.TVShow
     },
+    {
+        title: "Starsky & Hutch",
+        acceptableAnswers: ["starsky & hutch", "starsky and hutch", "starski & hutch", "starski and hutch"],
+        emoji: "⭐️/⛷️/🐇/🛖",
+        mediaType: MediaType.TVShow
+    },
+    {
+        title: "Squid Game",
+        acceptableAnswers: ["squid game", "squid games", "the squid game", "the squid games"],
+        emoji: "🦑/🎮",
+        mediaType: MediaType.TVShow
+    },
     // FAMOUS PEOPLE SECTION
     {
         title: "Elon Musk",
@@ -674,7 +824,7 @@ export const questions = [
     },
     {
         title: "Abraham Lincoln",
-        acceptableAnswers: ["abraham lincoln", "lincoln", "president lincoln", "president abraham lincoln"],
+        acceptableAnswers: ["abraham lincoln", "lincoln", "president lincoln", "president abraham lincoln", "abe"],
         emoji: "🧔🏻/🎩/🇺🇸",
         mediaType: MediaType.FamousPeople
     },
@@ -682,6 +832,60 @@ export const questions = [
         title: "Genghis Khan",
         acceptableAnswers: ["genghis khan", "gengis khan"],
         emoji: "🇲🇳/🧔🏻/🐎/⚔️/🌏",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Steven Spielberg",
+        acceptableAnswers: ["steven spielberg", "stephen spielberg", "spielberg"],
+        emoji: "🎥/🎬/🦈/🦖/👽/🪖",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Usain Bolt",
+        acceptableAnswers: ["usain bolt", "usain", "bolt", "lightning bolt", "the bolt"],
+        emoji: "🇯🇲/🏃🏿‍♂️/💨/🥇/⚡️",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Vincent Van Gogh",
+        acceptableAnswers: ["vincent van gogh", "van gogh", "vincent", "vincent vangogh", "vincent van-gogh"],
+        emoji: "🇳🇱/👨🏻‍🎨/👂🏻/🔪",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Muhammad Ali",
+        acceptableAnswers: ["muhammad ali", "muhammed ali", "mohamed ali", "ali", "cassius clay", "cassius", "clay"],
+        emoji: "🥊/👨🏿/🥇/🕌/🇺🇸",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Steve Jobs",
+        acceptableAnswers: ["steve jobs", "jobs", "steven jobs", "stephen jobs", "steve"],
+        emoji: "💻/🍎/📱/💡",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Isaac Newton",
+        acceptableAnswers: ["isaac newton", "isaac", "newton", "isaak newton"],
+        emoji: "👨🏻‍🏫/🌳/🍎/🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "J.K. Rowling",
+        acceptableAnswers: ["j.k. rowling", "j.k rowling", "jk rowling", "jk", "j.k.", "j.k", "joanne rowling", "rowling"],
+        emoji: "👩/✍️/📚/🧙‍♂️/🏰/🪄",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Beyoncé",
+        acceptableAnswers: ["beyoncé", "beyonce", "bey", "sasha fierce", "beyonce knowles", "beyoncé knowles"],
+        emoji: "🐝/🔛/🌊",
+        mediaType: MediaType.FamousPeople
+    },
+    {
+        title: "Beyoncé",
+        acceptableAnswers: ["beyoncé", "beyonce", "bey", "sasha fierce", "beyonce knowles", "beyoncé knowles"],
+        emoji: "🐝/🔛/🌊",
         mediaType: MediaType.FamousPeople
     },
     // VIDEO GAME SECTION
@@ -798,6 +1002,42 @@ export const questions = [
         title: "The Cold War",
         acceptableAnswers: ["the cold war", "cold war"],
         emoji: "🥶/☢️/🚀",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "The American Civil War",
+        acceptableAnswers: ["american civil war", "civil war", "the civil war", "us civil war", "north vs south", "the american civil war"],
+        emoji: "🇺🇸/👨🏻/🗡️/🔥/👨🏻/🇺🇸",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "The French Revolution",
+        acceptableAnswers: ["french revolution", "the french revolution"],
+        emoji: "🇫🇷/👑/🚫",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "The Industrial Revolution",
+        acceptableAnswers: ["the industrial revolution", "industrial revolution"],
+        emoji: "💡/🏭/🚂/💰/🌍",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "Fall Of The Berlin Wall",
+        acceptableAnswers: ["berlin wall", "the berlin wall", "fall of the berlin wall", "berlin wall falls", "the fall of the berlin wall", "berlin", "wall", "knocking down the berlin wall", "berlin wall knocked down", "fall of berlin wall", "1989"],
+        emoji: "🇩🇪/🧱/💥/🕊️",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "The Cuban Missile Crisis",
+        acceptableAnswers: ["missile crisis", "cuban missile crisis", "cuban missiles", "cuban missiles crisis", "the cuban missile crisis", "the cuban missiles crisis"],
+        emoji: "🇨🇺/🚀/🚀/🇺🇸/😱",
+        mediaType: MediaType.HistoricalEvent
+    },
+    {
+        title: "Boston Tea Party",
+        acceptableAnswers: ["tea party", "boston tea party"],
+        emoji: "🚢/😡/🚫/🫖/↘️/🌊/🇺🇸",
         mediaType: MediaType.HistoricalEvent
     },
     // BOOK SECTION
@@ -923,54 +1163,562 @@ export const questions = [
         mediaType: MediaType.MythsLegends
     },
     // NATION FLAG SECTION
+    // Americas
     {
-        title: "United Kingdom",
-        acceptableAnswers: ["UK", "the UK", "the united kingdom", "united kingdom", "britain", "great britain", "the united kingdom of great britain and northern ireland"],
-        emoji: "🇬🇧",
+        title: "Antigua and Barbuda",
+        acceptableAnswers: ["antigua and barbuda"],
+        emoji: "🇦🇬",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Spain",
-        acceptableAnswers: ["spain", "reino de españa", "reino de espana", "españa", "espana", "kingdom of spain", "the kingdom of spain"],
-        emoji: "🇪🇸",
+        title: "Argentina",
+        acceptableAnswers: ["argentina"],
+        emoji: "🇦🇷",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "France",
-        acceptableAnswers: ["france", "french republic", "the french republic", "la france", "république française", "republique francaise"],
-        emoji: "🇫🇷",
+        title: "Bahamas",
+        acceptableAnswers: ["bahamas"],
+        emoji: "🇧🇸",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Germany",
-        acceptableAnswers: ["germany", "federal republic of germany", "deutschland", "deutsche"],
-        emoji: "🇩🇪",
+        title: "Barbados",
+        acceptableAnswers: ["barbados"],
+        emoji: "🇧🇧",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Italy",
-        acceptableAnswers: ["italy", "italian republic", "republic of italy", "italia", "repubblica italiana"],
-        emoji: "🇮🇹",
+        title: "Belize",
+        acceptableAnswers: ["belize"],
+        emoji: "🇧🇿",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Finland",
-        acceptableAnswers: ["finland", "the republic of finland", "republic of finland", "suomi"],
-        emoji: "🇫🇮",
+        title: "Bolivia",
+        acceptableAnswers: ["bolivia"],
+        emoji: "🇧🇴",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Sweden",
-        acceptableAnswers: ["sweden", "the kingdom of sweden", "kingdom of sweden", "sverige"],
-        emoji: "🇸🇪",
+        title: "Brazil",
+        acceptableAnswers: ["brazil"],
+        emoji: "🇧🇷",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Norway",
-        acceptableAnswers: ["norway", "the kingdom of norway", "kingdom of norway", "norge", "noreg"],
-        emoji: "🇳🇴",
+        title: "Canada",
+        acceptableAnswers: ["canada"],
+        emoji: "🇨🇦",
         mediaType: MediaType.NationFlag
     },
+    {
+        title: "Chile",
+        acceptableAnswers: ["chile"],
+        emoji: "🇨🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Colombia",
+        acceptableAnswers: ["colombia"],
+        emoji: "🇨🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Costa Rica",
+        acceptableAnswers: ["costa rica"],
+        emoji: "🇨🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cuba",
+        acceptableAnswers: ["cuba"],
+        emoji: "🇨🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Dominican Republic",
+        acceptableAnswers: ["dominican republic"],
+        emoji: "🇩🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Ecuador",
+        acceptableAnswers: ["ecuador"],
+        emoji: "🇪🇨",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "El Salvador",
+        acceptableAnswers: ["el salvador"],
+        emoji: "🇸🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "French Guiana",
+        acceptableAnswers: ["french guiana"],
+        emoji: "🇬🇫",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Guatemala",
+        acceptableAnswers: ["guatemala"],
+        emoji: "🇬🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Haiti",
+        acceptableAnswers: ["haiti"],
+        emoji: "🇭🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Honduras",
+        acceptableAnswers: ["honduras"],
+        emoji: "🇭🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Jamaica",
+        acceptableAnswers: ["jamaica"],
+        emoji: "🇯🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mexico",
+        acceptableAnswers: ["mexico"],
+        emoji: "🇲🇽",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Nicaragua",
+        acceptableAnswers: ["nicaragua"],
+        emoji: "🇳🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Panama",
+        acceptableAnswers: ["panama"],
+        emoji: "🇵🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Paraguay",
+        acceptableAnswers: ["paraguay"],
+        emoji: "🇵🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Peru",
+        acceptableAnswers: ["peru"],
+        emoji: "🇵🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Puerto Rico",
+        acceptableAnswers: ["puerto rico"],
+        emoji: "🇵🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "United States",
+        acceptableAnswers: ["united states", "usa", "america"],
+        emoji: "🇺🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Uruguay",
+        acceptableAnswers: ["uruguay"],
+        emoji: "🇺🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Venezuela",
+        acceptableAnswers: ["venezuela"],
+        emoji: "🇻🇪",
+        mediaType: MediaType.NationFlag
+    },
+    // Asia
+    {
+        title: "Afghanistan",
+        acceptableAnswers: ["afghanistan"],
+        emoji: "🇦🇫",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Armenia",
+        acceptableAnswers: ["armenia"],
+        emoji: "🇦🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Azerbaijan",
+        acceptableAnswers: ["azerbaijan"],
+        emoji: "🇦🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Bahrain",
+        acceptableAnswers: ["bahrain"],
+        emoji: "🇧🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Bangladesh",
+        acceptableAnswers: ["bangladesh"],
+        emoji: "🇧🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Bhutan",
+        acceptableAnswers: ["bhutan"],
+        emoji: "🇧🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Brunei",
+        acceptableAnswers: ["brunei"],
+        emoji: "🇧🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cambodia",
+        acceptableAnswers: ["cambodia"],
+        emoji: "🇰🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "China",
+        acceptableAnswers: ["china"],
+        emoji: "🇨🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cyprus",
+        acceptableAnswers: ["cyprus"],
+        emoji: "🇨🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Georgia",
+        acceptableAnswers: ["georgia"],
+        emoji: "🇬🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "India",
+        acceptableAnswers: ["india"],
+        emoji: "🇮🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Indonesia",
+        acceptableAnswers: ["indonesia"],
+        emoji: "🇮🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Iran",
+        acceptableAnswers: ["iran"],
+        emoji: "🇮🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Iraq",
+        acceptableAnswers: ["iraq"],
+        emoji: "🇮🇶",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Israel",
+        acceptableAnswers: ["israel"],
+        emoji: "🇮🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Japan",
+        acceptableAnswers: ["japan"],
+        emoji: "🇯🇵",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Jordan",
+        acceptableAnswers: ["jordan"],
+        emoji: "🇯🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Kazakhstan",
+        acceptableAnswers: ["kazakhstan"],
+        emoji: "🇰🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Kuwait",
+        acceptableAnswers: ["kuwait"],
+        emoji: "🇰🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Laos",
+        acceptableAnswers: ["laos"],
+        emoji: "🇱🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Lebanon",
+        acceptableAnswers: ["lebanon"],
+        emoji: "🇱🇧",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Malaysia",
+        acceptableAnswers: ["malaysia"],
+        emoji: "🇲🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Maldives",
+        acceptableAnswers: ["maldives"],
+        emoji: "🇲🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mongolia",
+        acceptableAnswers: ["mongolia"],
+        emoji: "🇲🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Myanmar (Burma)",
+        acceptableAnswers: ["myanmar", "burma"],
+        emoji: "🇲🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Nepal",
+        acceptableAnswers: ["nepal"],
+        emoji: "🇳🇵",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "North Korea",
+        acceptableAnswers: ["north korea"],
+        emoji: "🇰🇵",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Oman",
+        acceptableAnswers: ["oman"],
+        emoji: "🇴🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Pakistan",
+        acceptableAnswers: ["pakistan"],
+        emoji: "🇵🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Palestine",
+        acceptableAnswers: ["palestine"],
+        emoji: "🇵🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Philippines",
+        acceptableAnswers: ["philippines"],
+        emoji: "🇵🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Qatar",
+        acceptableAnswers: ["qatar"],
+        emoji: "🇶🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Russia",
+        acceptableAnswers: ["russia"],
+        emoji: "🇷🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Saudi Arabia",
+        acceptableAnswers: ["saudi arabia"],
+        emoji: "🇸🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Singapore",
+        acceptableAnswers: ["singapore"],
+        emoji: "🇸🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "South Korea",
+        acceptableAnswers: ["south korea"],
+        emoji: "🇰🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Sri Lanka",
+        acceptableAnswers: ["sri lanka"],
+        emoji: "🇱🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Syria",
+        acceptableAnswers: ["syria"],
+        emoji: "🇸🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Taiwan",
+        acceptableAnswers: ["taiwan"],
+        emoji: "🇹🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Tajikistan",
+        acceptableAnswers: ["tajikistan"],
+        emoji: "🇹🇯",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Thailand",
+        acceptableAnswers: ["thailand"],
+        emoji: "🇹🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Timor-Leste (East Timor)",
+        acceptableAnswers: ["timor-leste", "east timor"],
+        emoji: "🇹🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Turkey",
+        acceptableAnswers: ["turkey"],
+        emoji: "🇹🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Turkmenistan",
+        acceptableAnswers: ["turkmenistan"],
+        emoji: "🇹🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "United Arab Emirates (UAE)",
+        acceptableAnswers: ["united arab emirates", "uae"],
+        emoji: "🇦🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Uzbekistan",
+        acceptableAnswers: ["uzbekistan"],
+        emoji: "🇺🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Vietnam",
+        acceptableAnswers: ["vietnam"],
+        emoji: "🇻🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Yemen",
+        acceptableAnswers: ["yemen"],
+        emoji: "🇾🇪",
+        mediaType: MediaType.NationFlag
+    },
+    // Australasia and Oceania
+    {
+        title: "Australia",
+        acceptableAnswers: ["australia"],
+        emoji: "🇦🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Federated States of Micronesia",
+        acceptableAnswers: ["federated states of micronesia", "micronesia"],
+        emoji: "🇫🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Fiji",
+        acceptableAnswers: ["fiji"],
+        emoji: "🇫🇯",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Kiribati",
+        acceptableAnswers: ["kiribati"],
+        emoji: "🇰🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Marshall Islands",
+        acceptableAnswers: ["marshall islands"],
+        emoji: "🇲🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Nauru",
+        acceptableAnswers: ["nauru"],
+        emoji: "🇳🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "New Zealand",
+        acceptableAnswers: ["new zealand"],
+        emoji: "🇳🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Palau",
+        acceptableAnswers: ["palau"],
+        emoji: "🇵🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Papua New Guinea",
+        acceptableAnswers: ["papua new guinea"],
+        emoji: "🇵🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Samoa",
+        acceptableAnswers: ["samoa"],
+        emoji: "🇼🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Solomon Islands",
+        acceptableAnswers: ["solomon islands"],
+        emoji: "🇸🇧",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Tonga",
+        acceptableAnswers: ["tonga"],
+        emoji: "🇹🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Tuvalu",
+        acceptableAnswers: ["tuvalu"],
+        emoji: "🇹🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Vanuatu",
+        acceptableAnswers: ["vanuatu"],
+        emoji: "🇻🇺",
+        mediaType: MediaType.NationFlag
+    },
+    // Europe
     {
         title: "England",
         acceptableAnswers: ["england"],
@@ -990,141 +1738,592 @@ export const questions = [
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Ireland",
-        acceptableAnswers: ["ireland", "Éire", "eire"],
-        emoji: "🇮🇪",
+        title: "Albania",
+        acceptableAnswers: ["albania"],
+        emoji: "🇦🇱",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Portugal",
-        acceptableAnswers: ["portugal", "portuguese republic", "república portuguesa"],
-        emoji: "🇵🇹",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Netherlands",
-        acceptableAnswers: ["netherlands", "holland", "the netherlands", "kingdom of the netherlands", "koninkrijk der nederlanden"],
-        emoji: "🇳🇱",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Belgium",
-        acceptableAnswers: ["belgium", "kingdom of belgium", "belgië", "belgique"],
-        emoji: "🇧🇪",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Greece",
-        acceptableAnswers: ["greece", "hellenic republic", "ελλάδα"],
-        emoji: "🇬🇷",
+        title: "Andorra",
+        acceptableAnswers: ["andorra"],
+        emoji: "🇦🇩",
         mediaType: MediaType.NationFlag
     },
     {
         title: "Austria",
-        acceptableAnswers: ["austria", "republic of austria", "österreich"],
+        acceptableAnswers: ["austria"],
         emoji: "🇦🇹",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Denmark",
-        acceptableAnswers: ["denmark", "kingdom of denmark", "danmark"],
-        emoji: "🇩🇰",
+        title: "Belarus",
+        acceptableAnswers: ["belarus"],
+        emoji: "🇧🇾",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Switzerland",
-        acceptableAnswers: ["switzerland", "swiss confederation", "schweiz", "suisse", "svizzera"],
-        emoji: "🇨🇭",
+        title: "Belgium",
+        acceptableAnswers: ["belgium"],
+        emoji: "🇧🇪",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Czech Republic",
-        acceptableAnswers: ["czech republic", "česká republika", "the czech republic", "czechia"],
-        emoji: "🇨🇿",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Poland",
-        acceptableAnswers: ["poland", "republic of poland", "rzeczpospolita polska", "polska"],
-        emoji: "🇵🇱",
-        mediaType: MediaType.NationFlag
-    },
-    {   
-        title: "Hungary", 
-        acceptableAnswers: ["hungary", "magyarország", "magyarorszag"],
-        emoji: "🇭🇺",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Romania",
-        acceptableAnswers: ["romania", "românia"],
-        emoji: "🇷🇴",
+        title: "Bosnia and Herzegovina",
+        acceptableAnswers: ["bosnia and herzegovina", "bosnia", "herzegovina"],
+        emoji: "🇧🇦",
         mediaType: MediaType.NationFlag
     },
     {
         title: "Bulgaria",
-        acceptableAnswers: ["bulgaria", "republic of bulgaria", "българия"],
+        acceptableAnswers: ["bulgaria"],
         emoji: "🇧🇬",
         mediaType: MediaType.NationFlag
     },
     {
         title: "Croatia",
-        acceptableAnswers: ["croatia", "republic of croatia", "hrvatska"],
+        acceptableAnswers: ["croatia"],
         emoji: "🇭🇷",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Serbia",
-        acceptableAnswers: ["serbia", "republic of serbia", "srbija", "Србија"],
-        emoji: "🇷🇸",
+        title: "Cyprus",
+        acceptableAnswers: ["cyprus"],
+        emoji: "🇨🇾",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Slovakia",
-        acceptableAnswers: ["slovakia", "slovak republic", "slovensko"],
-        emoji: "🇸🇰",
+        title: "Czech Republic",
+        acceptableAnswers: ["czech republic", "czechia"],
+        emoji: "🇨🇿",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Slovenia",
-        acceptableAnswers: ["slovenia", "republic of slovenia", "slovenija"],
-        emoji: "🇸🇮",
-        mediaType: MediaType.NationFlag
-    },
-    {
-        title: "Latvia",
-        acceptableAnswers: ["latvia", "republic of latvia", "latvija"],
-        emoji: "🇱🇻",
+        title: "Denmark",
+        acceptableAnswers: ["denmark"],
+        emoji: "🇩🇰",
         mediaType: MediaType.NationFlag
     },
     {
         title: "Estonia",
-        acceptableAnswers: ["estonia", "republic of estonia", "eesti"],
+        acceptableAnswers: ["estonia"],
         emoji: "🇪🇪",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Lithuania",
-        acceptableAnswers: ["lithuania", "republic of lithuania", "lietuva"],
-        emoji: "🇱🇹",
+        title: "Finland",
+        acceptableAnswers: ["finland"],
+        emoji: "🇫🇮",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Belarus",
-        acceptableAnswers: ["belarus", "republic of belarus", "belarusian", "беларусь"],
-        emoji: "🇧🇾",
+        title: "France",
+        acceptableAnswers: ["france"],
+        emoji: "🇫🇷",
         mediaType: MediaType.NationFlag
     },
     {
-        title: "Bosnia and Herzegovina",
-        acceptableAnswers: ["bosnia and herzegovina", "bosna i hercegovina", "босна и херцеговина", "bosnia", "herzegovina", "bosnia & herzegovina"],
-        emoji: "🇧🇦",
+        title: "Germany",
+        acceptableAnswers: ["germany"],
+        emoji: "🇩🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Greece",
+        acceptableAnswers: ["greece"],
+        emoji: "🇬🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Hungary",
+        acceptableAnswers: ["hungary"],
+        emoji: "🇭🇺",
         mediaType: MediaType.NationFlag
     },
     {
         title: "Iceland",
-        acceptableAnswers: ["iceland", "ísland"],
+        acceptableAnswers: ["iceland"],
         emoji: "🇮🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Ireland",
+        acceptableAnswers: ["ireland"],
+        emoji: "🇮🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Italy",
+        acceptableAnswers: ["italy"],
+        emoji: "🇮🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Kosovo",
+        acceptableAnswers: ["kosovo"],
+        emoji: "🇽🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Latvia",
+        acceptableAnswers: ["latvia"],
+        emoji: "🇱🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Liechtenstein",
+        acceptableAnswers: ["liechtenstein"],
+        emoji: "🇱🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Lithuania",
+        acceptableAnswers: ["lithuania"],
+        emoji: "🇱🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Luxembourg",
+        acceptableAnswers: ["luxembourg"],
+        emoji: "🇱🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Malta",
+        acceptableAnswers: ["malta"],
+        emoji: "🇲🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Moldova",
+        acceptableAnswers: ["moldova"],
+        emoji: "🇲🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Monaco",
+        acceptableAnswers: ["monaco"],
+        emoji: "🇲🇨",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Montenegro",
+        acceptableAnswers: ["montenegro"],
+        emoji: "🇲🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Netherlands",
+        acceptableAnswers: ["netherlands"],
+        emoji: "🇳🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "North Macedonia",
+        acceptableAnswers: ["north macedonia", "macedonia"],
+        emoji: "🇲🇰",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Norway",
+        acceptableAnswers: ["norway"],
+        emoji: "🇳🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Poland",
+        acceptableAnswers: ["poland"],
+        emoji: "🇵🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Portugal",
+        acceptableAnswers: ["portugal"],
+        emoji: "🇵🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Romania",
+        acceptableAnswers: ["romania"],
+        emoji: "🇷🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Russia",
+        acceptableAnswers: ["russia"],
+        emoji: "🇷🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "San Marino",
+        acceptableAnswers: ["san marino"],
+        emoji: "🇸🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Serbia",
+        acceptableAnswers: ["serbia"],
+        emoji: "🇷🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Slovenia",
+        acceptableAnswers: ["slovenia"],
+        emoji: "🇸🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Spain",
+        acceptableAnswers: ["spain"],
+        emoji: "🇪🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Sweden",
+        acceptableAnswers: ["sweden"],
+        emoji: "🇸🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Switzerland",
+        acceptableAnswers: ["switzerland"],
+        emoji: "🇨🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Ukraine",
+        acceptableAnswers: ["ukraine"],
+        emoji: "🇺🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "United Kingdom",
+        acceptableAnswers: ["united kingdom", "uk", "england", "scotland", "wales", "northern ireland"],
+        emoji: "🇬🇧",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Vatican City",
+        acceptableAnswers: ["vatican city"],
+        emoji: "🇻🇦",
+        mediaType: MediaType.NationFlag
+    },
+    // Africa
+    {
+        title: "Algeria",
+        acceptableAnswers: ["algeria"],
+        emoji: "🇩🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Angola",
+        acceptableAnswers: ["angola"],
+        emoji: "🇦🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Benin",
+        acceptableAnswers: ["benin"],
+        emoji: "🇧🇯",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Botswana",
+        acceptableAnswers: ["botswana"],
+        emoji: "🇧🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Burkina Faso",
+        acceptableAnswers: ["burkina faso"],
+        emoji: "🇧🇫",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Burundi",
+        acceptableAnswers: ["burundi"],
+        emoji: "🇧🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cameroon",
+        acceptableAnswers: ["cameroon"],
+        emoji: "🇨🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cape Verde",
+        acceptableAnswers: ["cape verde"],
+        emoji: "🇨🇻",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Central African Republic",
+        acceptableAnswers: ["central african republic"],
+        emoji: "🇨🇫",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Chad",
+        acceptableAnswers: ["chad"],
+        emoji: "🇹🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Comoros",
+        acceptableAnswers: ["comoros"],
+        emoji: "🇰🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Democratic Republic of Congo",
+        acceptableAnswers: ["democratic republic of congo", "dr congo", "drc"],
+        emoji: "🇨🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Republic of Congo",
+        acceptableAnswers: ["republic of congo", "congo"],
+        emoji: "🇨🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Cote d'Ivoire",
+        acceptableAnswers: ["cote d'ivoire", "ivory coast"],
+        emoji: "🇨🇮",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Djibouti",
+        acceptableAnswers: ["djibouti"],
+        emoji: "🇩🇯",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Egypt",
+        acceptableAnswers: ["egypt"],
+        emoji: "🇪🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Equatorial Guinea",
+        acceptableAnswers: ["equatorial guinea"],
+        emoji: "🇬🇶",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Eritrea",
+        acceptableAnswers: ["eritrea"],
+        emoji: "🇪🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Eswatini",
+        acceptableAnswers: ["eswatini", "swaziland"],
+        emoji: "🇸🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Gabon",
+        acceptableAnswers: ["gabon"],
+        emoji: "🇬🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Gambia",
+        acceptableAnswers: ["gambia"],
+        emoji: "🇬🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Ghana",
+        acceptableAnswers: ["ghana"],
+        emoji: "🇬🇭",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Guinea",
+        acceptableAnswers: ["guinea"],
+        emoji: "🇬🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Guinea-Bissau",
+        acceptableAnswers: ["guinea-bissau"],
+        emoji: "🇬🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Kenya",
+        acceptableAnswers: ["kenya"],
+        emoji: "🇰🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Lesotho",
+        acceptableAnswers: ["lesotho"],
+        emoji: "🇱🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Liberia",
+        acceptableAnswers: ["liberia"],
+        emoji: "🇱🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Libya",
+        acceptableAnswers: ["libya"],
+        emoji: "🇱🇾",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Madagascar",
+        acceptableAnswers: ["madagascar"],
+        emoji: "🇲🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Malawi",
+        acceptableAnswers: ["malawi"],
+        emoji: "🇲🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mali",
+        acceptableAnswers: ["mali"],
+        emoji: "🇲🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mauritania",
+        acceptableAnswers: ["mauritania"],
+        emoji: "🇲🇷",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mauritius",
+        acceptableAnswers: ["mauritius"],
+        emoji: "🇲🇺",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Morocco",
+        acceptableAnswers: ["morocco"],
+        emoji: "🇲🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Mozambique",
+        acceptableAnswers: ["mozambique"],
+        emoji: "🇲🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Namibia",
+        acceptableAnswers: ["namibia"],
+        emoji: "🇳🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Niger",
+        acceptableAnswers: ["niger"],
+        emoji: "🇳🇪",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Nigeria",
+        acceptableAnswers: ["nigeria"],
+        emoji: "🇳🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Rwanda",
+        acceptableAnswers: ["rwanda"],
+        emoji: "🇷🇼",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "São Tomé and Príncipe",
+        acceptableAnswers: ["sao tome and principe", "sao tome", "principe"],
+        emoji: "🇸🇹",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Senegal",
+        acceptableAnswers: ["senegal"],
+        emoji: "🇸🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Seychelles",
+        acceptableAnswers: ["seychelles"],
+        emoji: "🇸🇨",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Sierra Leone",
+        acceptableAnswers: ["sierra leone"],
+        emoji: "🇸🇱",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Somalia",
+        acceptableAnswers: ["somalia"],
+        emoji: "🇸🇴",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "South Africa",
+        acceptableAnswers: ["south africa"],
+        emoji: "🇿🇦",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "South Sudan",
+        acceptableAnswers: ["south sudan"],
+        emoji: "🇸🇸",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Sudan",
+        acceptableAnswers: ["sudan"],
+        emoji: "🇸🇩",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Tanzania",
+        acceptableAnswers: ["tanzania"],
+        emoji: "🇹🇿",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Togo",
+        acceptableAnswers: ["togo"],
+        emoji: "🇹🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Tunisia",
+        acceptableAnswers: ["tunisia"],
+        emoji: "🇹🇳",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Uganda",
+        acceptableAnswers: ["uganda"],
+        emoji: "🇺🇬",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Zambia",
+        acceptableAnswers: ["zambia"],
+        emoji: "🇿🇲",
+        mediaType: MediaType.NationFlag
+    },
+    {
+        title: "Zimbabwe",
+        acceptableAnswers: ["zimbabwe"],
+        emoji: "🇿🇼",
         mediaType: MediaType.NationFlag
     },
     // SONG SECTION
@@ -1187,5 +2386,337 @@ export const questions = [
         acceptableAnswers: ["sweet child o' mine", "sweet child o mine", "sweet child of mine"],
         emoji: "🍬/👶🏻/⛏️",
         mediaType: MediaType.Song
+    },
+    {
+        title: "Back To Black",
+        acceptableAnswers: ["back to black", "back 2 black"],
+        emoji: "👈/◼️",
+        mediaType: MediaType.Song
+    },
+    {
+        title: "Buffalo Soldier",
+        acceptableAnswers: ["buffalo soldier"],
+        emoji: "🐃/💂",
+        mediaType: MediaType.Song
+    },
+    {
+        title: "Crocodile Rock",
+        acceptableAnswers: ["crocodile rock"],
+        emoji: "🐊/🪨",
+        mediaType: MediaType.Song
+    },
+    {
+        title: "Thriller",
+        acceptableAnswers: ["thriller", "the thriller", "thrilla"],
+        emoji: "🧟/👻/🧛‍♂️/🕺",
+        mediaType: MediaType.Song
+    },
+    {
+        title: "Don't Cry For Me Argentina",
+        acceptableAnswers: ["don't cry for me argentina", "dont cry for me argentina", "cry for me argentina"],
+        emoji: "🙅🏻‍♀️/😭/🇦🇷",
+        mediaType: MediaType.Song
+    },
+    // BRANDS SECTION
+    {
+        title: "Nike",
+        acceptableAnswers: ["nike", "nike inc", "nike inc."],
+        emoji: "👟/✅",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Coca-Cola",
+        acceptableAnswers: ["coca-cola", "coca cola", "cocacola", "the coca cola company", "coca cola co", "coca cola company", "pepsi"],
+        emoji: "🥤",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Apple",
+        acceptableAnswers: ["apple", "apple inc", "apple inc.", "apple computers"],
+        emoji: "🍏/💻/📱",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Amazon",
+        acceptableAnswers: ["amazon", "amazon prime"],
+        emoji: "🛍️/📦/🌐",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "McDonald's",
+        acceptableAnswers: ["mcdonald's", "mcdonalds", "macdonalds", "maccie ds", "maccie d"],
+        emoji: "🍔/🍟",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Google",
+        acceptableAnswers: ["google", "google inc.", "google inc"],
+        emoji: "🔍/🌐",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Pepsi",
+        acceptableAnswers: ["pepsi"],
+        emoji: "🥤/🔵/🔴",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Disney",
+        acceptableAnswers: ["disney", "walt disney", "the walt disney company", "disney co", "the walt disney co.", "the walt disney co"],
+        emoji: "🐭/🏰/✨",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Microsoft",
+        acceptableAnswers: ["microsoft", "micro soft", "windows"],
+        emoji: "🪟/💻",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Netflix",
+        acceptableAnswers: ["netflix", "net flix"],
+        emoji: "🎬/💻/🛋️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Burger King",
+        acceptableAnswers: ["burger king", "burgerking"],
+        emoji: "🍔/🤴🏻",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "IKEA",
+        acceptableAnswers: ["ikea"],
+        emoji: "👁️/🔑/🅰️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Blackberry",
+        acceptableAnswers: ["blackberry", "black berry"],
+        emoji: "⬛️/🍓",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Hello Kitty",
+        acceptableAnswers: ["hello kitty", "hellokitty"],
+        emoji: "👋/😸",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Firefox",
+        acceptableAnswers: ["firefox", "fire fox"],
+        emoji: "🔥/🦊",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Wetherspoons",
+        acceptableAnswers: ["wetherspoons", "wether spoons", "weatherspoons", "weather spoons"],
+        emoji: "☀️/🌧️/⛅️/🥄/🥄/🥄",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "IBM",
+        acceptableAnswers: ["ibm", "international business machines"],
+        emoji: "👁️/🐝/Ⓜ️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Waterstones",
+        acceptableAnswers: ["waterstones", "water stones"],
+        emoji: "💦/🪨/🪨",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Facebook",
+        acceptableAnswers: ["facebook", "face book"],
+        emoji: "😐/📕",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "BBC",
+        acceptableAnswers: ["bbc", "british broadcasting corporation", "the bbc"],
+        emoji: "🐝/🐝/🌊",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "YouTube",
+        acceptableAnswers: ["youtube", "you tube"],
+        emoji: "🫵/🧪",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Dominos Pizza",
+        acceptableAnswers: ["dominos pizza", "dominos", "domino's pizza", "domino's"],
+        emoji: "🁂/🁎/🍕",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Red Bull",
+        acceptableAnswers: ["red bull", "redbull"],
+        emoji: "🟥/🐂",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Lacoste",
+        acceptableAnswers: ["lacoste"],
+        emoji: "🇫🇷/🐊/🎾",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Kentucky Fried Chicken",
+        acceptableAnswers: ["kentucky fried chicken", "kfc", "kentucky chicken"],
+        emoji: "🇺🇸/🍳/🐓/🍗/👴🏻",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Vans",
+        acceptableAnswers: ["vans", "vans shoes", "vans co", "vans co."],
+        emoji: "🚐/🚐/👟",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "7UP",
+        acceptableAnswers: ["7up", "seven up", "sevenup", "7 up", "7-up", "seven-up"],
+        emoji: "7️⃣/⬆️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Subway",
+        acceptableAnswers: ["subway", "sub way", "subway sandwiches", "subway sandwich"],
+        emoji: "🚇/🥪",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Playboy",
+        acceptableAnswers: ["playboy", "play boy", "playboy bunny"],
+        emoji: "▶️/👦🏻",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "The North Face",
+        acceptableAnswers: ["the north face", "north face", "the northface", "northface"],
+        emoji: "🧭/⬆️/😐",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Hotmail",
+        acceptableAnswers: ["hotmail", "hot mail", "microsoft hot mail", "microsoft hotmail"],
+        emoji: "🥵/✉️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Starbucks",
+        acceptableAnswers: ["starbucks", "star bucks", "starbux", "star bux", "starbucks coffee", "star bucks coffee"],
+        emoji: "⭐️/💰/☕️",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Xbox",
+        acceptableAnswers: ["xbox", "x box", "microsoft xbox", "microsoft x box", "micro soft x box", "micro soft xbox"],
+        emoji: "❎/📦",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Taco Bell",
+        acceptableAnswers: ["taco bell", "tacobell"],
+        emoji: "🌮/🔔",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Pizza Hut",
+        acceptableAnswers: ["pizza hut", "pizzahut"],
+        emoji: "🍕/🛖",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Five Guys",
+        acceptableAnswers: ["five guys", "fiveguys", "five guys burgers"],
+        emoji: "👨🏻/👨🏻/👨🏻/👨🏻/👨🏻",
+        mediaType: MediaType.Brands
+    },
+    {
+        title: "Duracell",
+        acceptableAnswers: ["duracell", "duracell bunny", "energizer", "energizer bunny"],
+        emoji: "🔋/🐰",
+        mediaType: MediaType.Brands
+    },
+    // LANDMARKS
+    {
+        title: "The Eiffel Tower",
+        acceptableAnswers: ["the eiffel tower", "eiffel tower", "eiffel"],
+        emoji: "🇫🇷/🗼",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Great Wall Of China",
+        acceptableAnswers: ["the great wall of china", "great wall of china", "wall of china"],
+        emoji: "🤩/🧱/🧱/🧱/🇨🇳",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Statue Of Liberty",
+        acceptableAnswers: ["the statue of liberty", "statue of liberty", "liberty statue", "lady liberty"],
+        emoji: "🗽",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Colosseum",
+        acceptableAnswers: ["the colosseum", "colosseum", "the coliseum", "coliseum", "flavian amphitheatre"],
+        emoji: "🏟️/🇮🇹",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Taj Mahal",
+        acceptableAnswers: ["the taj mahal", "taj mahal", "the tajmahal", "tajmahal"],
+        emoji: "🕌/🇮🇳",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "Christ The Redeemer",
+        acceptableAnswers: ["christ the redeemer", "christ", "statue of christ the redeemer"],
+        emoji: "✝️/🙏/🇧🇷",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Great Pyramids Of Giza",
+        acceptableAnswers: ["the great pyramids of giza", "the great pyramids", "the pyramids", "pyramids", "the pyramids of giza", "pyramids of giza", "great pyramids"],
+        emoji: "🔺/🇪🇬",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "Big Ben",
+        acceptableAnswers: ["big ben", "great bell", "the great bell", "bigben", "great clock of westminster", "the great clock of westminster"],
+        emoji: "🕰️/🇬🇧",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "Stonehenge",
+        acceptableAnswers: ["stonehenge", "stone henge", "the henge"],
+        emoji: "🗿/🇬🇧",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Leaning Tower Of Pisa",
+        acceptableAnswers: ["the leaning tower of pisa", "leaning tower of pisa", "leaning tower", "tower of pisa", "leaning tower of pizza", "the leaning tower of pizza"],
+        emoji: "↗️/🗼/🇮🇹",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "Mount Rushmore",
+        acceptableAnswers: ["mount rushmore", "rushmore", "the presidents"],
+        emoji: "🗿/🗿/🗿/🗿/⛰️/🇺🇸",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Sydney Opera House",
+        acceptableAnswers: ["the sydney opera house", "sydney opera house", "opera house"],
+        emoji: "🇦🇺/🎤/🎭/🏠",
+        mediaType: MediaType.Landmarks
+    },
+    {
+        title: "The Acropolis",
+        acceptableAnswers: ["the acropolis", "acropolis"],
+        emoji: "🏛️/🇬🇷",
+        mediaType: MediaType.Landmarks
     },
 ];

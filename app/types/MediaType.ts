@@ -8,5 +8,7 @@ export enum MediaType {
     Book = "📚 Book",
     NationFlag = "🏳️ Nation Flags",
     MythsLegends = "🐲 Myths & Legends",
-    FamousPeople = "🤑 Famous People"
+    FamousPeople = "🤑 Famous People",
+    Brands = "💰 Brands",
+    Landmarks = "🗼 Landmarks"
 };
