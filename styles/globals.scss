@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: Blambot;
-  src: url("/public/fonts/Blambot.otf");
-}
+// @font-face {
+//   font-family: Blambot;
+//   src: url("/public/fonts/Blambot.otf");
+// }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Blambot;
-  // font-family: "blambot-pro", sans-serif;
+  // font-family: Blambot;
+  font-family: "blambot-pro", sans-serif;
   // font-family: "badaboom-pro", sans-serif;
   font-weight: 400;
   font-style: normal;
