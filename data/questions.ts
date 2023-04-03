@@ -198,7 +198,7 @@ export const questions = [
     {
         title: "Toy Story",
         acceptableAnswers: ["toy story", "toystory"],
-        emoji: "🧸/🕮",
+        emoji: "🧸/📖",
         mediaType: MediaType.Movie
     },
     {
@@ -393,6 +393,24 @@ export const questions = [
         emoji: "🥶/👸",
         mediaType: MediaType.Movie
     },
+    {
+        title: "The Shape Of Water",
+        acceptableAnswers: ["the shape of water", "shape of water", "shape water"],
+        emoji: "🔺/🟦/💦",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Mary Poppins",
+        acceptableAnswers: ["mary poppins", "mary poppings", "mary poppins returns", "mary poppings returns"],
+        emoji: "☂️/👩🏻/🪄",
+        mediaType: MediaType.Movie
+    },
+    {
+        title: "Blade Runner",
+        acceptableAnswers: ["blade runner", "blader runners", "blade runner 2049", "blade runners 2049"],
+        emoji: "🔪/🏃‍♂️",
+        mediaType: MediaType.Movie
+    },
     // CARTOON SECTION
     {
         title: "The Simpsons",
@@ -482,12 +500,6 @@ export const questions = [
         title: "Adventure Time",
         acceptableAnswers: ["adventure time"],
         emoji: "🗡️/👦🏻/🐶/👸/🍬/🍫/🏰/🧙‍♂️",
-        mediaType: MediaType.Cartoon
-    },
-    {
-        title: "Samurai Jack",
-        acceptableAnswers: ["samurai jack"],
-        emoji: "🇯🇵/🤺/🗡️",
         mediaType: MediaType.Cartoon
     },
     {
@@ -811,6 +823,12 @@ export const questions = [
         mediaType: MediaType.FamousPeople
     },
     {
+        title: "Marie Curie",
+        acceptableAnswers: ["marie curie", "marie", "curie"],
+        emoji: "👩🏻‍🔬/🇵🇱/☢️/🏅/🏅/☠️",
+        mediaType: MediaType.FamousPeople
+    },
+    {
         title: "Queen Elizabeth II",
         acceptableAnswers: ["queen elizabeth ii", "the queen", "the queen of england", "queen of england", "queen elizabeth", "elizabeth", "queen"],
         emoji: "💂🏻‍♂️/👸🏻/🐩/💂🏻‍♂️",
@@ -848,7 +866,7 @@ export const questions = [
     },
     {
         title: "Vincent Van Gogh",
-        acceptableAnswers: ["vincent van gogh", "van gogh", "vincent", "vincent vangogh", "vincent van-gogh"],
+        acceptableAnswers: ["vincent van gogh", "van gogh", "vangogh", "vincent", "vincent vangogh", "vincent van-gogh"],
         emoji: "🇳🇱/👨🏻‍🎨/👂🏻/🔪",
         mediaType: MediaType.FamousPeople
     },
@@ -2417,6 +2435,12 @@ export const questions = [
         emoji: "🙅🏻‍♀️/😭/🇦🇷",
         mediaType: MediaType.Song
     },
+    {
+        title: "Sex Bomb",
+        acceptableAnswers: ["sex bomb", "sexbomb"],
+        emoji: "🍆/💣",
+        mediaType: MediaType.Song
+    },
     // BRANDS SECTION
     {
         title: "Nike",
@@ -2673,13 +2697,13 @@ export const questions = [
     },
     {
         title: "Christ The Redeemer",
-        acceptableAnswers: ["christ the redeemer", "christ", "statue of christ the redeemer"],
+        acceptableAnswers: ["christ the redeemer", "christ", "statue of christ the redeemer", "christ redeemer"],
         emoji: "✝️/🙏/🇧🇷",
         mediaType: MediaType.Landmarks
     },
     {
         title: "The Great Pyramids Of Giza",
-        acceptableAnswers: ["the great pyramids of giza", "the great pyramids", "the pyramids", "pyramids", "the pyramids of giza", "pyramids of giza", "great pyramids"],
+        acceptableAnswers: ["the great pyramids of giza", "great pyramids of giza", "the great pyramids", "the pyramids", "pyramids", "the pyramids of giza", "pyramids of giza", "great pyramids"],
         emoji: "🔺/🇪🇬",
         mediaType: MediaType.Landmarks
     },
@@ -2691,7 +2715,7 @@ export const questions = [
     },
     {
         title: "Stonehenge",
-        acceptableAnswers: ["stonehenge", "stone henge", "the henge"],
+        acceptableAnswers: ["stonehenge", "stone henge", "the henge", "the stone henge", "the stonehenge"],
         emoji: "🗿/🇬🇧",
         mediaType: MediaType.Landmarks
     },

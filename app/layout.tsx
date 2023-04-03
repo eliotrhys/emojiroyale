@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: any }) {
     }
       <head>
         <title>Triviamoji</title>
-        <link rel="stylesheet" href="https://use.typekit.net/wtd2uom.css"></link>
+        {/* <link rel="stylesheet" href="https://use.typekit.net/wtd2uom.css"></link> */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
         <meta name="theme-color" content="#fff" />

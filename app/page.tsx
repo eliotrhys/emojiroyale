@@ -126,8 +126,8 @@ export default function Page() {
                             </div>
                             <div className="col-span-6 sm:col-span-12 flex items-center justify-start lg:justify-center">
                                 <div className="text-left sm:text-center">
-                                    <h3 className="text-md sm:text-lg lg:text-xl mb-2 lg:mb-4">🤯 1000s of emoji combos!</h3>
-                                    <p className="text-xs sm:text-md leading-relaxed">Never run out of questions!</p>
+                                    <h3 className="text-md sm:text-lg lg:text-xl mb-2 lg:mb-4">🤯 tons of emoji combos!</h3>
+                                    <p className="text-xs sm:text-md leading-relaxed">More questions added all the time!</p>
                                 </div>
                             </div>
                         </div>

@@ -1,11 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: Blambot;
+  src: url("/fonts/Blambot.otf");
+}
+
+@font-face {
+  font-family: BlambotAlt;
+  src: url("/fonts/BlambotAlt.otf");
+}
+
+@font-face {
+  font-family: BlambotBold;
+  src: url("/fonts/BlambotBold.otf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "blambot-pro", sans-serif;
+  font-family: BlambotAlt, sans-serif;
   font-weight: 400;
   font-style: normal;
   background: #eee;
